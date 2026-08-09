@@ -1,0 +1,16 @@
+node_modules/
+dist/
+
+# .env stays out — its only consumer (build.js) reads it locally to generate
+# js/config.js. The generated config.js IS committed because GitHub Pages
+# serves the repo as-is and has no build step; the Formspree ID it contains
+# is public-by-design (visible in the network request anyway).
+.env
+
+# output.css is the compiled Tailwind bundle. It IS committed for the same
+# reason — GitHub Pages cannot run `npm run build`. Re-run `npm run build`
+# before every commit so the live site stays in sync.
+
+# Tooling / QA scratch output
+.playwright-mcp/
+/*.png

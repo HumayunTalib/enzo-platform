@@ -1,0 +1,495 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <title>Home | ENZO — Wholesale Fabric Supplier, Lahore</title>
+  <meta name="description" content="ENZO by Humayun Ibrahim Textile — B2B wholesale fabric supplier, Lahore. 10,000m MOQ, manufacturer-direct, quotation within 1 business day.">
+  <link rel="canonical" href="https://enzolhr.com/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ENZO">
+  <meta property="og:url" content="https://enzolhr.com/">
+  <meta property="og:title" content="ENZO — Wholesale Fabric Supplier, Lahore">
+  <meta property="og:description" content="Manufacturer-direct wholesale fabric. 3 product lines. 10,000m MOQ. Quote within 1 business day.">
+  <meta property="og:image" content="https://enzolhr.com/assets/hero.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ENZO — Wholesale Fabric Supplier, Lahore">
+  <meta name="twitter:description" content="Manufacturer-direct wholesale fabric. 3 product lines. 10,000m MOQ. Quote within 1 business day.">
+  <meta name="twitter:image" content="https://enzolhr.com/assets/hero.jpeg">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="output.css?v=2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ENZO",
+    "legalName": "Humayun Ibrahim Textile",
+    "url": "https://enzolhr.com",
+    "email": "info@enzolhr.com",
+    "telephone": "+923218230266",
+    "foundingDate": "2014",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ENZO Tower, Thokar Niaz Baig",
+      "addressLocality": "Lahore",
+      "addressCountry": "PK"
+    },
+    "areaServed": ["Lahore", "Faisalabad", "Karachi", "Peshawar"]
+  }
+  </script>
+</head>
+<body style="padding-top:0;">
+
+<!-- ── PAGE LOADER ── -->
+<div id="enzo-loader" aria-hidden="true">
+  <iframe id="enzo-loader-frame" src="assets/loader/emblem.html" title="ENZO" scrolling="no" allowtransparency="true"
+          style="border:0;width:100%;height:100%;display:block;position:relative;z-index:1;background:transparent;" aria-hidden="true" tabindex="-1"></iframe>
+</div>
+<script>
+(function () {
+  var loader = document.getElementById('enzo-loader');
+  if (!loader) return;
+  var frame = document.getElementById('enzo-loader-frame');
+  function hide() {
+    loader.classList.add('enzo-loader-out');
+    setTimeout(function () { loader.style.display = 'none'; if (frame) frame.removeAttribute('src'); }, 420);
+  }
+  // Skip the heavy bundle for reduced-motion users or after the first view this session.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('enzo-loaded')) {
+    loader.style.display = 'none';
+    if (frame) frame.removeAttribute('src');
+    return;
+  }
+  sessionStorage.setItem('enzo-loaded', '1');
+  var REVEAL_AFTER = 4400;   // emblem draws once over ~4s; ease into the site just after it completes
+  var done = false;
+  function finish() { if (done) return; done = true; hide(); }
+  if (frame) {
+    frame.addEventListener('load', function () { setTimeout(finish, REVEAL_AFTER); });
+  }
+  setTimeout(finish, 8000);  // hard cap — always reveal the site even if the bundle stalls
+})();
+</script>
+
+<nav id="navbar" class="fixed top-4 inset-x-0 z-50 flex justify-center px-4" aria-label="Primary navigation">
+  <div class="w-full max-w-7xl flex items-center justify-between px-8 py-2.5 rounded-xl"
+       style="background:rgba(14,24,37,0.80);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(92,115,134,0.28);">
+    <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="ENZO — return to home">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:1.375rem;color:#F5F8FA;letter-spacing:0.14em;">ENZO</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list">
+      <li><a href="index.html"      class="nav-link">Home</a></li>
+      <li><a href="about.html"      class="nav-link">About</a></li>
+      <li><a href="catalog.html"    class="nav-link">Catalog</a></li>
+      <li><a href="calculator.html" class="nav-link">Calculator</a></li>
+      <li><a href="contact.html"    class="nav-link">Contact</a></li>
+      <li><a href="shop.html"        class="nav-link">Shop</a></li>
+    </ul>
+    <a href="contact.html" class="btn-primary hidden md:inline-block">Request Quote</a>
+    <button id="nav-toggle" class="md:hidden p-2 flex flex-col gap-1.5 rounded"
+            aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="w-6 h-px bg-ice-white block transition-all duration-200" id="hb1"></span>
+      <span class="w-6 h-px bg-ice-white block transition-all duration-200" id="hb2"></span>
+      <span class="w-6 h-px bg-ice-white block transition-all duration-200" id="hb3"></span>
+    </button>
+  </div>
+  <div id="mobile-nav"
+       style="display:none;flex-direction:column;gap:1rem;position:absolute;top:100%;left:1rem;right:1rem;margin-top:0.5rem;border-radius:0.75rem;padding:1.25rem 1.5rem 1.5rem;background:rgba(14,24,37,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(92,115,134,0.28);">
+    <a href="index.html"      class="nav-link text-base">Home</a>
+    <a href="about.html"      class="nav-link text-base">About</a>
+    <a href="catalog.html"    class="nav-link text-base">Catalog</a>
+    <a href="calculator.html" class="nav-link text-base">Calculator</a>
+    <a href="contact.html"    class="nav-link text-base">Contact</a>
+    <a href="shop.html"        class="nav-link text-base">Shop</a>
+    <a href="contact.html"    class="btn-primary text-center mt-2">Request Quote</a>
+  </div>
+</nav>
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var menu   = document.getElementById('mobile-nav');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = menu.style.display === 'flex';
+    menu.style.display = isOpen ? 'none' : 'flex';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+  var current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('#navbar .nav-link').forEach(function (link) {
+    if (link.getAttribute('href').endsWith(current)) link.setAttribute('aria-current', 'page');
+  });
+})();
+</script>
+
+<main>
+
+  <!-- ── HERO — Dark Navy ── -->
+  <section id="hero-section" style="background-color:#0E1825;background-image:url('assets/hero.jpeg');background-size:cover;background-position:center;min-height:100vh;position:relative;display:flex;align-items:center;padding-top:100px;overflow:hidden;" aria-label="Hero">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(14,24,37,0.88) 55%,rgba(14,24,37,0.55) 100%);"></div>
+
+    <!-- Text -->
+    <div class="content-rail section-pad w-full" style="position:relative;z-index:1;">
+      <div id="hero-text-inner">
+        <p id="hero-label" class="enzo-label mb-5" style="color:#5C7386;letter-spacing:0.16em;">
+          B2B Wholesale &mdash; Manufacturer Direct
+        </p>
+        <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,5.5rem);line-height:1;letter-spacing:0.02em;color:#F5F8FA;margin:0 0 1.5rem;">
+          <span id="hero-line1" style="display:block;">Fabric Built for</span>
+          <span id="hero-line2" style="display:block;color:#9DB4C6;">Volume.</span>
+          <span id="hero-line3" style="display:block;">Priced for Trade.</span>
+        </h1>
+        <p id="hero-body" style="font-size:1rem;color:#D6DEE6;max-width:480px;line-height:1.7;margin-bottom:2.5rem;">
+          ENZO supplies wholesale men's fabric directly from our Faisalabad looms to stockists, distributors, retailers, and fashion houses across Pakistan. No intermediaries. No retail pricing. Minimum 10,000 metres per order.
+        </p>
+        <div id="hero-ctas" class="flex flex-wrap gap-4">
+          <a href="catalog.html" class="btn-primary">Browse Catalog</a>
+          <a href="calculator.html" class="btn-ghost">Cost Calculator</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── TRUST STATS — Arctic Navy ── -->
+  <section style="background-color:#1E2A39;border-top:1px solid rgba(92,115,134,0.2);border-bottom:1px solid rgba(92,115,134,0.2);" aria-label="Trust indicators">
+    <div class="content-rail" style="padding-top:16px;padding-bottom:16px;">
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4">
+
+        <div class="text-center fade-up">
+          <dt class="enzo-label mb-2" style="color:#5C7386;">Minimum Order</dt>
+          <dd class="stat-num"><span class="stat-val" data-target="10000">10,000</span><span style="font-size:1rem;color:#5C7386;font-family:'Inter',sans-serif;"> m</span></dd>
+        </div>
+
+        <div class="text-center fade-up" style="transition-delay:0.07s;">
+          <dt class="enzo-label mb-2" style="color:#5C7386;">Orders Dispatched</dt>
+          <dd class="stat-num"><span class="stat-val" data-target="9600000">9,600,000</span><span style="font-size:1rem;color:#5C7386;font-family:'Inter',sans-serif;">m</span></dd>
+        </div>
+
+        <div class="text-center fade-up" style="transition-delay:0.14s;">
+          <dt class="enzo-label mb-2" style="color:#5C7386;">Product Lines</dt>
+          <dd class="stat-num"><span class="stat-val" data-target="3">3</span></dd>
+        </div>
+
+        <div class="text-center fade-up" style="transition-delay:0.21s;">
+          <dt class="enzo-label mb-2" style="color:#5C7386;">Operating Since</dt>
+          <dd class="stat-num"><span class="stat-val" data-target="2014" data-from="2010" data-nofmt="true">2014</span></dd>
+        </div>
+
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── CATALOG TEASER — Ice White (light section) ── -->
+  <section class="light-section section-pad" style="background-color:#F5F8FA;" aria-label="Catalog preview">
+    <div class="content-rail">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div class="fade-up">
+          <p class="enzo-label mb-3" style="color:#5C7386;">Quality Range</p>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#0E1825;margin:0;letter-spacing:0.02em;">
+            3 Premium Product Lines
+          </h2>
+          <p style="font-size:0.9375rem;color:#5C7386;margin-top:0.75rem;max-width:440px;line-height:1.65;">
+            Nova Silk, Wostar Wool, and Bluebird — curated for quality, not quantity. Supplied in thaan/roll format. No public pricing. Request a quote for any article.
+          </p>
+        </div>
+        <a href="catalog.html" class="btn-primary-inv shrink-0 fade-up" style="transition-delay:0.1s;">View Full Catalog</a>
+      </div>
+
+      <!-- Preview cards (3 product lines) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <article class="catalog-teaser-card fade-up rounded-xl overflow-hidden" style="background:#F5F8FA;border:1px solid #D6DEE6;">
+          <div class="card-img-wrap" style="background:#1A1F2E;">
+            <img src="assets/products/ns-01.webp" alt="Nova Silk fabric" width="400" height="300" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="p-4" style="border-top:1px solid #D6DEE6;">
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:#0E1825;margin:0 0 0.25rem;">Nova Silk</h3>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#5C7386;margin:0 0 0.75rem;">Art. NS-01 &bull; Wash n Wear Boski</p>
+            <a href="contact.html?quality=Nova+Silk&article=NS-01" class="btn-primary" style="display:block;text-align:center;width:100%;">Request Quote</a>
+          </div>
+        </article>
+
+        <article class="catalog-teaser-card fade-up rounded-xl overflow-hidden" style="background:#F5F8FA;border:1px solid #D6DEE6;transition-delay:0.07s;">
+          <div class="card-img-wrap" style="background:#2D3A2D;">
+            <img src="assets/products/ww-07.webp" alt="Wostar Wool fabric" width="400" height="300" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="p-4" style="border-top:1px solid #D6DEE6;">
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:#0E1825;margin:0 0 0.25rem;">Wostar Wool</h3>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#5C7386;margin:0 0 0.75rem;">Art. WW-07 &bull; Winter &bull; 8 colours</p>
+            <a href="contact.html?quality=Wostar+Wool&article=WW-07" class="btn-primary" style="display:block;text-align:center;width:100%;">Request Quote</a>
+          </div>
+        </article>
+
+        <article class="catalog-teaser-card fade-up rounded-xl overflow-hidden" style="background:#F5F8FA;border:1px solid #D6DEE6;transition-delay:0.14s;">
+          <div class="card-img-wrap" style="background:#1A2B45;">
+            <img src="assets/products/bb-04-summer.webp" alt="Bluebird fabric" width="400" height="300" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="p-4" style="border-top:1px solid #D6DEE6;">
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:#0E1825;margin:0 0 0.25rem;">Bluebird</h3>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#5C7386;margin:0 0 0.75rem;">Art. BB-04 &bull; Summer &amp; Winter &bull; 8 colours</p>
+            <a href="contact.html?quality=Bluebird&article=BB-04" class="btn-primary" style="display:block;text-align:center;width:100%;">Request Quote</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CALCULATOR TEASER — Dark Navy ── -->
+  <section class="section-pad" style="background-color:#0E1825;" aria-label="Calculator teaser">
+    <div class="content-rail">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="fade-up">
+          <p class="enzo-label mb-3" style="color:#5C7386;">Fabric Cost Estimator</p>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#F5F8FA;margin:0 0 1rem;letter-spacing:0.02em;">
+            Know Your Cost Before You Call
+          </h2>
+          <p style="font-size:0.9375rem;color:#D6DEE6;line-height:1.7;margin-bottom:2rem;">
+            Enter your reed, width, counts, and picks — the estimator calculates cost per metre, cost per yard, weight, and bags needed in real time. Send the estimate directly to our WhatsApp to start a conversation.
+          </p>
+          <a href="calculator.html" class="btn-primary">Open Calculator</a>
+        </div>
+
+        <!-- Live wholesale rate ticker -->
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <div style="background:#1E2A39;border:1px solid rgba(92,115,134,0.3);border-radius:0.75rem;padding:1.5rem;">
+            <div class="flex items-center justify-between mb-5">
+              <p class="enzo-label" style="color:#5C7386;margin:0;">Grey Fabric Rates</p>
+              <span style="display:inline-flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.625rem;letter-spacing:0.1em;text-transform:uppercase;color:#9DB4C6;">
+                <span id="pt-pulse" style="width:6px;height:6px;border-radius:50%;background:#9DB4C6;display:inline-block;"></span>Live
+              </span>
+            </div>
+
+            <div id="price-ticker" aria-live="polite" aria-label="Rotating wholesale fabric rates" style="min-height:118px;">
+              <div id="pt-body" style="transition:opacity 0.28s ease, transform 0.28s ease;">
+                <div class="flex items-center gap-3 mb-3">
+                  <span id="pt-spec" style="font-family:'JetBrains Mono',monospace;font-size:0.9375rem;font-weight:500;letter-spacing:0.04em;color:#9DB4C6;">100×80</span>
+                  <span id="pt-width" style="font-family:'JetBrains Mono',monospace;font-size:0.6875rem;color:#5C7386;border:1px solid rgba(92,115,134,0.35);border-radius:3px;padding:0.125rem 0.4rem;">62"</span>
+                </div>
+                <p id="pt-type" style="font-family:'Bebas Neue',sans-serif;font-size:1.875rem;line-height:1;letter-spacing:0.04em;color:#F5F8FA;margin:0 0 0.875rem;">COTTON</p>
+                <p style="margin:0;display:flex;align-items:baseline;gap:0.25rem;">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:1rem;color:#5C7386;">Rs</span>
+                  <span id="pt-price" style="font-family:'JetBrains Mono',monospace;font-size:2.25rem;font-weight:500;color:#F5F8FA;line-height:1;">304</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:1rem;color:#5C7386;">/m</span>
+                </p>
+              </div>
+            </div>
+
+            <div id="pt-dots" class="flex gap-1.5 mt-5" role="presentation" aria-hidden="true"></div>
+
+            <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(92,115,134,0.2);">
+              <p style="font-size:0.8125rem;color:#5C7386;">Indicative rates &bull; Final quotation confirmed within 1 business day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    var rates = [
+      { spec: '100×80', type: 'Cotton',        width: '62"', price: 304 },
+      { spec: '80×72',  type: 'PV',            width: '62"', price: 255 },
+      { spec: '64×64',  type: 'PV',            width: '62"', price: 249 },
+      { spec: '56×56',  type: 'Mid Grey',      width: '',    price: 245 },
+      { spec: '56×52',  type: 'Wool',          width: '',    price: 210 },
+      { spec: '80×72',  type: 'PP MVS',        width: '62"', price: 200 },
+      { spec: '65×58',  type: 'Cross Slub PV', width: '',    price: 185 }
+    ];
+
+    var body  = document.getElementById('pt-body');
+    var elSpec  = document.getElementById('pt-spec');
+    var elWidth = document.getElementById('pt-width');
+    var elType  = document.getElementById('pt-type');
+    var elPrice = document.getElementById('pt-price');
+    var dotsBox = document.getElementById('pt-dots');
+    if (!body || !elPrice) return;
+
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // progress dots
+    var dots = [];
+    rates.forEach(function (_, i) {
+      var d = document.createElement('span');
+      d.style.cssText = 'width:16px;height:2px;border-radius:1px;background:rgba(92,115,134,0.3);transition:background 0.3s ease;';
+      dotsBox.appendChild(d);
+      dots.push(d);
+    });
+
+    var idx = 0;
+    var priceRaf = null;
+
+    function countTo(from, to) {
+      if (reduce) { elPrice.textContent = to; return; }
+      if (priceRaf) cancelAnimationFrame(priceRaf);
+      var start = null, dur = 420;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        elPrice.textContent = Math.round(from + (to - from) * eased);
+        if (p < 1) priceRaf = requestAnimationFrame(step);
+      }
+      priceRaf = requestAnimationFrame(step);
+    }
+
+    function paint(i) {
+      var r = rates[i];
+      elSpec.textContent = r.spec;
+      elType.textContent = r.type;
+      if (r.width) { elWidth.textContent = r.width; elWidth.style.display = ''; }
+      else { elWidth.style.display = 'none'; }
+      dots.forEach(function (d, di) {
+        d.style.background = di === i ? '#9DB4C6' : 'rgba(92,115,134,0.3)';
+      });
+    }
+
+    function advance() {
+      var prev = rates[idx].price;
+      idx = (idx + 1) % rates.length;
+      if (reduce) {
+        paint(idx);
+        countTo(prev, rates[idx].price);
+        return;
+      }
+      // slide-out
+      body.style.opacity = '0';
+      body.style.transform = 'translateY(-6px)';
+      setTimeout(function () {
+        paint(idx);
+        body.style.transform = 'translateY(6px)';
+        // force reflow then slide-in
+        void body.offsetWidth;
+        body.style.opacity = '1';
+        body.style.transform = 'translateY(0)';
+        countTo(prev, rates[idx].price);
+      }, 280);
+    }
+
+    paint(0);
+    setInterval(advance, 1250);
+  })();
+  </script>
+
+  <!-- ── CERTIFICATIONS — Arctic Navy — continuous slider strip ── -->
+  <section style="background-color:#1E2A39;border-top:1px solid rgba(92,115,134,0.2);border-bottom:1px solid rgba(92,115,134,0.2);overflow:hidden;" aria-label="Yarn-supplier certifications">
+    <div style="padding-top:16px;padding-bottom:16px;">
+      <div class="cert-marquee" role="marquee" aria-label="Yarn-supplier certifications — documentation available on request">
+        <div class="cert-marquee-track">
+          <!-- Group A -->
+          <span class="cert-chip"><span class="cert-chip-name">OEKO-TEX</span><span class="cert-chip-desc">Standard 100 — yarn level</span></span>
+          <span class="cert-chip"><span class="cert-chip-name">BCI</span><span class="cert-chip-desc">Better Cotton Initiative — yarn level</span></span>
+          <span class="cert-chip"><span class="cert-chip-name">Control Union</span><span class="cert-chip-desc">Third-party verification — yarn level</span></span>
+          <span class="cert-chip"><span class="cert-chip-desc">Documentation available on request</span></span>
+          <!-- Group B (duplicate for seamless loop) -->
+          <span class="cert-chip" aria-hidden="true"><span class="cert-chip-name">OEKO-TEX</span><span class="cert-chip-desc">Standard 100 — yarn level</span></span>
+          <span class="cert-chip" aria-hidden="true"><span class="cert-chip-name">BCI</span><span class="cert-chip-desc">Better Cotton Initiative — yarn level</span></span>
+          <span class="cert-chip" aria-hidden="true"><span class="cert-chip-name">Control Union</span><span class="cert-chip-desc">Third-party verification — yarn level</span></span>
+          <span class="cert-chip" aria-hidden="true"><span class="cert-chip-desc">Documentation available on request</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT SNIPPET — Ice White (light section) ── -->
+  <section class="light-section" style="background-color:#F5F8FA;padding-top:56px;padding-bottom:56px;" aria-label="About ENZO">
+    <div class="content-rail">
+      <div class="fade-up" style="max-width:760px;">
+        <p class="enzo-label mb-3" style="color:#5C7386;">About ENZO</p>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#0E1825;margin:0 0 1rem;letter-spacing:0.02em;">
+          Manufacturer Direct. No Intermediaries.
+        </h2>
+        <p style="font-size:0.9375rem;color:#5C7386;line-height:1.7;margin-bottom:1.5rem;">
+          ENZO (Humayun Ibrahim Textile) has operated in wholesale fabric trade since 2014, with production centered in Faisalabad — Pakistan's primary textile manufacturing hub. We supply loom-to-buyer, with full traceability from production to delivery. Our clients are stockists, distributors, retailers, and fashion houses who need consistent quality, reliable restock cycles, and pricing that reflects a direct trade relationship — not an intermediary's margin.
+        </p>
+        <a href="about.html" class="btn-primary-inv">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RETAIL TEASER — Dark Navy, warm accent card ── -->
+  <section class="section-pad" style="background-color:#0E1825;border-top:1px solid rgba(92,115,134,0.2);" aria-label="Shop RAQI finished pieces">
+    <div class="content-rail">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="fade-up">
+          <p class="enzo-label mb-3" style="color:#5C7386;">Also From ENZO</p>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#F5F8FA;margin:0 0 1rem;letter-spacing:0.02em;">
+            RAQI — Finished Suiting From Our Mill
+          </h2>
+          <p style="font-size:0.9375rem;color:#D6DEE6;line-height:1.7;margin-bottom:2rem;">
+            RAQI is ENZO's small-batch, finished-goods line — the same fabric off our Faisalabad looms, cut and finished into suiting lengths and sold by the piece rather than the roll. Individual clients, by appointment, in Lahore.
+          </p>
+          <a href="shop.html" class="btn-primary-inv">Shop Finished Pieces</a>
+        </div>
+
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <div style="background:#2B1B17;border:1px solid #4A372E;border-radius:0.75rem;padding:1.5rem;">
+            <p style="font-family:'JetBrains Mono',monospace;font-size:0.625rem;letter-spacing:0.14em;text-transform:uppercase;color:#C5A059;margin:0 0 1.25rem;">RAQI &mdash; The Four Codes</p>
+            <div class="grid grid-cols-2 gap-3 mb-5">
+              <a href="product-safa.html" style="border:1px solid #4A372E;border-radius:0.5rem;padding:0.75rem;display:block;">
+                <p style="font-family:'JetBrains Mono',monospace;font-size:0.625rem;color:#C5A059;margin:0 0 0.25rem;">RQ-S1</p>
+                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;letter-spacing:0.02em;color:#F2F0EB;margin:0;">Safa</p>
+              </a>
+              <a href="product-noor.html" style="border:1px solid #4A372E;border-radius:0.5rem;padding:0.75rem;display:block;">
+                <p style="font-family:'JetBrains Mono',monospace;font-size:0.625rem;color:#C5A059;margin:0 0 0.25rem;">RQ-S2</p>
+                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;letter-spacing:0.02em;color:#F2F0EB;margin:0;">Noor</p>
+              </a>
+              <a href="product-waqar.html" style="border:1px solid #4A372E;border-radius:0.5rem;padding:0.75rem;display:block;">
+                <p style="font-family:'JetBrains Mono',monospace;font-size:0.625rem;color:#C5A059;margin:0 0 0.25rem;">RQ-W3</p>
+                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;letter-spacing:0.02em;color:#F2F0EB;margin:0;">Waqar</p>
+              </a>
+              <a href="product-daim.html" style="border:1px solid #4A372E;border-radius:0.5rem;padding:0.75rem;display:block;">
+                <p style="font-family:'JetBrains Mono',monospace;font-size:0.625rem;color:#C5A059;margin:0 0 0.25rem;">RQ-A4</p>
+                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;letter-spacing:0.02em;color:#F2F0EB;margin:0;">Daim</p>
+              </a>
+            </div>
+            <a href="https://wa.me/923218230266?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20RAQI%20finished%20suiting%20fabric." target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;width:100%;background:#C5A059;color:#2B1B17;font-family:'JetBrains Mono',monospace;font-size:0.8125rem;letter-spacing:0.03em;padding:0.75rem;border-radius:0.375rem;">Chat with RAQI on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="position:relative;overflow:hidden;background-color:#0E1825;border-top:1px solid rgba(92,115,134,0.22);">
+  <div class="content-rail" style="position:relative;z-index:1;padding-top:48px;padding-bottom:36px;">
+    <div style="position:relative;overflow:hidden;">
+      <img src="assets/logo/logo-refined.webp" alt="" aria-hidden="true" loading="lazy"
+           style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(420px,65%);opacity:0.07;pointer-events:none;user-select:none;z-index:0;">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start" style="position:relative;z-index:1;">
+        <div>
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.14em;color:#F5F8FA;" class="mb-2">ENZO</p>
+          <p style="font-size:0.8125rem;color:#5C7386;line-height:1.65;">Humayun Ibrahim Textile<br>B2B Wholesale Fabric &mdash; Lahore</p>
+          <p style="font-size:0.75rem;color:#5C7386;margin-top:0.75rem;">MOQ 10,000 m &mdash; Quote within 1 business day</p>
+        </div>
+        <div class="text-left md:text-right">
+          <p class="enzo-label mb-3">Contact</p>
+          <address class="not-italic flex flex-col gap-2 items-start md:items-end" style="font-size:0.875rem;color:#D6DEE6;">
+            <a href="mailto:info@enzolhr.com" style="color:#D6DEE6;" class="nav-link">info@enzolhr.com</a>
+            <a href="https://wa.me/923218230266" style="color:#D6DEE6;" class="nav-link" target="_blank" rel="noopener noreferrer">+92 321 8230266</a>
+            <span style="color:#5C7386;font-size:0.8125rem;line-height:1.6;">ENZO Tower, Thokar Niaz Baig<br>Lahore, Pakistan</span>
+          </address>
+          <p style="font-size:0.75rem;color:#5C7386;margin-top:0.875rem;line-height:1.55;max-width:340px;" class="md:ml-auto">Certifications (OEKO-TEX, BCI, Control Union) held at yarn-supplier level. Documentation available on request.</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(92,115,134,0.18);margin-top:2rem;padding-top:1.25rem;position:relative;z-index:1;" class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+      <p style="font-size:0.75rem;color:#5C7386;">&copy; 2026 ENZO &mdash; Humayun Ibrahim Textile. All rights reserved.</p>
+      <p style="font-size:0.75rem;color:#5C7386;">Faisalabad production &bull; Serving Lahore, Faisalabad, Karachi, Peshawar</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/hero-weave.js"></script>
+<script src="js/motion.js"></script>
+</body>
+</html>
