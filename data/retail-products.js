@@ -1,6 +1,7 @@
-/* Shop-grid source of truth for the 4 real RAQI codes (ENZO's retail/
-   finished-goods line). product-*.html pages are hand-authored separately
-   for SEO/OG/link-preview correctness (WhatsApp/social scrapers don't run
+/* Shop-grid source of truth for ENZO's 4 real retail/finished-goods codes
+   (internal codename "RAQI" pre-merge — not a public-facing brand; see
+   CLAUDE.md). product-*.html pages are hand-authored separately for
+   SEO/OG/link-preview correctness (WhatsApp/social scrapers don't run
    JS) — update BOTH when a price, color, or spec changes. Never add a
    product/color/spec here that isn't confirmed real. */
 var RAQI_PRODUCTS = [

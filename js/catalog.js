@@ -42,7 +42,7 @@
 
     card.addEventListener('mouseenter', function () {
       card.style.borderColor = '#5C7386';
-      card.style.boxShadow   = '0 4px 24px rgba(14,24,37,0.18)';
+      card.style.boxShadow   = '0 4px 24px rgba(11, 15, 20,0.18)';
     });
     card.addEventListener('mouseleave', function () {
       card.style.borderColor = '#D6DEE6';
@@ -91,7 +91,7 @@
     }
 
     var nameEl = document.createElement('h3');
-    nameEl.style.cssText = "font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:#0E1825;letter-spacing:0.04em;margin:0;";
+    nameEl.style.cssText = "font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:#0B0F14;letter-spacing:0.04em;margin:0;";
     nameEl.textContent = p.name;
     body.appendChild(nameEl);
 
