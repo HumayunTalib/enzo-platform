@@ -616,7 +616,15 @@ p { margin: 0; }
    REVEAL — one motion pattern, used sparingly
    ============================================================ */
 
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+/* Content is visible by default. It is hidden pending animation ONLY when
+   the bootstrap script in <head> has confirmed JS actually ran (html.js) —
+   see chrome.py's inline snippet. If JS is blocked, fails to load, errors,
+   or is disabled, .reveal content is never hidden in the first place. That
+   snippet also force-reveals everything after 1.2s as a second safety net
+   in case motion.js itself never runs. Text must never depend on a single
+   script tag succeeding to be readable. */
+html.js .reveal { opacity: 0; transform: translateY(14px); }
+.reveal { transition: opacity .55s var(--ease), transform .55s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
