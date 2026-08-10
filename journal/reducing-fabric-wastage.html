@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+document.documentElement.classList.add('js');
+setTimeout(function () {
+  document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { el.classList.add('in'); });
+}, 1200);
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+<title>Reducing Fabric Wastage in Bulk Garment Production | ENZO Journal</title>
+<meta name="description" content="Practical levers for reducing fabric wastage in bulk production — marker efficiency, defect management, and supplier-side consistency.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://enzolhr.com/journal/reducing-fabric-wastage.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ENZO">
+<meta property="og:url" content="https://enzolhr.com/journal/reducing-fabric-wastage.html">
+<meta property="og:title" content="Reducing Fabric Wastage in Bulk Garment Production | ENZO Journal">
+<meta property="og:description" content="Practical levers for reducing fabric wastage in bulk production — marker efficiency, defect management, and supplier-side consistency.">
+<meta property="og:image" content="https://enzolhr.com/assets/og-image.png">
+<meta property="og:locale" content="en_PK">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reducing Fabric Wastage in Bulk Garment Production | ENZO Journal">
+<meta name="twitter:description" content="Practical levers for reducing fabric wastage in bulk production — marker efficiency, defect management, and supplier-side consistency.">
+<meta name="twitter:image" content="https://enzolhr.com/assets/og-image.png">
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../output.css?v=3">
+<link rel="stylesheet" href="../css/components.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Reducing Fabric Wastage in Bulk Garment Production",
+  "author": { "@type": "Organization", "name": "ENZO" },
+  "publisher": { "@type": "Organization", "name": "ENZO", "url": "https://enzolhr.com" },
+  "mainEntityOfPage": "https://enzolhr.com/journal/reducing-fabric-wastage.html"
+}
+</script>
+</head>
+<body class="page-offset">
+<header class="site-header is-static" id="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand" aria-label="ENZO — home">ENZO</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../catalog.html">Catalog</a>
+      <a href="../shop.html">Shop</a>
+      <a href="../wholesale.html">Wholesale</a>
+      <a href="../journal.html">Journal</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-secondary header-cta">Contact</a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a>
+    <a href="../catalog.html">Catalog</a>
+    <a href="../shop.html">Shop</a>
+    <a href="../wholesale.html">Wholesale</a>
+    <a href="../journal.html">Journal</a>
+    <a href="../about.html">About</a>
+  <a href="../contact.html" class="btn btn-primary btn-block">Contact</a>
+</nav>
+<script src="../js/nav.js"></script>
+
+<article class="on-warm">
+  <div class="container" style="padding-top:calc(var(--header-h) + var(--s5));padding-bottom:var(--s6);">
+    <div class="article-head mb-5">
+      <a href="../journal.html" class="link xs mb-3" style="display:inline-flex;">← The Fabric Journal</a>
+      <p class="label mb-2">Garment Manufacturing · MOFU</p>
+      <h1 class="h1 mb-2">Reducing Fabric Wastage in Bulk Garment Production</h1>
+      <p class="small" style="font-family:var(--mono);">Cluster: Garment Manufacturing · Primary keyword: reduce fabric wastage</p>
+    </div>
+    <div class="grid">
+      <div class="col-8">
+        <div class="article-body">
+
+          <p class="lead">Fabric wastage compounds across a bulk order in a way that's easy to underestimate — a small inefficiency per garment becomes a significant cost across a run of thousands.</p>
+
+          <h2>Where wastage actually comes from</h2>
+          <ul>
+            <li><strong>Marker inefficiency.</strong> How tightly pattern pieces are nested on the cloth — see our note on this in <a href="fabric-consumption-and-yield.html">fabric consumption and yield</a>.</li>
+            <li><strong>Fabric defects.</strong> Every flaw that has to be cut around effectively wastes the surrounding fabric too — see our list of <a href="../journal/greige-fabric-defects.html">common greige fabric defects</a>.</li>
+            <li><strong>Short rolls.</strong> Rolls measuring under the specified length create end-of-piece offcuts that can't be used for a full pattern layout.</li>
+            <li><strong>Width variation.</strong> Inconsistent width across a lot forces markers to be planned for the narrowest roll, wasting capacity on wider ones.</li>
+            <li><strong>Shade mismatches within a lot.</strong> Rolls that don't match the approved shade band may need to be set aside rather than used in a matched garment set.</li>
+          </ul>
+
+          <h2>Levers that actually reduce it</h2>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Lever</th><th>Effect</th></tr></thead>
+              <tbody>
+                <tr><td>Tighter GSM/width tolerance</td><td>More predictable markers, less safety margin needed</td></tr>
+                <tr><td>Pre-production inspection</td><td>Fewer defects reach the cutting table</td></tr>
+                <tr><td>Marker optimisation software or review</td><td>Better piece nesting, less offcut</td></tr>
+                <tr><td>Wider fabric (where pattern allows)</td><td>Generally improves yield — see our width/consumption guide</td></tr>
+                <tr><td>Consistent shade lot management</td><td>Fewer garments set aside for mismatch</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="article-callout"><strong>The highest-leverage fix is usually upstream:</strong> a supplier with tight GSM/width tolerance and low defect rates reduces wastage before cutting even starts — see our <a href="../journal/choose-fabric-supplier.html">supplier evaluation checklist</a> for what to verify before committing to a bulk order.</div>
+
+          <h2>Measuring wastage to actually manage it</h2>
+          <p>Track actual consumption per garment against the planned marker figure across each production run. A consistent gap between planned and actual points to a specific, findable cause — usually one of the five listed above — rather than being an unavoidable cost of doing business.</p>
+
+          <div class="faq" style="margin-top:var(--s6);">
+            <h2>Frequently asked questions</h2>
+            <details class="faq-item"><summary>What's a normal wastage rate?</summary><p>It varies too much by garment and pattern to state a universal figure — track your own actual-vs-planned consumption instead of benchmarking against a generic number.</p></details>
+            <details class="faq-item"><summary>Does better fabric always mean less wastage?</summary><p>More consistent fabric (tighter tolerances, fewer defects) does — but this is a separate variable from price or hand quality, and worth verifying specifically rather than assuming.</p></details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card mt-6" style="max-width:640px;background:var(--navy);border-color:var(--navy);">
+      <p class="label" style="color:#8FA3B5;">Discuss Requirements</p>
+      <p class="body" style="color:#DCE4EC;">Ask us about the GSM, width, and defect tolerances we hold to — the levers that actually reduce your wastage.</p>
+      <a href="../contact.html" class="btn btn-invert" style="align-self:flex-start;">Discuss Requirements</a>
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">ENZO</p>
+        <div class="footer-rule"></div>
+        <p class="small" style="max-width:34ch;">Humayun Ibrahim Textile — manufacturer-direct fabric, wholesale and retail, Lahore.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../catalog.html">Catalog</a></li>
+          <li><a href="../shop.html">Shop</a></li>
+          <li><a href="../wholesale.html">Wholesale</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../journal.html">Fabric Journal</a></li>
+          <li><a href="../calculator.html">Textile Tools</a></li>
+          <li><a href="../contact.html">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@enzolhr.com">info@enzolhr.com</a></li>
+          <li><a href="https://wa.me/923218230266" target="_blank" rel="noopener noreferrer">+92&nbsp;321&nbsp;8230266</a></li>
+          <li><span style="color:#C3CEDA;">ENZO Tower, Thokar Niaz Baig<br>Lahore, Pakistan</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ENZO — Humayun Ibrahim Textile. All rights reserved.</p>
+      <p>Faisalabad production &middot; Serving Lahore, Faisalabad, Karachi, Peshawar</p>
+    </div>
+  </div>
+</footer>
+<script src="../js/motion.js"></script>
+</body>
+</html>
