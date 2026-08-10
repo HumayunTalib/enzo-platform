@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./css/input.css -o ./output.css --minify && node -e \"require('fs').copyFileSync('output.css','dist/output.css')\"",
+    "build:css": "tailwindcss -i ./css/input.css -o ./output.css --minify && node -e \"const fs=require('fs'); fs.appendFileSync('output.css', fs.readFileSync('css/components.css','utf8')); fs.copyFileSync('output.css','dist/output.css')\"",
     "build": "node build.js && npm run build:css",
     "dev:css": "tailwindcss -i ./css/input.css -o ./output.css --watch",
     "dev": "npm run dev:css"

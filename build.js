@@ -65,10 +65,10 @@ copyDir('data',      'dist/data');
 copyDir('journal',   'dist/journal');   // long-form article pages behind journal.html
 copyDir('raqi-site', 'dist/raqi-site'); // old RAQI URLs — redirect stubs, not a live app
 
-fs.mkdirSync('dist/css', { recursive: true });
-if (fs.existsSync('css/components.css')) fs.copyFileSync('css/components.css', 'dist/css/components.css');
+// css/components.css is appended onto output.css by `npm run build:css`
+// (one stylesheet request per page instead of two) — not copied standalone.
 
 ['robots.txt', 'sitemap.xml'].forEach(function (f) {
   if (fs.existsSync(f)) fs.copyFileSync(f, 'dist/' + f);
 });
-console.log('copied → assets/ js/ data/ journal/ css/components.css raqi-site/ + SEO files');
+console.log('copied → assets/ js/ data/ journal/ raqi-site/ + SEO files');
