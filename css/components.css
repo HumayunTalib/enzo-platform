@@ -1,0 +1,323 @@
+/* ============================================================
+   ENZO — COMPONENT MODULES
+   Loaded on every page alongside output.css. Plain CSS (not run
+   through Tailwind) so nothing here can be tree-shaken, including
+   classes only ever emitted from JS template strings.
+
+   Consumes the same tokens as css/input.css. Never introduce a
+   colour here that isn't one of the seven brand values.
+   ============================================================ */
+
+/* ============================================================
+   PRODUCT DETAIL — 60/40 split, material first
+   ============================================================ */
+
+.pdp {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s5);
+  padding-top: var(--s5);
+}
+@media (min-width: 900px) {
+  .pdp { grid-template-columns: 6fr 4fr; gap: var(--s6); align-items: start; }
+}
+
+.pdp-gallery { display: flex; flex-direction: column; gap: var(--s2); }
+.pdp-figure {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--stone);
+  border-radius: var(--r3);
+  overflow: hidden;
+}
+.pdp-figure img { width: 100%; height: 100%; object-fit: cover; }
+.pdp-figure .product-media-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.pdp-figure.has-image .product-media-fallback { display: none; }
+.pdp-caption { font-size: var(--fs-xs); color: var(--slate); line-height: 1.6; }
+
+.pdp-info { display: flex; flex-direction: column; gap: var(--s3); }
+@media (min-width: 900px) { .pdp-info { position: sticky; top: calc(var(--header-h) + var(--s3)); } }
+
+.pdp-price { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.pdp-price small { font-size: var(--fs-sm); font-weight: 500; color: var(--slate); letter-spacing: 0; }
+
+.pdp-swatch-row { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.pdp-actions { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.pdp-stock {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--slate);
+}
+.pdp-stock::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--copper); flex: none; }
+
+.pdp-block { border-top: 1px solid var(--line); padding-top: var(--s4); margin-top: var(--s5); }
+.pdp-block > h2 { margin-bottom: var(--s3); }
+
+/* ============================================================
+   SELECTION CART — retail
+   ============================================================ */
+
+.cart-bar {
+  position: fixed;
+  right: var(--s3); bottom: var(--s3);
+  z-index: 80;
+  display: flex; align-items: center; gap: var(--s2);
+  background: var(--navy); color: var(--warm-white);
+  border-radius: var(--r2);
+  padding: 12px 12px 12px 18px;
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity .24s var(--ease), transform .24s var(--ease);
+}
+.cart-bar.visible { opacity: 1; transform: none; pointer-events: auto; }
+.cart-bar-count { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; white-space: nowrap; }
+@media (max-width: 520px) { .cart-bar { left: var(--s3); right: var(--s3); justify-content: space-between; } }
+
+.cart-backdrop {
+  position: fixed; inset: 0; z-index: 95;
+  background: rgba(11,24,40,0.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity .28s var(--ease);
+}
+.cart-backdrop.visible { opacity: 1; pointer-events: auto; }
+
+.cart-drawer {
+  position: fixed; top: 0; right: 0; height: 100%;
+  width: 380px; max-width: 88vw; z-index: 96;
+  background: var(--warm-white);
+  border-left: 1px solid var(--line);
+  transform: translateX(100%);
+  transition: transform .3s var(--ease);
+  display: flex; flex-direction: column;
+}
+.cart-drawer.open { transform: none; }
+.cart-drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--s3) var(--s4);
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+.cart-drawer-close { background: none; border: none; font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--slate); padding: 0; }
+.cart-drawer-close:hover { color: var(--charcoal); }
+.cart-drawer-items { flex: 1; overflow-y: auto; padding: 0 var(--s4); }
+.cart-item { display: flex; align-items: center; gap: var(--s2); padding: var(--s3) 0; border-bottom: 1px solid var(--line); }
+.cart-item:last-child { border-bottom: none; }
+.cart-item-thumb { width: 52px; height: 65px; background: var(--stone); border-radius: var(--r1); flex: none; overflow: hidden; }
+.cart-item-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-name { font-size: var(--fs-sm); font-weight: 600; }
+.cart-item-sub { font-size: var(--fs-label); font-family: var(--mono); color: var(--slate); margin-top: 3px; }
+.cart-item-remove { background: none; border: none; font-size: 1.25rem; line-height: 1; cursor: pointer; color: var(--slate); padding: 6px; flex: none; }
+.cart-item-remove:hover { color: var(--charcoal); }
+.cart-drawer-empty { font-size: var(--fs-sm); color: var(--slate); text-align: center; padding: var(--s6) 0; }
+.cart-drawer-footer { padding: var(--s3) var(--s4) var(--s4); border-top: 1px solid var(--line); flex: none; }
+
+.quickadd {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  width: 32px; height: 32px; border-radius: var(--r1);
+  background: rgba(247,245,241,0.92);
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy); cursor: pointer; padding: 0;
+  transition: background-color .2s var(--ease), color .2s var(--ease);
+}
+.quickadd:hover { background: var(--warm-white); }
+.quickadd.is-added { background: var(--navy); border-color: var(--navy); color: var(--warm-white); }
+
+/* ============================================================
+   MOBILE FILTER DRAWER — shop
+   ============================================================ */
+
+.filter-drawer {
+  position: fixed; top: 0; left: 0; height: 100%;
+  width: 320px; max-width: 86vw; z-index: 96;
+  background: var(--warm-white);
+  border-right: 1px solid var(--line);
+  transform: translateX(-100%);
+  transition: transform .3s var(--ease);
+  overflow-y: auto;
+  padding: var(--s4);
+}
+.filter-drawer.open { transform: none; }
+.filter-drawer-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s4); }
+.filter-drawer-close { background: none; border: none; font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--slate); }
+.filter-group { display: flex; flex-direction: column; gap: var(--s2); margin-bottom: var(--s4); }
+.filters-desktop { display: none; }
+@media (min-width: 900px) { .filters-desktop { display: flex; flex-wrap: wrap; gap: var(--s5); } .filters-toggle { display: none; } }
+
+/* ============================================================
+   CALCULATOR — professional instrument, not a lifestyle product
+   ============================================================ */
+
+.calc {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s5);
+}
+@media (min-width: 900px) { .calc { grid-template-columns: 7fr 5fr; gap: var(--s6); align-items: start; } }
+
+.calc-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: var(--s3);
+}
+@media (max-width: 560px) { .calc-inputs { grid-template-columns: 1fr; } }
+
+.calc-fieldset { border: 0; margin: 0; padding: 0; }
+.calc-fieldset + .calc-fieldset { margin-top: var(--s5); }
+.calc-fieldset legend {
+  padding: 0;
+  font-family: var(--mono); font-size: var(--fs-label); font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #8C9BAB;
+  margin-bottom: var(--s3);
+}
+
+.calc-output {
+  background: rgba(247,245,241,0.05);
+  border: 1px solid var(--line-dark);
+  border-radius: var(--r3);
+  padding: var(--s4);
+}
+@media (min-width: 900px) { .calc-output { position: sticky; top: calc(var(--header-h) + var(--s3)); } }
+.calc-readout + .calc-readout { margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line-dark); }
+.calc-value {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--warm-white);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+}
+.calc-value-sm { font-family: var(--mono); font-size: 1.125rem; color: #C3CEDA; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.calc-secondary { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+
+/* ============================================================
+   ARTICLE / JOURNAL — long-form reading
+   ============================================================ */
+
+.article-head { max-width: 72ch; }
+.article-body { max-width: 68ch; font-size: 1.0625rem; line-height: 1.75; color: var(--charcoal); }
+.article-body > * + * { margin-top: var(--s3); }
+.article-body h2 { font-size: 1.5rem; margin-top: var(--s6); }
+.article-body h3 { font-size: 1.1875rem; margin-top: var(--s5); }
+.article-body p { color: #3A4046; }
+.article-body ul, .article-body ol { padding-left: var(--s3); color: #3A4046; }
+.article-body li + li { margin-top: var(--s1); }
+.article-body strong { color: var(--charcoal); font-weight: 600; }
+.article-body a { color: var(--navy); border-bottom: 1px solid var(--line-strong); }
+.article-body a:hover { border-bottom-color: var(--copper); }
+.article-body .table-scroll { margin-block: var(--s4); }
+.article-body blockquote {
+  margin: var(--s4) 0;
+  padding-left: var(--s3);
+  border-left: 2px solid var(--copper);
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  line-height: 1.35;
+  color: var(--charcoal);
+}
+
+.article-formula {
+  background: var(--deep-navy);
+  color: #DCE4EC;
+  border-radius: var(--r2);
+  padding: var(--s3);
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.article-callout {
+  border-left: 2px solid var(--copper);
+  background: var(--stone);
+  padding: var(--s3);
+  border-radius: 0 var(--r2) var(--r2) 0;
+  font-size: var(--fs-sm);
+  color: var(--slate);
+}
+.article-callout strong { color: var(--charcoal); }
+
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  cursor: pointer; list-style: none;
+  padding: var(--s3) 0;
+  font-size: var(--fs-body); font-weight: 600;
+  display: flex; align-items: flex-start; gap: var(--s2);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before { content: '+'; color: var(--copper); font-weight: 400; flex: none; }
+.faq-item[open] summary::before { content: '−'; }
+.faq-item p { padding: 0 0 var(--s3) var(--s3); font-size: var(--fs-sm); color: var(--slate); max-width: 62ch; }
+
+/* ============================================================
+   JOURNAL INDEX — the content funnel hub
+   ============================================================ */
+
+.post-list { display: flex; flex-direction: column; }
+.post-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s2);
+  padding: var(--s4) 0;
+  border-top: 1px solid var(--line);
+  transition: opacity .2s var(--ease);
+}
+@media (min-width: 860px) {
+  .post-row { grid-template-columns: 96px 1fr 200px; gap: var(--s4); align-items: start; }
+}
+.post-row:last-child { border-bottom: 1px solid var(--line); }
+
+.post-index {
+  font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.1em;
+  color: var(--slate-soft); padding-top: 5px;
+}
+.post-title { font-size: 1.1875rem; font-weight: 600; letter-spacing: -0.01em; }
+.post-row:hover .post-title { color: var(--navy); }
+.post-excerpt { font-size: var(--fs-sm); color: var(--slate); margin-top: 6px; max-width: 62ch; }
+.post-side { display: flex; flex-direction: column; gap: var(--s1); }
+@media (min-width: 860px) { .post-side { align-items: flex-end; } }
+
+.kw-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--s2); }
+.kw-chip {
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.04em;
+  color: var(--slate);
+  background: var(--stone);
+  border-radius: var(--r1);
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.kw-chip.primary { background: var(--navy); color: var(--warm-white); }
+
+.stage {
+  font-family: var(--mono); font-size: var(--fs-label); font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: var(--r1); white-space: nowrap;
+  border: 1px solid var(--line-strong); color: var(--slate);
+}
+.stage.bofu { border-color: var(--navy); color: var(--navy); }
+.stage.mofu { border-color: var(--copper); color: var(--copper); }
+.stage.tofu { border-color: var(--line-strong); color: var(--slate); }
+.stage.soon { border-style: dashed; color: var(--slate-soft); }
+
+.cluster-nav { display: flex; flex-wrap: wrap; gap: var(--s1); }
+
+/* ============================================================
+   WHATSAPP — single persistent action, retail pages
+   ============================================================ */
+
+.wa-float {
+  position: fixed; right: var(--s3); bottom: var(--s3);
+  z-index: 79;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  transition: background-color .22s var(--ease);
+}
+.wa-float:hover { background: var(--deep-navy); }
+.wa-float svg { width: 24px; height: 24px; fill: var(--warm-white); }
+/* When the cart bar is present it owns the bottom-right corner */
+.has-cart .wa-float { bottom: calc(var(--s3) + 68px); }

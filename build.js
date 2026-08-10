@@ -40,7 +40,7 @@ console.log('generated → js/config.js');
 
 // ── Build dist/ (nav + footer are inlined in each page; no injection step) ──
 var pages = [
-  'index', 'about', 'catalog', 'calculator', 'contact',
+  'index', 'about', 'catalog', 'calculator', 'contact', 'wholesale',
   'shop', 'journal', 'product-safa', 'product-noor', 'product-waqar', 'product-daim'
 ];
 
@@ -62,12 +62,13 @@ pages.forEach(function (page) {
 copyDir('assets',    'dist/assets');
 copyDir('js',        'dist/js');   // includes the generated config.js
 copyDir('data',      'dist/data');
-copyDir('raqi-site', 'dist/raqi-site');  // old RAQI URLs — redirect stubs, not a live app
+copyDir('journal',   'dist/journal');   // long-form article pages behind journal.html
+copyDir('raqi-site', 'dist/raqi-site'); // old RAQI URLs — redirect stubs, not a live app
 
 fs.mkdirSync('dist/css', { recursive: true });
-if (fs.existsSync('css/retail.css')) fs.copyFileSync('css/retail.css', 'dist/css/retail.css');
+if (fs.existsSync('css/components.css')) fs.copyFileSync('css/components.css', 'dist/css/components.css');
 
 ['robots.txt', 'sitemap.xml'].forEach(function (f) {
   if (fs.existsSync(f)) fs.copyFileSync(f, 'dist/' + f);
 });
-console.log('copied → assets/ js/ data/ css/retail.css raqi-site/ + SEO files');
+console.log('copied → assets/ js/ data/ journal/ css/components.css raqi-site/ + SEO files');

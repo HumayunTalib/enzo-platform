@@ -1,385 +1,244 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <title>About | ENZO — Wholesale Fabric Supplier, Lahore</title>
-  <meta name="description" content="ENZO by Humayun Ibrahim Textile — manufacturer-direct wholesale fabric supplier since 2014. Faisalabad production, loom-to-buyer traceability, 10,000m MOQ.">
-  <link rel="canonical" href="https://enzolhr.com/about.html">
-  <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="ENZO">
-  <meta property="og:url" content="https://enzolhr.com/about.html">
-  <meta property="og:title" content="About ENZO — Manufacturer-Direct Wholesale Fabric">
-  <meta property="og:description" content="Humayun Ibrahim Textile since 2014. Faisalabad production, loom-to-buyer traceability, 10,000m MOQ.">
-  <meta property="og:image" content="https://enzolhr.com/assets/about.jpeg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About ENZO — Manufacturer-Direct Wholesale Fabric">
-  <meta name="twitter:description" content="Humayun Ibrahim Textile since 2014. Faisalabad production, loom-to-buyer traceability, 10,000m MOQ.">
-  <meta name="twitter:image" content="https://enzolhr.com/assets/about.jpeg">
-  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="output.css?v=2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+<title>About ENZO — Built on Trade, Grounded in Craft</title>
+<meta name="description" content="ENZO is a manufacturer-direct fabric business in Faisalabad — two decades of textile trade, a decade of manufacturing under our own name. Consistency, direct trade, and traceability on every order.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://enzolhr.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ENZO">
+<meta property="og:url" content="https://enzolhr.com/about.html">
+<meta property="og:title" content="About ENZO — Built on Trade, Grounded in Craft">
+<meta property="og:description" content="ENZO is a manufacturer-direct fabric business in Faisalabad — two decades of textile trade, a decade of manufacturing under our own name. Consistency, direct trade, and traceability on every order.">
+<meta property="og:image" content="https://enzolhr.com/assets/about.jpeg">
+<meta property="og:locale" content="en_PK">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About ENZO — Built on Trade, Grounded in Craft">
+<meta name="twitter:description" content="ENZO is a manufacturer-direct fabric business in Faisalabad — two decades of textile trade, a decade of manufacturing under our own name. Consistency, direct trade, and traceability on every order.">
+<meta name="twitter:image" content="https://enzolhr.com/assets/about.jpeg">
+<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="output.css?v=3">
+<link rel="stylesheet" href="css/components.css?v=3">
+
 </head>
-<body>
-
-<!-- ── PAGE LOADER ── -->
-<div id="enzo-loader" aria-hidden="true">
-  <iframe id="enzo-loader-frame" src="assets/loader/emblem.html" title="ENZO" scrolling="no" allowtransparency="true"
-          style="border:0;width:100%;height:100%;display:block;position:relative;z-index:1;background:transparent;" aria-hidden="true" tabindex="-1"></iframe>
-</div>
-<script>
-(function () {
-  var loader = document.getElementById('enzo-loader');
-  if (!loader) return;
-  var frame = document.getElementById('enzo-loader-frame');
-  function hide() {
-    loader.classList.add('enzo-loader-out');
-    setTimeout(function () { loader.style.display = 'none'; if (frame) frame.removeAttribute('src'); }, 420);
-  }
-  // Skip the heavy bundle for reduced-motion users or after the first view this session.
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('enzo-loaded')) {
-    loader.style.display = 'none';
-    if (frame) frame.removeAttribute('src');
-    return;
-  }
-  sessionStorage.setItem('enzo-loaded', '1');
-  var REVEAL_AFTER = 4400;   // emblem draws once over ~4s; ease into the site just after it completes
-  var done = false;
-  function finish() { if (done) return; done = true; hide(); }
-  if (frame) {
-    frame.addEventListener('load', function () { setTimeout(finish, REVEAL_AFTER); });
-  }
-  setTimeout(finish, 8000);  // hard cap — always reveal the site even if the bundle stalls
-})();
-</script>
-
-<nav id="navbar" class="fixed top-4 inset-x-0 z-50 flex justify-center px-4" aria-label="Primary navigation">
-  <div class="w-full max-w-7xl flex items-center justify-between px-8 py-2.5 rounded-xl"
-       style="background:rgba(11, 15, 20,0.80);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(92,115,134,0.28);">
-    <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="ENZO — return to home">
-      <span style="font-family:'Bebas Neue',sans-serif;font-size:1.375rem;color:#F5F8FA;letter-spacing:0.14em;">ENZO</span>
-    </a>
-    <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list">
-      <li><a href="index.html"      class="nav-link">Home</a></li>
-      <li><a href="about.html"      class="nav-link">About</a></li>
-      <li><a href="catalog.html"    class="nav-link">Catalog</a></li>
-      <li><a href="contact.html"    class="nav-link">Contact</a></li>
-      <li><a href="shop.html"        class="nav-link">Shop</a></li>
-    </ul>
-    <a href="contact.html" class="btn-primary hidden md:inline-block">Request Quote</a>
-    <button id="nav-toggle" class="md:hidden p-2 flex flex-col gap-1.5 rounded"
-            aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-      <span class="w-6 h-px bg-ice-white block transition-all duration-200" id="hb1"></span>
-      <span class="w-6 h-px bg-ice-white block transition-all duration-200" id="hb2"></span>
-      <span class="w-6 h-px bg-ice-white block transition-all duration-200" id="hb3"></span>
-    </button>
+<body class="">
+<header class="site-header over-hero" id="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="ENZO — home">ENZO</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="catalog.html">Catalog</a>
+      <a href="shop.html">Shop</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-secondary header-cta">Contact</a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
-  <div id="mobile-nav"
-       style="display:none;flex-direction:column;gap:1rem;position:absolute;top:100%;left:1rem;right:1rem;margin-top:0.5rem;border-radius:0.75rem;padding:1.25rem 1.5rem 1.5rem;background:rgba(11, 15, 20,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(92,115,134,0.28);">
-    <a href="index.html"      class="nav-link text-base">Home</a>
-    <a href="about.html"      class="nav-link text-base">About</a>
-    <a href="catalog.html"    class="nav-link text-base">Catalog</a>
-    <a href="contact.html"    class="nav-link text-base">Contact</a>
-    <a href="shop.html"        class="nav-link text-base">Shop</a>
-    <a href="contact.html"    class="btn-primary text-center mt-2">Request Quote</a>
-  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="shop.html">Shop</a>
+    <a href="wholesale.html">Wholesale</a>
+    <a href="journal.html">Journal</a>
+    <a href="about.html">About</a>
+  <a href="contact.html" class="btn btn-primary btn-block">Contact</a>
 </nav>
-<script>
-(function () {
-  var toggle = document.getElementById('nav-toggle');
-  var menu   = document.getElementById('mobile-nav');
-  if (!toggle || !menu) return;
-  toggle.addEventListener('click', function () {
-    var isOpen = menu.style.display === 'flex';
-    menu.style.display = isOpen ? 'none' : 'flex';
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-  });
-  var current = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('#navbar .nav-link').forEach(function (link) {
-    if (link.getAttribute('href').endsWith(current)) link.setAttribute('aria-current', 'page');
-  });
-})();
-</script>
+<script src="js/nav.js"></script>
 
-<main>
+<section class="hero" style="min-height:56vh;" aria-label="About ENZO">
+  <div class="hero-media"><img src="assets/about.jpeg" alt="Fabric construction detail at ENZO's Faisalabad mill" loading="eager"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner container">
+    <p class="label" style="color:#8FA3B5;margin-bottom:var(--s3);">Humayun Ibrahim Textile</p>
+    <h1 class="display" style="color:#fff;max-width:16ch;">Built on trade. Grounded in craft.</h1>
+  </div>
+</section>
 
-  <!-- ── PAGE HEADER — Dark Navy ── -->
-  <section style="background-color:#0B0F14;background-image:url('assets/about.jpeg');background-size:cover;background-position:center;position:relative;" aria-label="Page header">
-    <div style="position:absolute;inset:0;background:rgba(11, 15, 20,0.78);"></div>
-    <div class="content-rail" style="position:relative;z-index:1;padding-top:140px;padding-bottom:64px;">
-      <p class="enzo-label mb-4" style="color:#5C7386;">Humayun Ibrahim Textile</p>
-      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:0.02em;color:#F5F8FA;margin:0 0 1.25rem;">
-        Built on Trade.<br>Grounded in Craft.
-      </h1>
-      <p style="font-size:1rem;color:#D6DEE6;max-width:520px;line-height:1.7;">
-        Two decades of textile trade, a decade of manufacturing under the ENZO name — all of it pointing to one model: loom to buyer, no intermediary.
-      </p>
-    </div>
-  </section>
+<section class="section on-warm">
+  <div class="container">
+    <div class="eyebrow-row"><span class="label" style="margin:0;">Our Approach</span></div>
+    <p class="serif" style="font-size:clamp(1.5rem,3vw,2.25rem);max-width:34ch;">Two decades of textile trade, a decade of manufacturing under the ENZO name — all of it pointing to one model: loom to buyer, no intermediary.</p>
+  </div>
+</section>
 
-  <!-- ── PRODUCT PHILOSOPHY — Arctic Navy ── -->
-  <section style="background-color:#1E2A39;border-bottom:1px solid rgba(92,115,134,0.2);" aria-label="Product philosophy">
-    <div class="content-rail" style="padding-top:56px;padding-bottom:56px;">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-        <div class="fade-up">
-          <p class="enzo-label mb-3" style="color:#5C7386;">Our Philosophy</p>
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#F5F8FA;margin:0 0 1rem;letter-spacing:0.02em;">
-            Quality Over Quantity.<br>Three Lines. No Compromise.
-          </h2>
-          <p style="font-size:0.9375rem;color:#9DB4C6;line-height:1.7;margin-bottom:1rem;">
-            We don't supply fifteen articles. We supply three — and we have refined each one until there is nothing left to improve. Every order that leaves our looms meets the same specification as the first.
-          </p>
-          <p style="font-size:0.9375rem;color:#9DB4C6;line-height:1.7;">
-            Our buyers restock on a schedule because they know exactly what they are getting. That predictability is worth more than a wide catalogue of inconsistent qualities.
-          </p>
-        </div>
-
-        <div class="fade-up" style="transition-delay:0.1s;display:flex;flex-direction:column;gap:1rem;">
-
-          <div style="background:#0B0F14;border:1px solid rgba(92,115,134,0.25);border-radius:0.75rem;padding:1.25rem 1.5rem;">
-            <div class="flex items-start gap-4">
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#9DB4C6;min-width:3.5rem;padding-top:0.2rem;">NS-01</span>
-              <div>
-                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#F5F8FA;margin:0 0 0.25rem;letter-spacing:0.06em;">Nova Silk &mdash; Flagship</p>
-                <p style="font-size:0.8125rem;color:#9DB4C6;line-height:1.6;margin:0;">A wash n wear boski of exceptional drape and finish &mdash; not actual silk, but indistinguishable in appearance. Our best cloth, and the one we are most proud to supply.</p>
-              </div>
-            </div>
+<section class="section on-stone">
+  <div class="container">
+    <div class="grid">
+      <div class="col-5 reveal">
+        <p class="label mb-2">Material</p>
+        <h2 class="h2 mb-3">Quality over quantity. Three lines. No compromise.</h2>
+        <p class="body measure-sm">We don't supply fifteen articles. We supply three — refined until there was nothing left to improve. Every order that leaves our looms meets the same specification as the first. Our buyers restock on a schedule because they know exactly what they're getting.</p>
+      </div>
+      <div class="col-7">
+        <div class="grid">
+          <div class="col-4 card reveal">
+            <p class="label label-copper">NS-01</p>
+            <h3 class="h3">Nova Silk</h3>
+            <p class="small">Wash-and-wear boski of exceptional drape and finish — not actual silk, but indistinguishable in appearance. Our flagship.</p>
           </div>
-
-          <div style="background:#0B0F14;border:1px solid rgba(92,115,134,0.25);border-radius:0.75rem;padding:1.25rem 1.5rem;">
-            <div class="flex items-start gap-4">
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#9DB4C6;min-width:3.5rem;padding-top:0.2rem;">WW-07</span>
-              <div>
-                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#F5F8FA;margin:0 0 0.25rem;letter-spacing:0.06em;">Wostar Wool &mdash; Winter</p>
-                <p style="font-size:0.8125rem;color:#9DB4C6;line-height:1.6;margin:0;">Eight colours. Heavy enough for the coldest months, refined enough for formal suiting. Available in thaan format only.</p>
-              </div>
-            </div>
+          <div class="col-4 card reveal" style="transition-delay:.05s;">
+            <p class="label label-copper">WW-07</p>
+            <h3 class="h3">Wostar Wool</h3>
+            <p class="small">Eight colours. Heavy enough for the coldest months, refined enough for formal suiting. Thaan format only.</p>
           </div>
-
-          <div style="background:#0B0F14;border:1px solid rgba(92,115,134,0.25);border-radius:0.75rem;padding:1.25rem 1.5rem;">
-            <div class="flex items-start gap-4">
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#9DB4C6;min-width:3.5rem;padding-top:0.2rem;">BB-04</span>
-              <div>
-                <p style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#F5F8FA;margin:0 0 0.25rem;letter-spacing:0.06em;">Bluebird &mdash; Summer &amp; Winter</p>
-                <p style="font-size:0.8125rem;color:#9DB4C6;line-height:1.6;margin:0;">One article, two seasonal weights, eight colours each. The versatility of the range within the discipline of a single product line.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TIMELINE — Ice White (light section) ── -->
-  <section class="light-section section-pad" style="background-color:#F5F8FA;" aria-label="Company timeline">
-    <div class="content-rail">
-      <div class="fade-up">
-        <p class="enzo-label mb-3" style="color:#5C7386;">Company Timeline</p>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#0B0F14;margin:0 0 2.5rem;letter-spacing:0.02em;">
-          From Trade to Manufacture
-        </h2>
-      </div>
-
-      <!-- Timeline track — rail with glowing nodes (vertical on phone, horizontal on desktop) -->
-      <div data-timeline class="timeline-grid">
-
-        <!-- Progress line -->
-        <div class="timeline-v-rail" aria-hidden="true"></div>
-        <div id="timeline-line" class="timeline-v-line" aria-hidden="true"></div>
-
-        <div class="timeline-item fade-up">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:500;color:#0B0F14;margin:0 0 0.5rem;">2001</p>
-          <p style="font-size:0.875rem;color:#5C7386;line-height:1.55;">Humayun Ibrahim Textile established as a Fancy Yarn Manufacturer in Karachi.</p>
-        </div>
-
-        <div class="timeline-item fade-up" style="transition-delay:0.1s;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:500;color:#0B0F14;margin:0 0 0.5rem;">2014</p>
-          <p style="font-size:0.875rem;color:#5C7386;line-height:1.55;">ENZO founded. Manufacturing operations launched under own brand.</p>
-        </div>
-
-        <div class="timeline-item fade-up" style="transition-delay:0.2s;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:500;color:#0B0F14;margin:0 0 0.5rem;">2016</p>
-          <p style="font-size:0.875rem;color:#5C7386;line-height:1.55;">Production hub established in Faisalabad — Pakistan's primary textile manufacturing centre.</p>
-        </div>
-
-        <div class="timeline-item fade-up" style="transition-delay:0.3s;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:500;color:#0B0F14;margin:0 0 0.5rem;">2019</p>
-          <p style="font-size:0.875rem;color:#5C7386;line-height:1.55;">Distribution reach extended to Karachi and Peshawar markets.</p>
-        </div>
-
-        <div class="timeline-item fade-up" style="transition-delay:0.4s;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:500;color:#0B0F14;margin:0 0 0.5rem;">2024</p>
-          <p style="font-size:0.875rem;color:#5C7386;line-height:1.55;">3 refined product lines across collections. Online B2B presence launched.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CORE VALUES — Dark Navy ── -->
-  <section class="section-pad" style="background-color:#0B0F14;" aria-label="Core values">
-    <div class="content-rail">
-      <div class="fade-up mb-10">
-        <p class="enzo-label mb-3" style="color:#5C7386;">How We Operate</p>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#F5F8FA;margin:0;letter-spacing:0.02em;">
-          Four Principles, No Exceptions
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.75rem;">Consistency</p>
-          <p style="font-size:0.875rem;color:#9DB4C6;line-height:1.65;">Every thaan leaves Faisalabad to the same specification — weight, count, and finish — that was quoted. No surprises at delivery.</p>
-        </div>
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);transition-delay:0.07s;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.75rem;">Reliability</p>
-          <p style="font-size:0.875rem;color:#9DB4C6;line-height:1.65;">Quotation within one business day. Restock cycles you can build a procurement schedule around. No unexplained delays.</p>
-        </div>
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);transition-delay:0.14s;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.75rem;">Direct Trade</p>
-          <p style="font-size:0.875rem;color:#9DB4C6;line-height:1.65;">Manufacturer to buyer. No agent, no middleman, no markup layer between our looms and your warehouse. The price you get is the production price.</p>
-        </div>
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);transition-delay:0.21s;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.75rem;">Traceability</p>
-          <p style="font-size:0.875rem;color:#9DB4C6;line-height:1.65;">Loom-to-delivery tracking. Yarn certifications from our suppliers available on request. Every roll can be accounted for.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PRODUCTION HUB — Ice White (light section) ── -->
-  <section class="light-section section-pad" style="background-color:#F5F8FA;" aria-label="Production and operations">
-    <div class="content-rail">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-
-        <div class="fade-up">
-          <p class="enzo-label mb-3" style="color:#5C7386;">Production</p>
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#0B0F14;margin:0 0 1rem;letter-spacing:0.02em;">
-            Faisalabad — Sole Production Hub
-          </h2>
-          <p style="font-size:0.9375rem;color:#5C7386;line-height:1.7;margin-bottom:1rem;">
-            All ENZO fabric is produced in Faisalabad, Pakistan's primary textile manufacturing centre. Consolidating production in one location means tighter quality control, consistent spec enforcement, and faster turnaround on large orders.
-          </p>
-          <p style="font-size:0.9375rem;color:#5C7386;line-height:1.7;margin-bottom:2rem;">
-            Headquarters are in Lahore. Orders are dispatched to buyers across Lahore, Faisalabad, Karachi, and Peshawar. Minimum order: 10,000 linear metres per order, supplied in thaan/roll format.
-          </p>
-          <a href="contact.html" class="btn-primary-inv">Request a Quote</a>
-        </div>
-
-        <div class="fade-up" style="transition-delay:0.1s;">
-          <div class="flex flex-col gap-4">
-            <div style="background:#0B0F14;border-radius:0.75rem;padding:1.5rem;">
-              <p class="enzo-label mb-3" style="color:#5C7386;">Operation Details</p>
-              <dl class="flex flex-col gap-3">
-                <div class="flex justify-between items-baseline" style="border-bottom:1px solid rgba(92,115,134,0.2);padding-bottom:0.75rem;">
-                  <dt style="font-size:0.8125rem;color:#5C7386;">Headquarters</dt>
-                  <dd style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#D6DEE6;">Lahore, Pakistan</dd>
-                </div>
-                <div class="flex justify-between items-baseline" style="border-bottom:1px solid rgba(92,115,134,0.2);padding-bottom:0.75rem;">
-                  <dt style="font-size:0.8125rem;color:#5C7386;">Production</dt>
-                  <dd style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#D6DEE6;">Faisalabad</dd>
-                </div>
-                <div class="flex justify-between items-baseline" style="border-bottom:1px solid rgba(92,115,134,0.2);padding-bottom:0.75rem;">
-                  <dt style="font-size:0.8125rem;color:#5C7386;">MOQ</dt>
-                  <dd style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#D6DEE6;">10,000 m / order</dd>
-                </div>
-                <div class="flex justify-between items-baseline" style="border-bottom:1px solid rgba(92,115,134,0.2);padding-bottom:0.75rem;">
-                  <dt style="font-size:0.8125rem;color:#5C7386;">Format</dt>
-                  <dd style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#D6DEE6;">Thaan / roll</dd>
-                </div>
-                <div class="flex justify-between items-baseline" style="border-bottom:1px solid rgba(92,115,134,0.2);padding-bottom:0.75rem;">
-                  <dt style="font-size:0.8125rem;color:#5C7386;">Quote turnaround</dt>
-                  <dd style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#D6DEE6;">1 business day</dd>
-                </div>
-                <div class="flex justify-between items-baseline">
-                  <dt style="font-size:0.8125rem;color:#5C7386;">Markets served</dt>
-                  <dd style="font-family:'JetBrains Mono',monospace;font-size:0.8125rem;color:#D6DEE6;">LHE · FSD · KHI · PEW</dd>
-                </div>
-              </dl>
-            </div>
+          <div class="col-4 card reveal" style="transition-delay:.1s;">
+            <p class="label label-copper">BB-04</p>
+            <h3 class="h3">Bluebird</h3>
+            <p class="small">One article, two seasonal weights, eight colours each — versatility within the discipline of a single line.</p>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── CERTIFICATIONS — Dark Navy ── -->
-  <section class="section-pad" style="background-color:#0B0F14;" aria-label="Certifications">
-    <div class="content-rail">
-      <div class="fade-up mb-10">
-        <p class="enzo-label mb-3" style="color:#5C7386;">Compliance</p>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#F5F8FA;margin:0 0 0.75rem;letter-spacing:0.02em;">
-          Yarn-Supplier Certifications
-        </h2>
-        <p style="font-size:0.9375rem;color:#9DB4C6;max-width:540px;line-height:1.7;">
-          The following certifications are held at the yarn-supplier level — not at the ENZO entity level. This is the standard structure for Pakistani textile manufacturers sourcing certified yarn. Full documentation is available on request via <a href="mailto:info@enzolhr.com" style="color:#D6DEE6;">info@enzolhr.com</a> for procurement review.
-        </p>
+<section class="section on-warm">
+  <div class="container">
+    <p class="label mb-2">Craft</p>
+    <h2 class="h2 mb-5">From trade to manufacture</h2>
+    <div class="grid" data-timeline id="about-timeline">
+      <div class="col-3 reveal">
+        <p class="num" style="color:var(--copper);font-size:1.5rem;">2001</p>
+        <p class="small mt-1">Humayun Ibrahim Textile established as a fancy yarn manufacturer in Karachi.</p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.5rem;">OEKO-TEX Standard 100</p>
-          <p style="font-size:0.8125rem;color:#9DB4C6;line-height:1.6;">Yarn-level testing for harmful substances across textile components. Covers the raw material inputs used in ENZO fabric production.</p>
-        </div>
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);transition-delay:0.07s;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.5rem;">Better Cotton Initiative</p>
-          <p style="font-size:0.8125rem;color:#9DB4C6;line-height:1.6;">Certified cotton grown with reduced water use and responsible soil management — applied at the yarn-supplier level to our cotton inputs.</p>
-        </div>
-
-        <div class="fade-up p-6 rounded-xl" style="background:#1E2A39;border:1px solid rgba(92,115,134,0.25);transition-delay:0.14s;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.06em;color:#F5F8FA;margin:0 0 0.5rem;">Control Union</p>
-          <p style="font-size:0.8125rem;color:#9DB4C6;line-height:1.6;">Independent third-party verification for quality and sustainability claims across our yarn supply chain.</p>
-        </div>
-
+      <div class="col-3 reveal" style="transition-delay:.05s;">
+        <p class="num" style="color:var(--copper);font-size:1.5rem;">2014</p>
+        <p class="small mt-1">ENZO founded. Manufacturing operations launched under our own brand.</p>
+      </div>
+      <div class="col-3 reveal" style="transition-delay:.1s;">
+        <p class="num" style="color:var(--copper);font-size:1.5rem;">2016</p>
+        <p class="small mt-1">Production hub established in Faisalabad — Pakistan's primary textile manufacturing centre.</p>
+      </div>
+      <div class="col-3 reveal" style="transition-delay:.15s;">
+        <p class="num" style="color:var(--copper);font-size:1.5rem;">2019 — 2024</p>
+        <p class="small mt-1">Distribution extended to Karachi and Peshawar. Three refined product lines; B2B presence launched online.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</main>
-
-<footer style="position:relative;overflow:hidden;background-color:#0B0F14;border-top:1px solid rgba(92,115,134,0.22);">
-  <div class="content-rail" style="position:relative;z-index:1;padding-top:48px;padding-bottom:36px;">
-    <div style="position:relative;overflow:hidden;">
-      <img src="assets/logo/logo-refined.webp" alt="" aria-hidden="true" loading="lazy"
-           style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(420px,65%);opacity:0.07;pointer-events:none;user-select:none;z-index:0;">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start" style="position:relative;z-index:1;">
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.14em;color:#F5F8FA;" class="mb-2">ENZO</p>
-          <p style="font-size:0.8125rem;color:#5C7386;line-height:1.65;">Humayun Ibrahim Textile<br>B2B Wholesale Fabric &mdash; Lahore</p>
-          <p style="font-size:0.75rem;color:#5C7386;margin-top:0.75rem;">MOQ 10,000 m &mdash; Quote within 1 business day</p>
-        </div>
-        <div class="text-left md:text-right">
-          <p class="enzo-label mb-3">Contact</p>
-          <address class="not-italic flex flex-col gap-2 items-start md:items-end" style="font-size:0.875rem;color:#D6DEE6;">
-            <a href="mailto:info@enzolhr.com" style="color:#D6DEE6;" class="nav-link">info@enzolhr.com</a>
-            <a href="https://wa.me/923218230266" style="color:#D6DEE6;" class="nav-link" target="_blank" rel="noopener noreferrer">+92 321 8230266</a>
-            <span style="color:#5C7386;font-size:0.8125rem;line-height:1.6;">ENZO Tower, Thokar Niaz Baig<br>Lahore, Pakistan</span>
-          </address>
-          <p style="font-size:0.75rem;color:#5C7386;margin-top:0.875rem;line-height:1.55;max-width:340px;" class="md:ml-auto">Certifications (OEKO-TEX, BCI, Control Union) held at yarn-supplier level. Documentation available on request.</p>
-        </div>
+<section class="section on-navy">
+  <div class="container">
+    <p class="label mb-2" style="color:#8FA3B5;">Consistency</p>
+    <h2 class="h2 mb-5" style="color:#fff;">Four principles, no exceptions.</h2>
+    <div class="grid">
+      <div class="col-3 reveal">
+        <h3 class="h3" style="color:#fff;">Consistency</h3>
+        <p class="small mt-2">Every thaan leaves Faisalabad to the same specification — weight, count, finish — that was quoted. No surprises at delivery.</p>
+      </div>
+      <div class="col-3 reveal" style="transition-delay:.05s;">
+        <h3 class="h3" style="color:#fff;">Reliability</h3>
+        <p class="small mt-2">Quotation within one business day. Restock cycles you can build a procurement schedule around.</p>
+      </div>
+      <div class="col-3 reveal" style="transition-delay:.1s;">
+        <h3 class="h3" style="color:#fff;">Direct Trade</h3>
+        <p class="small mt-2">Manufacturer to buyer. No agent, no markup layer between our looms and your warehouse.</p>
+      </div>
+      <div class="col-3 reveal" style="transition-delay:.15s;">
+        <h3 class="h3" style="color:#fff;">Traceability</h3>
+        <p class="small mt-2">Loom-to-delivery tracking. Yarn certifications from our suppliers available on request.</p>
       </div>
     </div>
-    <div style="border-top:1px solid rgba(92,115,134,0.18);margin-top:2rem;padding-top:1.25rem;position:relative;z-index:1;" class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-      <p style="font-size:0.75rem;color:#5C7386;">&copy; 2026 ENZO &mdash; Humayun Ibrahim Textile. All rights reserved. &middot; <a href="calculator.html" style="color:#5C7386;text-decoration:underline;text-underline-offset:2px;" class="nav-link">Textile Tools</a></p>
-      <p style="font-size:0.75rem;color:#5C7386;">Faisalabad production &bull; Serving Lahore, Faisalabad, Karachi, Peshawar</p>
+  </div>
+</section>
+
+<section class="section on-warm">
+  <div class="container">
+    <div class="grid" style="align-items:center;">
+      <div class="col-6 reveal">
+        <p class="label mb-2">Supply</p>
+        <h2 class="h2 mb-3">Faisalabad — sole production hub.</h2>
+        <p class="body measure-sm mb-3">Consolidating production in one location means tighter quality control, consistent spec enforcement, and faster turnaround on large orders. Headquarters are in Lahore; orders dispatch across Lahore, Faisalabad, Karachi and Peshawar.</p>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      </div>
+      <div class="col-6 reveal" style="transition-delay:.06s;">
+        <dl class="spec-list">
+          <div class="spec-item"><dt>Headquarters</dt><dd style="font-size:1rem;">Lahore, Pakistan</dd></div>
+          <div class="spec-item"><dt>Production</dt><dd style="font-size:1rem;">Faisalabad</dd></div>
+          <div class="spec-item"><dt>MOQ</dt><dd>10,000 m</dd></div>
+          <div class="spec-item"><dt>Format</dt><dd style="font-size:1rem;">Thaan / roll</dd></div>
+          <div class="spec-item"><dt>Quote turnaround</dt><dd style="font-size:1rem;">1 business day</dd></div>
+          <div class="spec-item"><dt>Markets served</dt><dd style="font-size:0.9375rem;">LHE &middot; FSD &middot; KHI &middot; PEW</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-stone">
+  <div class="container">
+    <p class="label mb-2">Compliance</p>
+    <h2 class="h2 mb-3">Yarn-supplier certifications</h2>
+    <p class="body measure mb-5">These certifications are held at the yarn-supplier level, not the ENZO entity level — the standard structure for Pakistani textile manufacturers sourcing certified yarn. Full documentation is available on request via <a href="mailto:info@enzolhr.com" class="link">info@enzolhr.com</a>.</p>
+    <div class="grid">
+      <div class="col-4 card reveal">
+        <h3 class="h3">OEKO-TEX Standard 100</h3>
+        <p class="small">Yarn-level testing for harmful substances across textile components.</p>
+      </div>
+      <div class="col-4 card reveal" style="transition-delay:.05s;">
+        <h3 class="h3">Better Cotton Initiative</h3>
+        <p class="small">Certified cotton grown with reduced water use and responsible soil management.</p>
+      </div>
+      <div class="col-4 card reveal" style="transition-delay:.1s;">
+        <h3 class="h3">Control Union</h3>
+        <p class="small">Independent third-party verification for quality and sustainability claims.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">ENZO</p>
+        <div class="footer-rule"></div>
+        <p class="small" style="max-width:34ch;">Humayun Ibrahim Textile — manufacturer-direct fabric, wholesale and retail, Lahore.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="journal.html">Fabric Journal</a></li>
+          <li><a href="calculator.html">Textile Tools</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@enzolhr.com">info@enzolhr.com</a></li>
+          <li><a href="https://wa.me/923218230266" target="_blank" rel="noopener noreferrer">+92&nbsp;321&nbsp;8230266</a></li>
+          <li><span style="color:#C3CEDA;">ENZO Tower, Thokar Niaz Baig<br>Lahore, Pakistan</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ENZO — Humayun Ibrahim Textile. All rights reserved.</p>
+      <p>Faisalabad production &middot; Serving Lahore, Faisalabad, Karachi, Peshawar</p>
     </div>
   </div>
 </footer>
-
 <script src="js/motion.js"></script>
 <script src="js/timeline.js"></script>
 </body>

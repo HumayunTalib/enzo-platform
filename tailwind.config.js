@@ -1,33 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html', './js/*.js'],
+  content: ['./*.html', './journal/*.html', './js/*.js'],
   theme: {
     extend: {
       colors: {
-        // Cold Technical Core — ENZO's primary identity (60-70% of the site)
-        'obsidian':     '#0B0F14',  // primary dark anchor: footer, calculator bg, premium sections
-        'arctic-navy':  '#1E2A39',  // primary brand color: buttons, nav accents, hero, wholesale
-        'steel-blue':   '#5C7386',
-        'glacier-blue': '#9DB4C6',
-        'silver-mist':  '#D6DEE6',
-        'ice-white':    '#F5F8FA',
-        // Coffee / Chocolate Material Accent — warmth + craftsmanship, used sparingly (5-10%)
-        'espresso':        '#241510',  // darkest warm tone — premium full-bleed sections
-        'dark-chocolate':  '#3A2118',  // main chocolate accent — premium CTAs, cards
-        'coffee-brown':    '#5A3828',  // secondary accent, borders on chocolate surfaces
-        'warm-mocha':      '#80604C',  // micro-details, thin lines, small labels only
-        'textile-cream':   '#E8DED2',  // text/highlights on chocolate — prevents heaviness
+        // Navy is the identity; warm white is the ground; stone gives structure.
+        // Copper is an accent only — never a second brand color.
+        'navy':       '#142B44',
+        'deep-navy':  '#0B1828',
+        'warm-white': '#F7F5F1',
+        'stone':      '#E7E3DC',
+        'charcoal':   '#1A1D21',
+        'slate':      '#68727D',
+        'copper':     '#A66345',
       },
       fontFamily: {
-        bebas: ['"Bebas Neue"', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        mono:  ['"JetBrains Mono"', 'monospace'],
-        fraunces: ['Fraunces', 'serif'],
-        plexsans: ['"IBM Plex Sans"', '-apple-system', 'sans-serif'],
-        plexmono: ['"IBM Plex Mono"', 'monospace'],
+        sans:  ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        mono:  ['ui-monospace', '"SF Mono"', '"JetBrains Mono"', 'Consolas', 'monospace'],
+      },
+      spacing: {
+        // Mirrors the --s1..--s8 scale in css/input.css. Keep in sync.
+        's1': '8px',  's2': '16px', 's3': '24px', 's4': '32px',
+        's5': '48px', 's6': '64px', 's7': '96px', 's8': '128px',
+      },
+      borderRadius: {
+        'r1': '2px', 'r2': '4px', 'r3': '6px',
       },
       maxWidth: {
-        '6xl': '72rem',
+        container: '1280px',
       },
     },
   },

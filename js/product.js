@@ -1,7 +1,7 @@
 /* ============================================================
-   ENZO — retail (RAQI) product detail page logic (color select,
-   quantity, order/enquire). Shared across all product-*.html
-   pages; reads which product it's on from <main data-product-code>.
+   ENZO — retail product detail page logic (color select, quantity,
+   order/enquire). Shared across all product-*.html pages; reads
+   which product it's on from <main data-product-code>.
    ============================================================ */
 (function () {
   'use strict';
@@ -25,14 +25,12 @@
   function renderColors() {
     if (!swatchRow) return;
     if (product.colors.length === 1) {
-      // A selector with exactly one non-optional option reads as broken —
-      // show a static label instead of a fake "choice."
       swatchRow.innerHTML = '';
       if (selectedLabel) selectedLabel.textContent = 'Color: ' + product.colors[0].name;
       return;
     }
     swatchRow.innerHTML = product.colors.map(function (c, i) {
-      return '<button type="button" class="pdp-swatch' + (i === 0 ? ' active' : '') + '" ' +
+      return '<button type="button" class="swatch-lg' + (i === 0 ? ' active' : '') + '" ' +
         'data-hex="' + c.hex + '" data-name="' + c.name + '" ' +
         'style="background:' + c.hex + '" aria-label="' + c.name + '" title="' + c.name + '"></button>';
     }).join('');
@@ -45,9 +43,9 @@
 
   if (swatchRow) {
     swatchRow.addEventListener('click', function (e) {
-      var btn = e.target.closest('.pdp-swatch');
+      var btn = e.target.closest('.swatch-lg');
       if (!btn) return;
-      swatchRow.querySelectorAll('.pdp-swatch').forEach(function (s) { s.classList.remove('active'); });
+      swatchRow.querySelectorAll('.swatch-lg').forEach(function (s) { s.classList.remove('active'); });
       btn.classList.add('active');
       selectedColor = { name: btn.getAttribute('data-name'), hex: btn.getAttribute('data-hex') };
       updateSelectedLabel();
@@ -63,7 +61,7 @@
   if (orderBtn) {
     orderBtn.addEventListener('click', function () {
       var qty = getQty();
-      var msg = "Hello RAQI, I'd like to order: " + product.code + ', ' + selectedColor.name + ', ' + qty + ' metres.';
+      var msg = 'Hello ENZO, I would like to order: ' + product.code + ', ' + selectedColor.name + ', ' + qty + ' metres.';
       window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
   }
@@ -71,7 +69,7 @@
   if (enquireLink) {
     enquireLink.addEventListener('click', function (e) {
       e.preventDefault();
-      if (!RaqiCart.has(product.code)) RaqiCart.toggle(product.code);
+      if (!EnzoCart.has(product.code)) EnzoCart.toggle(product.code);
       window.location.href = 'contact.html';
     });
   }
