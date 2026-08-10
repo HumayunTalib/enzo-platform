@@ -48,7 +48,7 @@
   --container: 1280px;
   --gutter: 24px;
   --section-y: 64px;
-  --header-h: 68px;
+  --header-h: 72px;
 
   /* ── Geometry — editorial, not app-like ─────────────── */
   --r1: 2px;
@@ -74,7 +74,7 @@
 }
 
 @media (min-width: 768px) {
-  :root { --gutter: 32px; --section-y: 96px; --header-h: 76px; }
+  :root { --gutter: 32px; --section-y: 96px; --header-h: 88px; }
 }
 
 /* ============================================================
@@ -288,7 +288,7 @@ p { margin: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--s4);
+  gap: var(--s5);
 }
 
 .site-header.is-solid,
@@ -297,25 +297,32 @@ p { margin: 0; }
   border-bottom-color: var(--line);
 }
 
+/* The wordmark is the one place the display serif belongs in the header —
+   everything else here is functional and stays in Inter. Cormorant at this
+   size and tracking reads as a milled, permanent mark rather than an app
+   logotype, which is the point for a manufacturer, not a product. */
 .brand {
-  font-size: 1.375rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   color: var(--navy);
   flex: none;
   transition: color .28s var(--ease);
 }
+@media (min-width: 768px) { .brand { font-size: 1.75rem; } }
 
-.nav { display: none; gap: var(--s4); align-items: center; }
+.nav { display: none; gap: var(--s5); align-items: center; }
 @media (min-width: 980px) { .nav { display: flex; } }
 
 .nav a {
   position: relative;
   font-size: var(--fs-sm);
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--charcoal);
-  padding: 6px 0;
+  padding: 8px 0;
   transition: color .22s var(--ease);
 }
 .nav a::after {
