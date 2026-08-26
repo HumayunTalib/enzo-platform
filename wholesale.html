@@ -27,11 +27,24 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "ENZO",
-  "url": "https://enzolhr.com/wholesale.html",
-  "description": "Manufacturer-direct wholesale woven fabric supply from Faisalabad, Pakistan.",
-  "areaServed": ["Lahore", "Faisalabad", "Karachi", "Peshawar", "International"]
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://enzolhr.com/wholesale.html#webpage",
+      "url": "https://enzolhr.com/wholesale.html",
+      "name": "Wholesale Fabric | ENZO",
+      "isPartOf": { "@id": "https://enzolhr.com/#website" },
+      "about": { "@id": "https://enzolhr.com/#organization" },
+      "description": "Manufacturer-direct wholesale woven fabric, woven at ENZO's own mill in Faisalabad and sold from Lahore."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://enzolhr.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Wholesale Fabric", "item": "https://enzolhr.com/wholesale.html" }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -70,7 +83,7 @@
   <div class="hero-scrim" style="background:linear-gradient(90deg,rgba(11,24,40,.95) 0%,rgba(11,24,40,.78) 55%,rgba(11,24,40,.4) 100%);"></div>
   <div class="hero-inner container">
     <p class="label" style="color:#8FA3B5;margin-bottom:var(--s3);">Commercial Supply</p>
-    <h1 class="display" style="color:#fff;max-width:18ch;">Sourcing at volume? Talk to the mill directly.</h1>
+    <h1 class="display" style="color:#fff;max-width:18ch;">Buying at volume? Talk to the mill directly.</h1>
     <p class="lead" style="color:#C3CEDA;max-width:46ch;margin-top:var(--s3);margin-bottom:var(--s4);">Manufacturer-direct woven fabric from our own Faisalabad production — no agent, no markup layer.</p>
     <div class="row">
       <a href="contact.html" class="btn btn-invert">Request a Wholesale Quotation</a>

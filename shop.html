@@ -27,12 +27,24 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ClothingStore",
-  "name": "ENZO",
-  "url": "https://enzolhr.com/shop.html",
-  "telephone": "+92 321 8230266",
-  "priceRange": "$$",
-  "address": { "@type": "PostalAddress", "streetAddress": "ENZO Tower, Main Westwood Road, Thokar Niaz Baig", "addressLocality": "Lahore", "addressRegion": "Punjab", "addressCountry": "PK" }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://enzolhr.com/shop.html#webpage",
+      "url": "https://enzolhr.com/shop.html",
+      "name": "Shop Finished Fabric | ENZO",
+      "isPartOf": { "@id": "https://enzolhr.com/#website" },
+      "about": { "@id": "https://enzolhr.com/#localbusiness" },
+      "description": "Finished fabric woven at ENZO's own mill, sold by the piece by appointment in Lahore."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://enzolhr.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Shop Finished Fabric", "item": "https://enzolhr.com/shop.html" }
+      ]
+    }
+  ]
 }
 </script>
 </head>
