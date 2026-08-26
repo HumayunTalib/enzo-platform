@@ -420,9 +420,9 @@ the pages most likely earning traffic today. Say the word and it takes February
 
 # The schedule
 
-**23 new posts** · 4 pillar rebuilds · 2 merges · 3 expansions.
-Three posts were cut outright by the range statement — see below the table.
-Phase 0 has shipped; the correction pass has shipped.
+**20 new posts** · 4 pillar rebuilds · 2 merges · 3 expansions.
+Six posts have been cut: three by the range statement, three by the positioning
+decision of 2026-08-27. Phase 0 has shipped; the correction pass has shipped.
 
 | Month | Type | Post | Cl. | Aud. | Words |
 |---|---|---|---|---|---|
@@ -444,18 +444,15 @@ Phase 0 has shipped; the correction pass has shipped.
 | Dec 26 | EXPAND | How Much Fabric You Actually Need | D | R | 1,700 |
 | Dec 26 | EXPAND | Complete Guide to Fabric Costing — PILLAR | B | W | 2,800 |
 | Dec 26 | MERGE | What Makes a Fabric Worth Its Price | B | W+R | 1,600 |
-| Jan 27 | NEW | The Colours ENZO Actually Stocks | C | R | 1,200 |
+| Jan 27 | NEW | Why Everything We Weave Is a Grey | C | R | 1,200 |
 | Jan 27 | NEW | Stitched vs Unstitched: Which Actually Costs Less | D | R | 1,300 |
 | Jan 27 | NEW | Buying Men's Fabric in Lahore | E | R | 1,600 |
 | Jan 27 | EXPAND | Complete Guide to Greige Fabric — PILLAR | B | W | 2,600 |
 | Feb 27 | NEW | Men's Kurta Fabric | F | R | 1,200 |
 | Feb 27 | EXPAND | How to Judge Fabric by Hand | D | R | 1,400 |
 | Mar 27 | NEW | Cotton Isn't One Fabric: Staple, Comb and Count | A | W+R | 1,800 |
-| Mar 27 | NEW | Linen and Cotton Slub in Pakistani Heat | A | R | 1,200 |
 | Mar 27 | NEW | Why Your Kameez Came Back Shorter: Shrinkage | D | R | 1,200 |
 | Mar 27 | NEW | Will It Stay Soft After Washing? | D | R | 1,200 |
-| Apr 27 | NEW | Viscose, Modal and Lyocell in Men's Suiting | A | W+R | 1,400 |
-| Apr 27 | NEW | Jacquard and Self-Design: When the Pattern Is Woven | A | R | 1,200 |
 | Apr 27 | NEW | What MOQ Means, and Who Wholesale Is Actually For | D | W+R | 1,500 |
 | May 27 | NEW | PC Blend, Poly-Viscose and Recycled Polyester | A | W+R | 1,400 |
 | May 27 | EXPAND | Faisalabad, and Why ENZO Produces There | E | W+R | 1,600 |
@@ -473,6 +470,17 @@ it is about.
 | **Sherwani and Prince Coat Fabric** (F3) | ENZO makes no sherwani, jamawar, coat or jacket weight. The post would have sold cloth that does not exist |
 | **Blazer and Waistcoat Fabric** (F4) | Same. Jacketing is outside the weight class entirely — and it took **bouclé** with it |
 | **Buying From Karachi, Peshawar, or Not-Lahore** (E3) | Retail is **in-person only, no shipping**. The honest version of this post is one sentence long |
+
+### Cut by the positioning decision — 2026-08-27
+
+Nine fabric-education posts, six about fabrics ENZO does not weave, read as a
+broad catalogue however carefully each was worded. Cluster A is trimmed to six.
+
+| Post | Why |
+|---|---|
+| **Linen and Cotton Slub in Pakistani Heat** (A6) | Furthest of all from the range, and the reader it attracts is not one ENZO can serve |
+| **Viscose, Modal and Lyocell** (A7) | Two of its three fabrics are things ENZO does not weave; the third is unconfirmed |
+| **Jacquard and Self-Design** (A8) | Self-design is a real market segment but ENZO has nothing in it. A post about patterned cloth from a mill weaving plain suiting invites the wrong expectation |
 
 Cutting F3 and F4 removes the wedding cluster's formalwear spine. **C2 survives
 in narrowed form** — wedding-season shalwar kameez and shirting for guests, not
@@ -492,28 +500,22 @@ groomwear.
 > **Fibre composition is still unknown for all three qualities.** The range
 > statement gave constructions (LoomAura 64×64/26×26, VP Gold 56×52/20×20) but
 > not fibre content. Until that lands, no post can say whether ENZO's cloth is
-> a boski, a wash-and-wear, a blend, or a pure. **A1, A7 and A9 are blocked on
+> a boski, a wash-and-wear, a blend, or a pure. **A1 and A9 are blocked on
 > question 1.**
 >
 > **PET and PURE yarn fabric are wholesale-only offerings.** They belong in A9,
 > not in a retail post.
 
-### ⚠ Cluster A is too wide for the positioning
+### Trimmed to six — decided 2026-08-27
 
-Nine fabric-education posts, six of them about fabrics ENZO does not make, reads
-as a broad catalogue however carefully each one is worded. That is exactly the
-positioning you ruled out.
+A6 (linen), A7 (viscose/modal/lyocell) and A8 (jacquard) are cut. They were the
+three furthest from what ENZO weaves and the three where the education-only
+close did the most work for the least return.
 
-**Recommendation: cut Cluster A from nine posts to six.** Drop A6 (linen), A7
-(viscose/modal/lyocell) and A8 (jacquard) — the three furthest from what ENZO
-weaves and the three where the education-only close does the most work for the
-least return. That leaves the fabrics a man actually chooses between when buying
-shalwar kameez or shirting cloth, and takes the plan to **20 new posts**.
+What remains is the set of fabrics a man is genuinely choosing between when he
+buys shalwar kameez or shirting cloth.
 
-I have not cut them — they are still listed below and still in the schedule.
-**Your call.**
-
-Nine posts. Grouped by how fabrics behave and where a man would use them, not
+Six posts. Grouped by how fabrics behave and where a man would use them, not
 one per fabric name. A reader asking "khaddar or karandi?" is asking one
 question.
 
@@ -599,55 +601,16 @@ The strongest bridge between the retail clusters and the existing trade content
 lands here as the long-staple reference point. Links directly to
 `what-is-yarn-count.html`, to the costing pillar (B3), and to `calculator.html`.
 
-### A6 — Linen and Cotton Slub in Pakistani Heat
-**NEW · March 2027 · Retail · 1,200 words · education-only**
+### A6 — ~~Linen and Cotton Slub in Pakistani Heat~~ — **CUT**
+### A7 — ~~Viscose, Modal and Lyocell in Men's Suiting~~ — **CUT**
+### A8 — ~~Jacquard and Self-Design~~ — **CUT**
 
-**Reader's question:** *"Is linen worth it here, or does it just crease?"*
+All three cut on 2026-08-27 for positioning. ENZO weaves none of linen, modal,
+lyocell or jacquard; viscose is unconfirmed pending question 1. Cluster A now
+covers only what a man is actually choosing between.
 
-Secondary terms: linen fabric, linen blend, cotton slub, linen creasing,
-breathable fabric, summer suiting, slub texture.
-
-**Education-only — ENZO does not weave linen.** **One of the three posts I
-recommend cutting** — furthest of all from the range, and the reader it attracts
-is not one ENZO can serve.
-
-Honest about the trade-off rather than selling linen as a premium word. Covers
-where **cotton slub** sits as the cheaper texture substitute — a term already
-appearing in five existing files with no post that explains it.
-
-### A7 — Viscose, Modal and Lyocell in Men's Suiting
-**NEW · April 2027 · Wholesale + Retail · 1,400 words · BACKING UNCONFIRMED**
-
-**Reader's question:** *"These feel lovely in the shop. Will they survive a year
-of washing?"*
-
-Secondary terms: viscose fabric, modal fabric, lyocell fabric, regenerated
-cellulose, viscose blend, fabric pilling, drape.
-
-Viscose was backed by Nova Silk, now discontinued. Whether viscose is still an
-ENZO fibre at all depends on question 1. Modal and lyocell are education-only
-regardless — ENZO weaves neither. **This is one of the three posts I recommend
-cutting**: two of its three fabrics are things ENZO does not make, and the third
-is unconfirmed. Links to D7.
-
-### A8 — Jacquard and Self-Design: When the Pattern Is Woven, Not Printed
-**NEW · April 2027 · Retail · 1,200 words · education-only**
-
-**Reader's question:** *"Why does this self-design cost more than a printed
-fabric with the same pattern?"*
-
-Secondary terms: jacquard fabric, self design fabric, woven pattern, dobby,
-textured suiting, self print.
-
-**Education-only — ENZO does not weave jacquard.** **One of the three posts I
-recommend cutting** — self-design is a real market segment, but ENZO has nothing
-in it, and a post about patterned cloth from a mill that weaves plain suiting
-invites the wrong expectation.
-
-Self-design men's suiting is a large and completely uncovered segment —
-**jacquard and self-design both appear in zero of 54 files**. Answers a real
-pricing confusion: woven-in pattern is a loom operation, print is a surface
-operation, and the cost structures are nothing alike. Links up to B2 and B3.
+**Cotton slub** survives inside A5 (*Cotton Isn't One Fabric*), which is where
+it always belonged — it is a cotton texture, not a separate fabric.
 
 ### A9 — PC Blend, Poly-Viscose and Recycled Polyester
 **NEW · May 2027 · Wholesale + Retail · 1,400 words · BACKING UNCONFIRMED**
@@ -759,20 +722,20 @@ sighting nearer the date. The post uses it to set the tailoring countdown but
 **never states it as a fixed date** — "around the second week of March", with
 the sighting caveat where it matters.
 
-### C5 — The Colours ENZO Actually Stocks, and What They're For
+### C5 — Why Everything We Weave Is a Grey
 **NEW · January 2027 · Retail · 1,200 words**
 
 **Reader's question:** *"What shade do I pick, and will it look the same at a
 wedding as it does in daylight?"*
 
-Secondary terms: charcoal suiting, midnight blue fabric, stone beige, camel,
-burgundy, men's suit colour, seasonal shades, colour under photography.
+Secondary terms: grey suiting fabric, men's suit colour, shade cast, grey
+shades, navy suiting, black suiting, colour under artificial light.
 
-### ⚠ This post is now a different post — and mint, sage and powder blue are gone
+**Retitled and approved 2026-08-27.** This is no longer a seasonal-colour
+guide; it is a post about a deliberately narrow palette, which sits exactly on
+the positioning and is a better piece than a trend listicle.
 
-You approved keeping mint, sage and powder blue on my evidence that they were
-confirmed Bluebird shades. **They were not.** They came from the stale
-`data/products.js`, and the real Bluebird eight are:
+The real Bluebird eight:
 
 **Grey · Bright Grey · Pink Grey · Biscuit Grey · Turquoise Grey · Green Grey ·
 Blue Grey · Yellow Grey**
@@ -784,14 +747,13 @@ So the seasonal-colour post as planned does not exist. There is no pastel range,
 no ivory, no burgundy, no rust or olive. **Every colour term in the original
 brief is now unplaceable** — see the vocabulary ledger.
 
-**What the post should be instead:** *Why Everything We Weave Is a Grey* — a
-post about a deliberately narrow palette, which is a far more interesting piece
-than a trend guide and sits exactly on the positioning. Eight greys is a
-statement about restraint and about what a man actually wears to work. Turquoise
-Grey and Pink Grey are grey with a cast, and explaining that distinction is
-genuinely useful to someone choosing cloth in a shop under bad light.
+Eight greys is a statement about restraint and about what a man actually wears
+to work. Turquoise Grey and Pink Grey are grey with a cast, and explaining that
+distinction is genuinely useful to someone choosing cloth in a shop under bad
+light — which is where most of these decisions get made.
 
-Retitled and rescoped. **Confirm you want it this way before I write it.**
+The post needs **no photography**: it is about how to read a shade name and what
+a cast does under different light, not about looking at swatches on a screen.
 
 Written as a men's shade guide, not a trend listicle: which shades survive
 artificial light, which show sweat, which read formal. The **pastel and Eid
@@ -872,8 +834,8 @@ fading, wash fastness, dyed vs printed, self-design fastness.
 
 A merge of two briefed topics that answer one question — "will it fade" is the
 retail form of "reactive versus pigment", and separating them produces two half
-posts. The trade explanation is the answer to the consumer worry. Links to A8
-and D7.
+posts. The trade explanation is the answer to the consumer worry. Links to D7
+and D3.
 
 ### D5 — Stitched vs Unstitched: Which Actually Costs Less
 **NEW · January 2027 · Retail · 1,300 words**
@@ -952,8 +914,8 @@ checklist for a buyer with a lot in front of him.
 
 # Cluster E — Place and market
 
-Two new posts and one expansion. Local intent is at zero — DHA, Gulberg and
-Johar Town appear in none of the 54 files.
+**One new post and one expansion** — E3 is cut, see below. Local intent is at
+zero: DHA, Gulberg and Johar Town appear in none of the 54 files.
 
 ### E1 — Buying Men's Fabric in Lahore: Where to Go, and What Each Route Costs
 **NEW · January 2027 · Retail · 1,600 words**
@@ -1012,8 +974,10 @@ If retail shipping ever launches, this becomes worth writing on day one.
 
 # Cluster F — Garment categories, men's
 
-Four posts. The brief's garment terms are not one topic each — a man choosing
-between a sherwani and a prince coat is making one decision, so it is one post.
+**Two posts.** The brief listed eight garment terms; five of them — sherwani,
+prince coat, blazer, waistcoat, and jacketing generally — sit outside ENZO's
+weight class and are cut. What remains is what ENZO can actually dress: the
+shalwar kameez and the kurta.
 
 ### F1 — Shalwar Kameez: Cut and Cloth, and Why They're Linked
 **PILLAR · NEW · November 2026 · Retail · 1,700 words**
@@ -1114,7 +1078,7 @@ redirected · **EXPAND** = rewritten at its own URL
 | 35 | choose-fabric-supplier | Supplier | B | KEEP — *see supplier-pillar flag* |
 | 36 | wholesale-greige-fabric | Greige | B | KEEP — BOFU, supporting under B4 |
 | 37 | fabric-for-everyday-wear | Retail Ed. | D | KEEP+X — cross-link A3, F2 |
-| 38 | fabric-for-formal-wear | Retail Ed. | C | KEEP+X — cross-link C2, F3, F4 |
+| 38 | fabric-for-formal-wear | Retail Ed. | C | KEEP+X — cross-link C2, F1. **Audit for coat/jacket-weight claims** before linking |
 | 39 | fabric-for-uniforms | Applications | D | KEEP |
 | 40 | buying-mens-fabric-by-the-metre | Men's | B | **ABSORB** → B1 |
 | 41 | avoid-overpaying-for-fabric | Value | B | **MERGE** → B6 |
@@ -1145,9 +1109,9 @@ or cross-links rather than new URLs:
 | Suiting as a category post | Men's Fabric cluster, 5 posts + B1 | **Not written** |
 | Softness after washing | `fabric-finishing-and-price` | **Both kept** — same mechanism, wholesale vs retail reader, must cross-link (D7) |
 
-Two proposed topics also collide with each other and were merged before writing:
-"will it fade" + "reactive vs pigment" → **D4**; "sherwani fabric" + "prince coat
-fabric" → **F3**.
+"Will it fade" and "reactive vs pigment" were also merged before writing →
+**D4**. "Sherwani fabric" and "prince coat fabric" were merged into F3, which
+was then cut outright — ENZO makes no cloth at that weight.
 
 ## Pillars after this plan
 
@@ -1160,9 +1124,13 @@ fabric" → **F3**.
 | Boski, Wash-and-Wear and Poly-Viscose | A | NEW | 2,200 |
 | Shalwar Kameez: Cut and Cloth | F | NEW | 1,700 |
 
-Everything else is a supporting post. The two retail pillars — B1 and A1 — are
-the ones the whole Phase 1 programme links up to; every new Cluster A, C, D and
-F post should point at one of them.
+**A1 is provisional.** It is listed as a pillar on the assumption that one of
+the three qualities turns out to be a boski or wash-and-wear construction. If
+question 1 comes back saying none is, A1 drops to a supporting education-only
+post and **B1 carries the retail hub alone**.
+
+Everything else is a supporting post. The retail hub is B1; the wholesale hub is
+B3. Every new Cluster A, C, D and F post should point at one of them.
 
 ---
 
@@ -1178,9 +1146,7 @@ F post should point at one of them.
 | shirting | A4 |
 | suiting | A1, B1, C3 + existing Men's cluster |
 | cotton, supima, combed/carded, staple, Ne count | A5 |
-| cotton slub, linen | A6 |
-| viscose, modal, lyocell | A7 |
-| jacquard, self-design, dobby | A8 |
+| cotton slub | A5 |
 | PC blend, recycled polyester | A9 |
 | shalwar kameez, straight kameez, shalwar | F1 |
 | kurta | F2 |
@@ -1221,8 +1187,10 @@ unstitched · the pastel and Eid women's palette. Removed entirely.
 - **latha, khaddar, karandi, cambric** — kept as education-only posts (A2, A3).
   They are what a man is choosing *between* when he walks in, so explaining them
   earns the reader even with nothing to sell against them.
-- **linen, jacquard, modal, lyocell** — kept for now in A6, A7, A8, but these
-  are the three posts I recommend cutting on positioning grounds.
+- **linen, jacquard, modal, lyocell, dobby, self-design** — **cut 2026-08-27**
+  with A6, A7 and A8. ENZO weaves none of them, and six education-only posts
+  about cloth it does not make read as a catalogue. **Cotton slub** survives
+  inside A5, where it belongs as a cotton texture.
 - **dhanak, cotton voile, canvas** — women's wear or home textile. No home.
 
 **The entire colour vocabulary is now unplaceable.**
@@ -1247,41 +1215,210 @@ honest home it is in this list, not wedged into a paragraph.
 
 # NEEDS INPUT register
 
-**The count moved from eleven to thirteen live, plus two withdrawn.** Two of
-the original eleven asked for figures the publication rule now excludes and are
-withdrawn — no answer wanted. The range statement replaced one question with
-five, because reconciling Bluebird / LoomAura / VP Gold against the catalog data
-raises more than "which fabrics do you stock".
+Thirteen questions were answered on 2026-08-26. Two were withdrawn under the
+publication rule. Answering them closed most of the plan's gaps and cut three
+posts outright — but the answers also opened nine new questions, because a
+confirmed range raises specifics that a stale one never did.
 
-Nothing here blocks Phase 0.
+## Answered — and what each unblocked
 
-| # | Needed | Blocks | Status |
-|---|---|---|---|
-| 1 | **Composition and construction of LoomAura and VP Gold.** Are either boski, wash-and-wear, or a viscose/poly blend? | A1, A7, A9, C3, F4 | **Live — answer first.** Governs five posts and the whole product-backed / education-only split |
-| 2 | **Which eight shades is Bluebird now?** The stale data carries sixteen across a summer/winter split that no longer exists | C5 | Live. Mint, sage and powder blue confirmed in; the other five unknown |
-| 3 | **Are 200 m / 1,000 m / 990 m stock on hand, or purchasable minimums?** The site states a 10,000 m MOQ in six places | D6 | Live. If they are minimums, six live pages are wrong |
-| 4 | **Are Signature / Reserve / Select tiers live, planned, or retired?** They appear nowhere on the site | C5, catalog copy | Live |
-| 5 | **Sources for Noor and Waqar.** They currently source from Nova Silk and Wostar Wool, both out of range | A1, product pages | Live. Two of four retail codes have no stated source |
-| 6 | **Eid al-Fitr 2027 date**, locally confirmed | C4 | Live. Sets the Phase 1 publish window |
-| 7 | **Standard thaan length; quoted per thaan or per metre** | B4, D6 | Live. Length and unit only — no rate |
-| 8 | **Production lead time, order → dispatch; tailoring turnaround in peak season** | C1 | Live. The post's whole argument rests on these |
-| 9 | **ENZO's recommended metreage per garment and height band.** The existing post carries figures — confirm they are correct before I build on them | D1 | Live |
-| 10 | **How a retail appointment at ENZO Tower is booked** — days, hours, walk-in policy. `shop.html` says "by appointment" but not how | E1 | Live |
-| 11 | **Retail shipping nationwide? Delivery cost? Swatches before purchase?** | E3 | Live. Delivery charge is a customer-facing price, not a cost disclosure |
-| 12 | **Any recycled-content option?** Or is rPET market context only? | A9 | Live. Framing changes on the answer |
-| 13 | **Does ENZO supply sherwani-weight or jamawar-type cloth?** | F3 | Live. If not, F3 is education-only with an honest close |
-
-**Withdrawn under the publication rule — no answer wanted:**
-
-| — | Was | Now |
+| Was asked | Answer | What it did |
 |---|---|---|
-| ~~Conversion cost per metre~~ | B3 costing pillar | **NOT FOR PUBLICATION.** B3 teaches the cost *model* and the reader supplies his own rates, exactly as `calculator.html` already does |
-| ~~Lahore tailoring cost~~ | D5 stitched vs unstitched | **Written as a formula.** The reader fills in his own tailor's rate. No figure published, nothing waiting |
+| Which fabrics does ENZO stock? | **Bluebird** (four-season, 8 shades), **LoomAura** (four-season, 64×64/26×26, black + navy), **VP Gold** (winter, 56×52/20×20, 1 shade). Plus **PET and PURE yarn fabric, wholesale only** | Set the whole product-backed / education-only split. Confirmed latha, khaddar, karandi, cambric, linen and jacquard are **not** woven — those posts are education-only permanently |
+| Which eight shades is Bluebird? | Grey, Bright Grey, Pink Grey, Biscuit Grey, Turquoise Grey, Green Grey, Blue Grey, Yellow Grey | **Rescoped C5 entirely.** See the correction below |
+| Are 200 m / 1,000 m / 990 m minimums? | **Stock on hand, not minimums.** Never publish them — they go stale weekly. Write "subject to availability — confirm on WhatsApp" | Unblocked D6. Confirmed the six live MOQ pages were right; all now say **wholesale** minimum explicitly |
+| Are Signature / Reserve / Select tiers live? | **They do not exist.** Removed from the plan | Nothing on the site used them, so nothing to strip there |
+| What are Noor and Waqar sourced from? | **ENZO manufactures. It does not source.** All four retail codes are own production | Reframed 4 product pages, 2 data files and the positioning throughout. `source:` → `production:` |
+| Eid al-Fitr 2027 date | **≈ 9–10 March 2027**, moon-sighting confirmed nearer the date | Set C4's December publish window. The post says "around the second week of March", never a fixed date |
+| Standard thaan length | **20 m**; loose fabric thaan can exceed 100 m | Unblocked B4 and gave D6 its ladder: 4 m a suit, 20 m a thaan, 10,000 m a wholesale order |
+| Production lead time | **Custom order 30 days to dispatch; from prior stock, next day** | Gave C1 its spine — the difference between "this exact construction" and "cloth this week" |
+| Metreage per garment | **A full men's suit — shalwar and kameez — is 4 metres** | Corrected "4 to 4.5 metres" across **five published posts**. D1 builds its table on 4 m |
+| Retail appointment at ENZO Tower | **Monday to Saturday** | Partly unblocked E1 — hours and walk-in policy still open, see below |
+| Retail shipping | **In-person only. No shipping** | **Cut E3.** Its entire premise was remote buying |
+| Recycled content / rPET | Superseded — **PET and PURE yarn fabric, wholesale purchasers only** | Redirected A9 from a market-context post to one with a real, confirmed product hook |
+| Sherwani or jamawar weight | **None. Shalwar kameez and shirting weight only** | **Cut F3 and F4.** Took bouclé with them |
 
-Also resolved without asking: **retail minimum is 4 metres**, stated on all four
-product pages. D5 and D6 can use it.
+**Withdrawn under the publication rule — no answer wanted, nothing waiting:**
 
-**Answer 1, 2 and 3 and most of the plan unblocks.**
+| Was | Now |
+|---|---|
+| ~~Conversion cost per metre~~ | **NOT FOR PUBLICATION.** B3 teaches the cost *model*; the reader supplies his own rates, as `calculator.html` already requires |
+| ~~Lahore tailoring cost~~ | **Written as a formula.** D5 supplies the arithmetic and the fabric side — 4 m suit, 4 m retail minimum, from Rs. 400/metre, all already public |
+
+## Correction to something I reported wrong
+
+I previously listed **mint, sage and powder blue** as confirmed ENZO stock
+shades, and you approved keeping them on that basis. They were not confirmed —
+they came from the stale `data/products.js`, not from the range.
+
+The real palette is **eight greys, plus black, navy blue, and one VP Gold
+shade.** Eleven in total. There is no mint, sage or powder blue, and no ivory,
+burgundy, rust or olive either. **Every colour term in the original brief is now
+unplaceable**, and C5 is rescoped from a seasonal-colour guide to a post about
+why the palette is deliberately narrow.
+
+## Still open — seven questions, returned blank
+
+The answers sent on 2026-08-27 came through with the bracket placeholders
+**unfilled**. Two of the nine were answered; seven are still open in exactly the
+form they were asked.
+
+**Answered:**
+
+| # | Answer | Effect |
+|---|---|---|
+| 4 | **Colour hex — skip for now**, not needed for text posts | Catalog swatches render shade names as text. No change required; C5 is a text post |
+| 9 | **No photography for LoomAura or VP Gold.** Write posts that don't need new images | Adopted as a constraint. C5 explicitly needs none. No planned post depends on a product photograph — verified across all 20 |
+
+**Still blank:**
+
+| # | Needed | Blocks | Note |
+|---|---|---|---|
+| 1 | **Fibre composition of Bluebird, LoomAura and VP Gold** | **A1, A9** | The single biggest blocker. Until it lands, no post can say whether ENZO weaves a boski, a wash-and-wear, a blend or a pure — and **A1's status as a pillar depends on it** |
+| 2 | **Bluebird's construction spec** | A4, B2 cross-refs | The other two qualities have one; `data/products.js` field is blank |
+| 3 | **Article codes — LoomAura, VP Gold** | Catalog cards, contact deep links | Cards fall back to the quality name; deep links omit `&article=`. Degrades cleanly, but they are placeholders |
+| 5 | **VP Gold's current shade name** | C5, catalog card | One shade exists and is unnamed |
+| 6 | **What PET and PURE denote** — fibre, yarn type, or product line | **A9** | A9 is the only Cluster A post with a confirmed product hook, and it cannot be written without this |
+| 7 | **Metreage — kurta, trousers, shirt, waistcoat; and the width they assume** | D1 | The suit figure (4 m) is confirmed and already applied. The rest of the table cannot be built |
+| 8 | **Retail opening hours; walk-ins or appointment only** | E1 | Monday–Saturday is confirmed. `shop.html` says "by appointment" and E1 cannot contradict it without this |
+
+**Answer 1 and 6 and Cluster A is fully unblocked.** 2, 3 and 5 are catalog
+data rather than post blockers. 7 and 8 each block one post.
+
+---
+
+# Suspect specification register
+
+Every live specification field that was recorded against a discontinued quality,
+and therefore cannot be trusted. **Nothing here has been changed or guessed** —
+these are flagged for you to supply real values.
+
+## The evidence
+
+All four retail codes cited a discontinued wholesale quality as their source.
+Their shade lists are **verbatim copies** of those qualities' shade lists:
+
+| Retail code | Cited source | Its shade list | Matches the source's list |
+|---|---|---|---|
+| Safa | Bluebird — Summer | Sky Blue, Mint, Pearl White, Sand, Powder Blue, Sage, Light Grey, Ivory | **identical** |
+| Noor | Nova Silk | Midnight | **identical** |
+| Waqar | Wostar Wool | Charcoal, Camel, Slate, Deep Brown, Forest, Midnight Blue, Burgundy, Stone | **identical** |
+| Daim | Bluebird — Winter | Deep Navy, Graphite, Rust, Olive, Plum, Teal, Dark Khaki, Ink | **identical** |
+
+None of these 25 shade names appears in the real range, which is eight greys
+plus black, navy blue and one VP Gold shade.
+
+**What the evidence does and does not prove.** The verbatim match — including
+the counts, 8→8, 1→1, 8→8, 8→8 — proves the lists were *copied* from the
+wholesale qualities rather than recorded independently. It does not by itself
+prove the shades are unsellable: ENZO could in principle finish retail pieces in
+shades it does not offer wholesale.
+
+But the site already answers that. `shop.html:73` states the retail codes are
+**"drawn from ENZO's own live shade range… every option maps to something real
+on the shelf."** That is the site asserting retail shades *are* a subset of what
+ENZO weaves. Under that model the 25 names are now wrong.
+
+So the open question is not "is the data wrong" but **"which of the two is
+wrong — the shade data, or `shop.html:73`?"** They cannot both be right. See
+the question put to production below.
+
+## Noor — RQ-S2
+
+Cited **Nova Silk (NS-01, Boski, 70% Viscose / 30% Polyester)**.
+
+| Field | Live value | Where | Verdict |
+|---|---|---|---|
+| Composition | 70% Viscose / 30% Polyester | `product-noor.html:121`, spec list | **Suspect** — Nova Silk's composition verbatim |
+| Weight | 166 GSM | `product-noor.html:116`; meta, OG and Twitter descriptions (3×) | **Suspect** |
+| Sett | 128 × 84 | `product-noor.html:117`, `data/retail-products.js:53` | **Suspect** |
+| Shades | Midnight | `data/retail-products.js` | **Suspect** — Nova Silk's single shade verbatim |
+| Season | Summer / Mid-Season | spec list, `retail-products.js` | Descriptive; re-confirm |
+| Drape | Fluid | spec list | Descriptive of boski character; re-confirm |
+| Price | Rs. 500/metre | meta, OG, product page, `retail-products.js` | **Likely safe** — ENZO's own retail price, not derived |
+
+## Waqar — RQ-W3
+
+Cited **Wostar Wool (WW-07, Wool Blend, Winter Weight)**.
+
+| Field | Live value | Where | Verdict |
+|---|---|---|---|
+| Composition | Wool Blend, Winter Weight | `product-waqar.html:121` | **Suspect, and structurally doubtful** — see below |
+| Prose composition claim | "**Poly-wool worsted**" | meta, OG and Twitter descriptions (3×) | **Suspect** — a composition claim in prose, outside the spec list |
+| Weight | 247 GSM | `product-waqar.html:116`; 3 descriptions | **Suspect** |
+| Sett | 96 × 72 | `product-waqar.html:117`, `retail-products.js:72` | **Suspect** |
+| Shades | Charcoal, Camel, Slate, Deep Brown, Forest, Midnight Blue, Burgundy, Stone | `retail-products.js` | **Suspect** — Wostar Wool's list verbatim |
+| Season | Autumn / Winter | spec list | Descriptive; re-confirm |
+| Price | Rs. 400/metre | 3 descriptions, product page, data | **Likely safe** |
+
+**The structural problem with Waqar:** the current range contains **no wool
+quality**. Bluebird and LoomAura are four-season, VP Gold is winter, and none is
+stated as wool. Waqar is described as a wool blend and a poly-wool worsted on a
+live page. Either it is woven from something not in the wholesale range, or the
+description is inherited from Wostar Wool and wrong. **This one needs an answer
+before anything else on the retail line.**
+
+## Also suspect — Safa and Daim
+
+You asked about Noor and Waqar. Safa and Daim have the same problem in a
+different form: both cited **Bluebird — Summer** and **Bluebird — Winter**, and
+that seasonal split **no longer exists**. Bluebird is now one four-season
+quality.
+
+| Code | Suspect fields |
+|---|---|
+| Safa (RQ-S1) | Shades (8, Bluebird-Summer verbatim); Season "Spring / Summer"; Weight 150 GSM; Sett 108 × 76 |
+| Daim (RQ-A4) | Shades (8, Bluebird-Winter verbatim); Season "All-Season"; Weight 192 GSM; Sett 124 × 88; the prose claim "**wash-and-wear construction**" in 3 descriptions |
+
+Both cite composition **20% Viscose / 80% Polyester** — which was BB-04's, and
+BB-04 still exists as Bluebird. That composition may well still hold, but it
+cannot be assumed while the seasonal split it was recorded against is gone.
+
+Two codes citing the same article and the same composition while carrying
+different setts (108 × 76 vs 124 × 88) and a 42 GSM spread is possible — but it
+is worth confirming rather than inheriting.
+
+## These numbers have propagated into six published posts
+
+If a spec changes, these change with it:
+
+| Post | What it cites |
+|---|---|
+| `best-fabric-shalwar-kameez.html:106` | "ENZO's Safa is a 150 GSM…" |
+| `best-fabric-shalwar-kameez.html:93` | "124 × 88" as a worked sett example (Daim's) |
+| `dressing-lahore-summers.html:108` | "Safa — a 150 GSM micro-crepe" |
+| `what-is-gsm.html:125` | "Four codes from 150 to 247 GSM" |
+| `what-makes-fabric-worth-its-price.html:105` | Prices (likely safe) **plus "Noor uses a finer boski construction (166 GSM…)"** — an inherited Nova Silk construction claim |
+| `width-gsm-variation.html:93` | "192 GSM × (1 ± 5%)" as a tolerance example (Daim's) |
+
+**The wool claim is not confined to the product page.** `best-fabric-shalwar-kameez.html:106`
+describes Waqar as "a 247 GSM **poly-wool worsted**". Together with
+`product-waqar.html`'s spec list and its three meta descriptions, that is **five
+live locations** asserting Waqar is wool. Likewise **boski** — Nova Silk's
+construction — is asserted of Noor at `what-makes-fabric-worth-its-price.html:105`.
+Both are construction claims inherited from discontinued qualities, and both sit
+in published prose rather than in a data field.
+
+## What I need from you
+
+Real values for: **composition, weight, sett and shade list** for all four retail
+codes — Noor and Waqar most urgently, and Waqar's wool claim first of all.
+Season and drape can be re-confirmed at the same time. Prices appear safe and I
+have not flagged them for replacement.
+
+**And one model question, which decides how the shade lists get fixed:**
+
+> Are the retail codes finished from the same cloth ENZO weaves wholesale — so
+> their shades must come from the current eleven — or does ENZO finish retail
+> pieces in shades outside the weaving range?
+>
+> If the first: the 25 shade names are wrong and get replaced.
+> If the second: the shade names may stand, and `shop.html:73` is the line that
+> needs rewriting instead.
+
+Nothing on the live site is being changed until production confirms.
+
+---
 
 # What Stage 2 will need
 
