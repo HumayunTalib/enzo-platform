@@ -66,7 +66,9 @@ const PRODUCTS = [
     id: 'stan',
     name: 'Stan',
     article: 'ST-01',
-    category: '',
+    category: 'two-tone',   // no season confirmed — filed by its own confirmed descriptor
+                            // so it stays reachable instead of showing only under "All"
+
     eyebrow: 'Two-Tone Suiting',
     description: 'A 56×46 / 20×20 construction in a two-tone mid grey. The newest addition to the range.',
     construction: '56×46 / 20×20',
