@@ -15,22 +15,29 @@
   var state = { category: initialCat };
 
   function cardHTML(p) {
-    var href = 'contact.html?quality=' + encodeURIComponent(p.name) + '&article=' + encodeURIComponent(p.article);
-    var swatches = p.colors.map(function (name, i) {
+    var href = 'contact.html?quality=' + encodeURIComponent(p.name) +
+      (p.article ? '&article=' + encodeURIComponent(p.article) : '');
+    // Swatches only when we have real hex values. Shade names without colour
+    // data render as text — eight identical placeholder chips say less than
+    // the names do, and inventing brand colours is not an option.
+    var hasHex = p.colorHex && p.colorHex.length;
+    var swatches = hasHex ? p.colors.map(function (name, i) {
       return '<span class="swatch" style="background:' + (p.colorHex[i] || '#68727D') + '" title="' + name + '"></span>';
-    }).join('');
+    }).join('') : '';
+    var shadeText = (!hasHex && p.colors.length) ? p.colors.join(' · ') : '';
     var specBits = [p.construction, p.composition].filter(Boolean).join(' · ');
 
     return (
       '<article class="product-card reveal">' +
         '<div class="product-media" data-src="' + p.imgProduct + '" data-alt="' + p.name + ' — ENZO wholesale fabric">' +
-          '<div class="product-media-fallback">' + p.article + '</div>' +
+          '<div class="product-media-fallback">' + (p.article || p.name) + '</div>' +
           '<a href="' + href + '" class="product-media-link" aria-label="Enquire about ' + p.name + '"></a>' +
         '</div>' +
         '<h3 class="product-name">' + p.name + '</h3>' +
         '<p class="product-meta">' + (p.eyebrow || '') + (p.comingSoon ? ' · Available Soon' : '') + '</p>' +
         (specBits ? '<p class="product-spec">' + specBits + '</p>' : '') +
         (swatches ? '<div class="swatch-row">' + swatches + '</div>' : '') +
+        (shadeText ? '<p class="product-spec">' + shadeText + '</p>' : '') +
         '<a href="' + href + '" class="product-cta">' + (p.comingSoon ? 'Notify Me →' : 'Request Quote →') + '</a>' +
       '</article>'
     );

@@ -1,9 +1,17 @@
 /* Shop-grid source of truth for ENZO's 4 real retail/finished-goods codes
-   (internal codename "RAQI" pre-merge — not a public-facing brand; see
-   CLAUDE.md). product-*.html pages are hand-authored separately for
-   SEO/OG/link-preview correctness (WhatsApp/social scrapers don't run
-   JS) — update BOTH when a price, color, or spec changes. Never add a
-   product/color/spec here that isn't confirmed real. */
+   (internal codename "RAQI" pre-merge — not a public-facing brand).
+   product-*.html pages are hand-authored separately for SEO/OG/link-preview
+   correctness (WhatsApp/social scrapers don't run JS) — update BOTH when a
+   price, color, or spec changes. Never add a product/color/spec here that
+   isn't confirmed real.
+
+   ENZO manufactures its own fabric; it does not source or trade. These four
+   codes are our own production in Faisalabad — the `production` field says so
+   and must never be reframed as a supplier or source.
+
+   [NEEDS INPUT] Noor and Waqar previously cited the discontinued Nova Silk and
+   Wostar Wool. Their weight, sett and composition figures were recorded against
+   those qualities and need re-confirming against current production. */
 var RAQI_PRODUCTS = [
   {
     code: 'Safa',
@@ -18,7 +26,7 @@ var RAQI_PRODUCTS = [
     gsm: 150,
     sett: '108 × 76',
     price: 400,
-    source: 'ENZO Bluebird — Summer (BB-04, 20% Viscose / 80% Polyester)',
+    production: 'Woven by ENZO, Faisalabad',
     image: 'assets/products/bb-04-summer.webp',
     colors: [
       { name: 'Sky Blue', hex: '#6EB0D8' },
@@ -44,7 +52,7 @@ var RAQI_PRODUCTS = [
     gsm: 166,
     sett: '128 × 84',
     price: 500,
-    source: 'ENZO Nova Silk (NS-01, Boski, 70% Viscose / 30% Polyester)',
+    production: 'Woven by ENZO, Faisalabad',
     image: 'assets/products/ns-01.webp',
     colors: [
       { name: 'Midnight', hex: '#1A1F2E' }
@@ -63,7 +71,7 @@ var RAQI_PRODUCTS = [
     gsm: 247,
     sett: '96 × 72',
     price: 400,
-    source: 'ENZO Wostar Wool (WW-07, Wool Blend, Winter Weight)',
+    production: 'Woven by ENZO, Faisalabad',
     image: 'assets/products/ww-07.webp',
     colors: [
       { name: 'Charcoal', hex: '#3A3A3A' },
@@ -89,7 +97,7 @@ var RAQI_PRODUCTS = [
     gsm: 192,
     sett: '124 × 88',
     price: 400,
-    source: 'ENZO Bluebird — Winter (BB-04, 20% Viscose / 80% Polyester)',
+    production: 'Woven by ENZO, Faisalabad',
     image: 'assets/products/bb-04-winter.webp',
     colors: [
       { name: 'Deep Navy', hex: '#1A2B45' },

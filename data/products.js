@@ -1,71 +1,61 @@
 // Plain JS array — not JSON — avoids CORS errors on file:// protocol
+//
+// ENZO's own manufacture. Three qualities, produced in Faisalabad — this is
+// not a sourced or traded range. Deliberately focused: the effort goes into
+// the quality of what we make, not the width of the list.
+//
+// Never put stock-on-hand quantities in here. They go stale weekly. Where
+// availability matters, say "subject to availability — confirm on WhatsApp".
 const PRODUCTS = [
   {
-    id: 'nova-silk',
-    name: 'Nova Silk',
-    article: 'NS-01',
-    category: 'wash',
-    eyebrow: 'Boski · Viscose-Polyester',
-    description: 'Boski fabric with a soft, silk-like drape and natural sheen — a refined viscose-polyester construction suited to premium unstitched suiting.',
-    construction: 'Boski',
-    composition: '70% Viscose / 30% Polyester',
-    tag: 'Fluid',
-    inStock: true,
-    colors: ['Midnight'],
-    colorHex: ['#1A1F2E'],
-    imgProduct:   'assets/products/ns-01.webp',
-    imgLifestyle: 'assets/lifestyle/ns-01.webp',
-    comingSoon: false,
-  },
-  {
-    id: 'wostar-wool',
-    name: 'Wostar Wool',
-    article: 'WW-07',
-    category: 'winter',
-    eyebrow: 'Wool Blend · Winter Weight',
-    description: 'Heavyweight wool construction built for the winter season — warm, structured, and durable for cold-weather wholesale demand.',
-    construction: 'Wostar',
-    composition: 'Wool Blend',
-    tag: 'Structured',
-    inStock: true,
-    colors: ['Charcoal', 'Camel', 'Slate', 'Deep Brown', 'Forest', 'Midnight Blue', 'Burgundy', 'Stone'],
-    colorHex: ['#3A3A3A', '#C19A6B', '#6B7C8A', '#4A2C1A', '#2D4A2D', '#1A2B45', '#800020', '#8A8070'],
-    imgProduct:   'assets/products/ww-07.webp',
-    imgLifestyle: 'assets/lifestyle/ww-07.webp',
-    comingSoon: false,
-  },
-  {
-    id: 'bluebird-summer',
-    name: 'Bluebird — Summer',
+    id: 'bluebird',
+    name: 'Bluebird',
     article: 'BB-04',
-    category: 'summer',
-    eyebrow: 'Fancy Blend · Summer Weight',
-    description: 'A lightweight fancy blend with a crisp, breathable hand — viscose-polyester engineered for easy-wear summer suiting in fresh, versatile tones.',
-    construction: 'Fancy Blend',
-    composition: '20% Viscose / 80% Polyester',
-    tag: 'Fancy',
+    category: 'four-season',
+    eyebrow: 'Four-Season Suiting',
+    description: 'ENZO’s four-season suiting quality, produced in Faisalabad and offered across an eight-shade grey range.',
+    construction: '',            // [NEEDS INPUT: construction spec]
+    composition: '',             // [NEEDS INPUT: fibre composition]
+    tag: 'Four-Season',
     inStock: true,
-    colors: ['Sky Blue', 'Mint', 'Pearl White', 'Sand', 'Powder Blue', 'Sage', 'Light Grey', 'Ivory'],
-    colorHex: ['#6EB0D8', '#A8D8C8', '#F5F0E8', '#C4A882', '#B8D8EE', '#9AAF88', '#C0C0C0', '#FFFFF0'],
+    colors: ['Grey', 'Bright Grey', 'Pink Grey', 'Biscuit Grey', 'Turquoise Grey', 'Green Grey', 'Blue Grey', 'Yellow Grey'],
+    colorHex: [],                // [NEEDS INPUT: hex values — names render as text until filled]
     imgProduct:   'assets/products/bb-04-summer.webp',
     imgLifestyle: 'assets/lifestyle/bb-04-summer.webp',
     comingSoon: false,
   },
   {
-    id: 'bluebird-winter',
-    name: 'Bluebird — Winter',
-    article: 'BB-04',
-    category: 'winter',
-    eyebrow: 'Fancy Blend · Winter Weight',
-    description: 'A fancy blend with added weight and structure for cooler months — viscose-polyester made for durable, year-round wholesale wear in deeper shades.',
-    construction: 'Fancy Blend',
-    composition: '20% Viscose / 80% Polyester',
-    tag: 'Fancy',
+    id: 'loomaura',
+    name: 'LoomAura',
+    article: '',                 // [NEEDS INPUT: article code]
+    category: 'four-season',
+    eyebrow: 'Four-Season Suiting',
+    description: 'A 64×64 / 26×26 four-season construction, produced in Faisalabad. Offered in black and navy blue.',
+    construction: '64×64 / 26×26',
+    composition: '',             // [NEEDS INPUT: fibre composition]
+    tag: 'Four-Season',
     inStock: true,
-    colors: ['Deep Navy', 'Graphite', 'Rust', 'Olive', 'Plum', 'Teal', 'Dark Khaki', 'Ink'],
-    colorHex: ['#1A2B45', '#4A4A4A', '#8B3A2A', '#4A5A2A', '#6B2B5A', '#1A5A5A', '#6B6040', '#1A1A2E'],
-    imgProduct:   'assets/products/bb-04-winter.webp',
-    imgLifestyle: 'assets/lifestyle/bb-04-winter.webp',
+    colors: ['Black', 'Navy Blue'],
+    colorHex: [],                // [NEEDS INPUT: hex values]
+    imgProduct:   'assets/products/loomaura.webp',   // [NEEDS INPUT: photography — falls back to name card]
+    imgLifestyle: 'assets/lifestyle/loomaura.webp',
+    comingSoon: false,
+  },
+  {
+    id: 'vp-gold',
+    name: 'VP Gold',
+    article: '',                 // [NEEDS INPUT: article code]
+    category: 'winter',
+    eyebrow: 'Winter Suiting',
+    description: 'A 56×52 / 20×20 winter construction, produced in Faisalabad. Further shades in production for the winter season.',
+    construction: '56×52 / 20×20',
+    composition: '',             // [NEEDS INPUT: fibre composition]
+    tag: 'Winter',
+    inStock: true,
+    colors: [],                  // [NEEDS INPUT: name of the current shade]
+    colorHex: [],
+    imgProduct:   'assets/products/vp-gold.webp',    // [NEEDS INPUT: photography — falls back to name card]
+    imgLifestyle: 'assets/lifestyle/vp-gold.webp',
     comingSoon: false,
   },
 ];
