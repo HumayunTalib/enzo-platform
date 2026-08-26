@@ -95,9 +95,9 @@ var EnzoCart = (function () {
   if (!bar && !drawer) return;
 
   function productByCode(code) {
-    if (typeof RAQI_PRODUCTS === 'undefined') return null;
-    for (var i = 0; i < RAQI_PRODUCTS.length; i++) {
-      if (RAQI_PRODUCTS[i].code === code) return RAQI_PRODUCTS[i];
+    if (typeof PRODUCTS === 'undefined') return null;
+    for (var i = 0; i < PRODUCTS.length; i++) {
+      if (PRODUCTS[i].name === code) return PRODUCTS[i];
     }
     return null;
   }

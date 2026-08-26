@@ -7,7 +7,7 @@
    ============================================================ */
 (function () {
   'use strict';
-  if (typeof RAQI_PRODUCTS === 'undefined') return;
+  if (typeof PRODUCTS === 'undefined') return;
 
   var PHONE = '923218230266';
   var SEASONS = [
@@ -62,33 +62,34 @@
   }
 
   function productCardHTML(p) {
-    // Shade lists are empty until confirmed with production — render nothing
-    // rather than a placeholder chip that implies a shade we can't stand behind.
-    var swatches = (p.colors || []).map(function (c) {
-      return '<span class="swatch" style="background:' + c.hex + '" title="' + c.name + '"></span>';
-    }).join('');
-    var href = 'product-' + p.slug + '.html';
+    // Shades render only where confirmed with production; no placeholder chips.
+    var shades = (p.colors && p.colors.length)
+      ? '<p class="product-spec">' + p.colors.join(' · ') + '</p>' : '';
+    // No per-quality retail price is confirmed yet, so none is shown. The site
+    // states the retail terms (from Rs. 400/metre, minimum 4 m, by appointment).
+    var price = p.price ? '<p class="product-price">Rs. ' + p.price + ' / metre</p>' : '';
+    var href = 'contact.html?quality=' + encodeURIComponent(p.name) +
+      (p.article ? '&article=' + encodeURIComponent(p.article) : '');
     return (
       '<article class="product-card reveal">' +
-        '<div class="product-media" data-src="' + p.image + '" data-alt="' + p.code + ' — ENZO finished fabric">' +
-          '<div class="product-media-fallback">' + p.id + '</div>' +
-          '<a href="' + href + '" class="product-media-link" aria-label="View ' + p.code + '"></a>' +
-          '<button type="button" class="quickadd" data-code="' + p.code + '" aria-label="Add ' + p.code + ' to selection">' +
+        '<div class="product-media" data-src="' + p.imgProduct + '" data-alt="' + p.name + ' — ENZO fabric">' +
+          '<div class="product-media-fallback">' + (p.article || p.name) + '</div>' +
+          '<a href="' + href + '" class="product-media-link" aria-label="Enquire about ' + p.name + '"></a>' +
+          '<button type="button" class="quickadd" data-code="' + p.name + '" aria-label="Add ' + p.name + ' to selection">' +
             '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>' +
           '</button>' +
         '</div>' +
-        '<h3 class="product-name"><a href="' + href + '">' + p.code + '</a></h3>' +
-        '<p class="product-meta">' + [p.season, p.construction].filter(Boolean).join(' · ') + '</p>' +
-        '<p class="product-price">Rs. ' + p.price + ' / metre</p>' +
-        '<div class="swatch-row">' + swatches + '</div>' +
-        '<a href="' + href + '" class="product-cta">View Fabric →</a>' +
+        '<h3 class="product-name"><a href="' + href + '">' + p.name + '</a></h3>' +
+        '<p class="product-meta">' + [p.eyebrow, p.construction].filter(Boolean).join(' · ') + '</p>' +
+        price + shades +
+        '<a href="' + href + '" class="product-cta">Enquire →</a>' +
       '</article>'
     );
   }
 
   function renderGrid() {
     var grid = document.getElementById('shop-grid');
-    var filtered = RAQI_PRODUCTS.filter(matches);
+    var filtered = PRODUCTS.filter(matches);
     var countEl = document.getElementById('shop-count');
     if (!filtered.length) {
       grid.innerHTML = '<p class="body" style="grid-column:1/-1;text-align:center;padding:64px 0;">No fabrics match this combination. <a href="shop.html" class="link">Clear filters</a></p>';
