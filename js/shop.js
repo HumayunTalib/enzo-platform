@@ -62,7 +62,9 @@
   }
 
   function productCardHTML(p) {
-    var swatches = p.colors.map(function (c) {
+    // Shade lists are empty until confirmed with production — render nothing
+    // rather than a placeholder chip that implies a shade we can't stand behind.
+    var swatches = (p.colors || []).map(function (c) {
       return '<span class="swatch" style="background:' + c.hex + '" title="' + c.name + '"></span>';
     }).join('');
     var href = 'product-' + p.slug + '.html';
@@ -76,7 +78,7 @@
           '</button>' +
         '</div>' +
         '<h3 class="product-name"><a href="' + href + '">' + p.code + '</a></h3>' +
-        '<p class="product-meta">' + p.season + ' · ' + p.gsm + ' GSM</p>' +
+        '<p class="product-meta">' + [p.season, p.construction].filter(Boolean).join(' · ') + '</p>' +
         '<p class="product-price">Rs. ' + p.price + ' / metre</p>' +
         '<div class="swatch-row">' + swatches + '</div>' +
         '<a href="' + href + '" class="product-cta">View Fabric →</a>' +

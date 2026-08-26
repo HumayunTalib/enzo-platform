@@ -20,16 +20,23 @@
   var orderBtn = document.getElementById('pdp-order');
   var enquireLink = document.getElementById('pdp-enquire');
 
-  var selectedColor = product.colors[0];
+  // colors may legitimately be empty — no shade is published until confirmed.
+  var colors = product.colors || [];
+  var selectedColor = colors[0] || null;
 
   function renderColors() {
     if (!swatchRow) return;
-    if (product.colors.length === 1) {
+    if (!colors.length) {
       swatchRow.innerHTML = '';
-      if (selectedLabel) selectedLabel.textContent = 'Color: ' + product.colors[0].name;
+      if (selectedLabel) selectedLabel.textContent = 'Shades confirmed at your appointment.';
       return;
     }
-    swatchRow.innerHTML = product.colors.map(function (c, i) {
+    if (colors.length === 1) {
+      swatchRow.innerHTML = '';
+      if (selectedLabel) selectedLabel.textContent = 'Color: ' + colors[0].name;
+      return;
+    }
+    swatchRow.innerHTML = colors.map(function (c, i) {
       return '<button type="button" class="swatch-lg' + (i === 0 ? ' active' : '') + '" ' +
         'data-hex="' + c.hex + '" data-name="' + c.name + '" ' +
         'style="background:' + c.hex + '" aria-label="' + c.name + '" title="' + c.name + '"></button>';
@@ -38,7 +45,10 @@
   }
 
   function updateSelectedLabel() {
-    if (selectedLabel) selectedLabel.textContent = 'Selected: ' + selectedColor.name;
+    if (!selectedLabel) return;
+    selectedLabel.textContent = selectedColor
+      ? 'Selected: ' + selectedColor.name
+      : 'Shades confirmed at your appointment.';
   }
 
   if (swatchRow) {
@@ -61,7 +71,8 @@
   if (orderBtn) {
     orderBtn.addEventListener('click', function () {
       var qty = getQty();
-      var msg = 'Hello ENZO, I would like to order: ' + product.code + ', ' + selectedColor.name + ', ' + qty + ' metres.';
+      var msg = 'Hello ENZO, I would like to order: ' + product.code +
+        (selectedColor ? ', ' + selectedColor.name : '') + ', ' + qty + ' metres.';
       window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
   }

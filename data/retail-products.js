@@ -1,17 +1,21 @@
-/* Shop-grid source of truth for ENZO's 4 real retail/finished-goods codes
-   (internal codename "RAQI" pre-merge — not a public-facing brand).
-   product-*.html pages are hand-authored separately for SEO/OG/link-preview
-   correctness (WhatsApp/social scrapers don't run JS) — update BOTH when a
-   price, color, or spec changes. Never add a product/color/spec here that
-   isn't confirmed real.
+/* Shop-grid source of truth for ENZO's 4 finished-goods codes (internal
+   codename "RAQI" pre-merge — not a public-facing brand). product-*.html pages
+   are hand-authored separately for SEO/OG/link-preview correctness
+   (WhatsApp/social scrapers don't run JS) — update BOTH when anything changes.
+   Never add a product/colour/spec here that isn't confirmed real.
 
-   ENZO manufactures its own fabric; it does not source or trade. These four
-   codes are our own production in Faisalabad — the `production` field says so
-   and must never be reframed as a supplier or source.
+   ENZO manufactures its own fabric; it does not source or trade. The
+   `production` field says so and must never be reframed as a supplier.
 
-   [NEEDS INPUT] Noor and Waqar previously cited the discontinued Nova Silk and
-   Wostar Wool. Their weight, sett and composition figures were recorded against
-   those qualities and need re-confirming against current production. */
+   2026-08-27: every finished GSM, sett and composition previously held here was
+   recorded against discontinued qualities and could not be verified. All of it
+   has been REMOVED rather than replaced with a guess. `construction`
+   (reed × pick / warp × weft count) is confirmed with production and is the
+   only spec published. Shade lists were verbatim copies of discontinued
+   qualities' lists and have been removed entirely — shades live on the
+   wholesale qualities in data/products.js, not here.
+
+   Prices are ENZO's own retail figures and are correct. */
 var RAQI_PRODUCTS = [
   {
     code: 'Safa',
@@ -23,21 +27,11 @@ var RAQI_PRODUCTS = [
     characterTag: 'standing',
     tagline: 'The dry-hand opener',
     desc: 'Micro-crepe weave with a dry, springy hand that stands slightly away from the body. The first fabric to put in a client’s hand.',
-    gsm: 150,
-    sett: '108 × 76',
+    construction: '65×58 / 28×28',
     price: 400,
     production: 'Woven by ENZO, Faisalabad',
-    image: 'assets/products/bb-04-summer.webp',
-    colors: [
-      { name: 'Sky Blue', hex: '#6EB0D8' },
-      { name: 'Mint', hex: '#A8D8C8' },
-      { name: 'Pearl White', hex: '#F5F0E8' },
-      { name: 'Sand', hex: '#C4A882' },
-      { name: 'Powder Blue', hex: '#B8D8EE' },
-      { name: 'Sage', hex: '#9AAF88' },
-      { name: 'Light Grey', hex: '#C0C0C0' },
-      { name: 'Ivory', hex: '#FFFFF0' }
-    ]
+    image: 'assets/products/bluebird.webp',
+    colors: []   // removed 2026-08-27 — were verbatim copies of discontinued qualities' shade lists
   },
   {
     code: 'Noor',
@@ -49,14 +43,11 @@ var RAQI_PRODUCTS = [
     characterTag: 'fluid',
     tagline: 'The evening code',
     desc: 'Fluid, weighted fall engineered for hall lighting — scatters light rather than flashing under LED or tungsten.',
-    gsm: 166,
-    sett: '128 × 84',
+    construction: '96×80 / 150D × 40VP',
     price: 500,
     production: 'Woven by ENZO, Faisalabad',
-    image: 'assets/products/ns-01.webp',
-    colors: [
-      { name: 'Midnight', hex: '#1A1F2E' }
-    ]
+    image: 'assets/products/noor.webp',
+    colors: []   // removed 2026-08-27 — were verbatim copies of discontinued qualities' shade lists
   },
   {
     code: 'Waqar',
@@ -67,22 +58,12 @@ var RAQI_PRODUCTS = [
     character: 'Structural',
     characterTag: 'structural',
     tagline: 'The structural code',
-    desc: 'Poly-wool worsted that holds a pressed pleat and a sculptural fold. The range’s quiet authority piece.',
-    gsm: 247,
-    sett: '96 × 72',
+    desc: 'A 30/2 × 30/2 two-ply construction that holds a pressed pleat and a sculptural fold. The range’s quiet authority piece.',
+    construction: '52×44 / 30/2 × 30/2',
     price: 400,
     production: 'Woven by ENZO, Faisalabad',
-    image: 'assets/products/ww-07.webp',
-    colors: [
-      { name: 'Charcoal', hex: '#3A3A3A' },
-      { name: 'Camel', hex: '#C19A6B' },
-      { name: 'Slate', hex: '#6B7C8A' },
-      { name: 'Deep Brown', hex: '#4A2C1A' },
-      { name: 'Forest', hex: '#2D4A2D' },
-      { name: 'Midnight Blue', hex: '#1A2B45' },
-      { name: 'Burgundy', hex: '#800020' },
-      { name: 'Stone', hex: '#8A8070' }
-    ]
+    image: 'assets/products/waqar.webp',
+    colors: []   // removed 2026-08-27 — were verbatim copies of discontinued qualities' shade lists
   },
   {
     code: 'Daim',
@@ -93,21 +74,11 @@ var RAQI_PRODUCTS = [
     character: 'Neutral',
     characterTag: 'neutral',
     tagline: 'The daily driver',
-    desc: 'Balanced, wash-and-wear construction with no knee or seat memory at hour twelve. The permanent core.',
-    gsm: 192,
-    sett: '124 × 88',
+    desc: 'A balanced construction with no knee or seat memory at hour twelve. The permanent core.',
+    construction: '',            // [NOT CONFIRMED — omitted rather than guessed]
     price: 400,
     production: 'Woven by ENZO, Faisalabad',
-    image: 'assets/products/bb-04-winter.webp',
-    colors: [
-      { name: 'Deep Navy', hex: '#1A2B45' },
-      { name: 'Graphite', hex: '#4A4A4A' },
-      { name: 'Rust', hex: '#8B3A2A' },
-      { name: 'Olive', hex: '#4A5A2A' },
-      { name: 'Plum', hex: '#6B2B5A' },
-      { name: 'Teal', hex: '#1A5A5A' },
-      { name: 'Dark Khaki', hex: '#6B6040' },
-      { name: 'Ink', hex: '#1A1A2E' }
-    ]
+    image: 'assets/products/daim.webp',
+    colors: []   // removed 2026-08-27 — were verbatim copies of discontinued qualities' shade lists
   }
 ];
