@@ -323,44 +323,67 @@
 .has-cart .wa-float { bottom: calc(var(--s3) + 68px); }
 
 /* ============================================================
-   NAV SUBMENU — Catalog holds the two product lines.
-   Fabric and fibre are separate businesses; the submenu keeps
-   them adjacent without promoting fibre to a top-level item.
-   Hover for pointers, focus-within for keyboards. Catalog itself
-   stays a working link, so nothing here is the only route in —
-   the footer carries Fibre on every page.
+   NAV SUBMENU — Catalog is a link that also holds the two lines.
+   Desktop opens on hover and on keyboard focus; a chevron button
+   toggles it on tap, so touch never depends on hover. The parent
+   stays a real link to catalog.html, which is the overview page.
+   Restrained: a hairline and a soft lift, no heavy chrome.
    ============================================================ */
-.nav-item { position: relative; display: flex; align-items: center; }
+.nav-item { position: relative; display: flex; align-items: center; gap: 4px; }
+
+.nav-sub-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; padding: 0; border: 0; background: none;
+  color: currentColor; cursor: pointer; opacity: .65;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+.nav-sub-toggle svg { width: 9px; height: 9px; display: block; }
+.nav-item:hover .nav-sub-toggle,
+.nav-sub-toggle[aria-expanded="true"] { opacity: 1; }
+.nav-sub-toggle[aria-expanded="true"] { transform: rotate(180deg); }
+
 .nav-sub {
-  position: absolute; top: 100%; left: 50%; transform: translate(-50%, -4px);
-  min-width: 190px; padding: var(--s2) 0;
+  position: absolute; top: calc(100% + 10px); left: 0;
+  min-width: 176px; padding: 6px 0;
   background: var(--warm-white);
   border: 1px solid var(--line); border-radius: var(--r2);
-  box-shadow: 0 12px 32px rgba(20, 43, 68, 0.12);
+  box-shadow: 0 6px 20px rgba(20, 43, 68, .08);
   display: flex; flex-direction: column;
-  opacity: 0; pointer-events: none;
-  transition: opacity .2s var(--ease), transform .2s var(--ease);
+  opacity: 0; pointer-events: none; transform: translateY(-4px);
+  transition: opacity .18s var(--ease), transform .18s var(--ease);
   z-index: 101;
 }
 .nav-item:hover .nav-sub,
-.nav-item:focus-within .nav-sub { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
-/* keeps the pointer from falling through the gap under the trigger */
-.nav-item:after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 10px; }
+.nav-item:focus-within .nav-sub,
+.nav-sub.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+/* bridges the gap so the pointer can travel down without it closing */
+.nav-item:after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 12px; }
 
 .nav-sub a {
-  padding: 8px var(--s3); font-size: var(--fs-xs); letter-spacing: .04em;
-  text-transform: none; color: var(--charcoal); white-space: nowrap;
+  padding: 7px var(--s3); font-size: var(--fs-xs); font-weight: 500;
+  letter-spacing: .03em; text-transform: none; color: var(--slate);
+  white-space: nowrap; transition: color .18s var(--ease);
 }
 .nav-sub a:after { display: none; }
-.nav-sub a:hover { color: var(--navy); background: var(--stone); }
-/* the dark-hero header inverts .nav a — the panel is always light */
-.site-header.over-hero:not(.is-solid) .nav-sub a { color: var(--charcoal); }
+.nav-sub a:hover, .nav-sub a[aria-current="page"] { color: var(--navy); }
+/* the panel stays light even where the dark hero inverts .nav a to white */
+.site-header.over-hero:not(.is-solid) .nav-sub a { color: var(--slate); }
 .site-header.over-hero:not(.is-solid) .nav-sub a:hover { color: var(--navy); }
 
-/* mobile panel: fibre sits indented beneath Catalog */
-.mobile-nav a.mobile-sub {
+/* ── mobile: tap to expand, never hover ── */
+.mobile-item { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.mobile-item > a { flex: 1; border-bottom: 0 !important; }
+.mobile-sub-toggle {
+  flex: 0 0 auto; width: 44px; height: 44px; padding: 0; border: 0;
+  background: none; color: var(--slate); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: transform .2s var(--ease);
+}
+.mobile-sub-toggle svg { width: 12px; height: 12px; }
+.mobile-sub-toggle[aria-expanded="true"] { transform: rotate(180deg); color: var(--navy); }
+.mobile-sub-panel { display: none; flex-direction: column; }
+.mobile-sub-panel.open { display: flex; }
+.mobile-nav .mobile-sub-panel a {
   font-size: 1.0625rem; padding-left: var(--s3); color: var(--slate);
 }
-.mobile-nav a.mobile-sub:before {
-  content: "└"; margin-right: var(--s2); color: var(--line-strong);
-}
+.mobile-nav .mobile-sub-panel a:before { content: "\2014"; margin-right: var(--s2); color: var(--line-strong); }

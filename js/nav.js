@@ -43,6 +43,31 @@
     });
   }
 
+  /* ── Catalog submenu ──
+     Desktop opens on hover/focus via CSS. These handlers add the tap and
+     keyboard paths, so touch and keyboard never depend on hover. The parent
+     stays an ordinary link to catalog.html throughout. */
+  document.querySelectorAll('.nav-sub-toggle, .mobile-sub-toggle').forEach(function (btn) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!panel) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.classList.toggle('open', !open);
+    });
+  });
+
+  var closeSubs = function (refocus) {
+    document.querySelectorAll('.nav-sub.open').forEach(function (panel) {
+      panel.classList.remove('open');
+      var btn = document.querySelector('[aria-controls="' + panel.id + '"]');
+      if (btn) { btn.setAttribute('aria-expanded', 'false'); if (refocus) btn.focus(); }
+    });
+  };
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSubs(true); });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.nav-item')) closeSubs(false); });
+
   /* ── Current page ──
      Matched on filename so it works identically on the live domain,
      the project-path staging URL, and file:// previews. */

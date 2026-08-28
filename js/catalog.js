@@ -15,8 +15,8 @@
   var state = { category: initialCat };
 
   function cardHTML(p) {
-    var href = 'contact.html?quality=' + encodeURIComponent(p.name) +
-      (p.article ? '&article=' + encodeURIComponent(p.article) : '');
+    var href = p.href || ('contact.html?quality=' + encodeURIComponent(p.name) +
+      (p.article ? '&article=' + encodeURIComponent(p.article) : ''));
     // Swatches only when we have real hex values. Shade names without colour
     // data render as text — eight identical placeholder chips say less than
     // the names do, and inventing brand colours is not an option.
@@ -38,15 +38,18 @@
         (specBits ? '<p class="product-spec">' + specBits + '</p>' : '') +
         (swatches ? '<div class="swatch-row">' + swatches + '</div>' : '') +
         (shadeText ? '<p class="product-spec">' + shadeText + '</p>' : '') +
-        '<a href="' + href + '" class="product-cta">' + (p.comingSoon ? 'Notify Me →' : 'Request Quote →') + '</a>' +
+        '<a href="' + href + '" class="product-cta">' + (p.href ? 'View Fibre →' : (p.comingSoon ? 'Notify Me →' : 'Request Quote →')) + '</a>' +
       '</article>'
     );
   }
 
   function render() {
+    // The catalog carries both business lines, rendered as separate blocks.
+    // Filters belong to the woven range; fibre has its own section below.
+    var FABRIC = PRODUCTS.filter(function (p) { return p.line !== 'fibre'; });
     var list = state.category === 'all'
-      ? PRODUCTS
-      : PRODUCTS.filter(function (p) { return p.category === state.category; });
+      ? FABRIC
+      : FABRIC.filter(function (p) { return p.category === state.category; });
 
     grid.innerHTML = list.map(cardHTML).join('');
     if (countEl) countEl.textContent = list.length + (list.length === 1 ? ' construction' : ' constructions');
@@ -62,6 +65,15 @@
     } else {
       grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
     }
+  }
+
+  // ── Fibre block — always shown, never filtered by the fabric categories ──
+  var fibreGrid = document.getElementById('fibre-grid');
+  if (fibreGrid) {
+    var fibre = PRODUCTS.filter(function (p) { return p.line === 'fibre'; });
+    fibreGrid.innerHTML = fibre.map(cardHTML).join('');
+    if (typeof applyImageFallback === 'function') applyImageFallback(fibreGrid);
+    fibreGrid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
 
   document.querySelectorAll('[data-filter]').forEach(function (btn) {

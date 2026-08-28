@@ -15,6 +15,7 @@ const PRODUCTS = [
     id: 'bluebird',
     name: 'Bluebird',
     article: 'BB-04',
+    line: 'fabric',
     category: 'four-season',
     eyebrow: 'Four-Season Suiting',
     description: 'Four-season suiting woven on our own looms, offered across an eight-shade grey range.',
@@ -32,6 +33,7 @@ const PRODUCTS = [
     id: 'loomaura',
     name: 'LoomAura',
     article: '',
+    line: 'fabric',
     category: 'four-season',
     eyebrow: 'Four-Season Suiting',
     description: 'A 64×64 / 26×26 four-season construction, woven in Faisalabad. Black and navy blue.',
@@ -49,6 +51,7 @@ const PRODUCTS = [
     id: 'vp-gold',
     name: 'VP Gold',
     article: '',
+    line: 'fabric',
     category: 'winter',
     eyebrow: 'Winter Suiting',
     description: 'A 56×52 / 20×20 winter construction, woven in Faisalabad. One shade now, with further shades in production for the season.',
@@ -66,6 +69,7 @@ const PRODUCTS = [
     id: 'stan',
     name: 'Stan',
     article: 'ST-01',
+    line: 'fabric',
     category: 'two-tone',   // no season confirmed — filed by its own confirmed descriptor
                             // so it stays reachable instead of showing only under "All"
 
@@ -79,6 +83,29 @@ const PRODUCTS = [
     colorHex: [],
     imgProduct:   'assets/products/stan.webp',
     imgLifestyle: 'assets/lifestyle/stan.webp',
+    comingSoon: false,
+  },
+  {
+    // ── Fibre: a separate business line. ENZO imports and trades this; it does
+    //    not spin or manufacture fibre. Shop never lists it — 1 tonne is not a
+    //    consumer quantity. Detail lives on fibre.html.
+    id: 'viscose-staple',
+    name: 'Viscose Staple Fibre',
+    article: '',
+    line: 'fibre',
+    category: 'fibre',
+    eyebrow: 'Imported \u00b7 Traded',
+    description: 'Viscose staple fibre in 3D, 4D and 5D, cut 38mm, 44mm or 51mm. Imported from China, limited stock held in Lahore.',
+    construction: '3D / 4D / 5D \u00b7 38, 44, 51\u2009mm',
+    composition: '',
+    tag: 'Fibre',
+    inStock: true,
+    colors: [],
+    colorHex: [],
+    imgProduct:   'assets/viscose-fibre.jpg',
+    imgLifestyle: 'assets/viscose-fibre.jpg',
+    href: 'fibre.html',
+    moq: '1 tonne',
     comingSoon: false,
   },
 ];

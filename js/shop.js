@@ -89,7 +89,9 @@
 
   function renderGrid() {
     var grid = document.getElementById('shop-grid');
-    var filtered = PRODUCTS.filter(matches);
+    // Shop is direct-to-consumer. Fibre is wholesale-only at a one-tonne
+    // minimum, so it never appears here.
+    var filtered = PRODUCTS.filter(function (p) { return p.line !== 'fibre'; }).filter(matches);
     var countEl = document.getElementById('shop-count');
     if (!filtered.length) {
       grid.innerHTML = '<p class="body" style="grid-column:1/-1;text-align:center;padding:64px 0;">No fabrics match this combination. <a href="shop.html" class="link">Clear filters</a></p>';
