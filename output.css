@@ -321,3 +321,46 @@
 .wa-float svg { width: 24px; height: 24px; fill: var(--warm-white); }
 /* When the cart bar is present it owns the bottom-right corner */
 .has-cart .wa-float { bottom: calc(var(--s3) + 68px); }
+
+/* ============================================================
+   NAV SUBMENU — Catalog holds the two product lines.
+   Fabric and fibre are separate businesses; the submenu keeps
+   them adjacent without promoting fibre to a top-level item.
+   Hover for pointers, focus-within for keyboards. Catalog itself
+   stays a working link, so nothing here is the only route in —
+   the footer carries Fibre on every page.
+   ============================================================ */
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-sub {
+  position: absolute; top: 100%; left: 50%; transform: translate(-50%, -4px);
+  min-width: 190px; padding: var(--s2) 0;
+  background: var(--warm-white);
+  border: 1px solid var(--line); border-radius: var(--r2);
+  box-shadow: 0 12px 32px rgba(20, 43, 68, 0.12);
+  display: flex; flex-direction: column;
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+  z-index: 101;
+}
+.nav-item:hover .nav-sub,
+.nav-item:focus-within .nav-sub { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+/* keeps the pointer from falling through the gap under the trigger */
+.nav-item:after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 10px; }
+
+.nav-sub a {
+  padding: 8px var(--s3); font-size: var(--fs-xs); letter-spacing: .04em;
+  text-transform: none; color: var(--charcoal); white-space: nowrap;
+}
+.nav-sub a:after { display: none; }
+.nav-sub a:hover { color: var(--navy); background: var(--stone); }
+/* the dark-hero header inverts .nav a — the panel is always light */
+.site-header.over-hero:not(.is-solid) .nav-sub a { color: var(--charcoal); }
+.site-header.over-hero:not(.is-solid) .nav-sub a:hover { color: var(--navy); }
+
+/* mobile panel: fibre sits indented beneath Catalog */
+.mobile-nav a.mobile-sub {
+  font-size: 1.0625rem; padding-left: var(--s3); color: var(--slate);
+}
+.mobile-nav a.mobile-sub:before {
+  content: "└"; margin-right: var(--s2); color: var(--line-strong);
+}
