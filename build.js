@@ -41,7 +41,7 @@ console.log('generated → js/config.js');
 // ── Build dist/ (nav + footer are inlined in each page; no injection step) ──
 var pages = [
   'index', 'about', 'catalog', 'calculator', 'contact', 'wholesale',
-  'shop', 'journal', 'product-safa', 'product-noor', 'product-waqar', 'product-daim'
+  'shop', 'journal', 'fibre', 'product-safa', 'product-noor', 'product-waqar', 'product-daim'
 ];
 
 // Clean dist so removed source files never linger in the artifact.
