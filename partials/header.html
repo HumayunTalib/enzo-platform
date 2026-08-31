@@ -1,0 +1,25 @@
+<header class="site-header {{HEADER_CLASS}}" id="site-header">
+  <div class="container">
+    <a href="{{BASE}}index.html" class="brand" aria-label="ENZO — home">ENZO</a>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-item has-sub">
+        <a href="{{BASE}}catalog.html">Catalog</a>
+        <button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="nav-sub-catalog" aria-label="Open the Catalog menu"><svg viewBox="0 0 12 8" aria-hidden="true" fill="none"><path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-sub" id="nav-sub-catalog">
+          <a href="{{BASE}}catalog.html#fabric">Fabric</a>
+          <a href="{{BASE}}fibre.html">Viscose Fibre</a>
+        </div>
+      </div>
+      <a href="{{BASE}}shop.html">Shop</a>
+      <a href="{{BASE}}wholesale.html">Wholesale</a>
+      <a href="{{BASE}}journal.html">Journal</a>
+      <a href="{{BASE}}about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <a href="{{BASE}}contact.html" class="btn btn-secondary header-cta">Contact</a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

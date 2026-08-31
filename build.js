@@ -56,7 +56,48 @@ var configJs =
 fs.writeFileSync('js/config.js', configJs);
 console.log('generated → js/config.js');
 
-// ── Build dist/ (nav + footer are inlined in each page; no injection step) ──
+// ── Sync shared partials into every page ──
+// GitHub Pages serves this repo's ROOT, so the root .html files are the site.
+// Header, mobile nav and footer used to be hand-copied into all 63 of them --
+// 31% of the HTML was that repetition, and a nav change meant editing 63 files.
+// They now live in partials/ and are written back between the <!--#name--> and
+// <!--/#name--> markers on each page. The markup emitted is byte-for-byte what
+// was there before; {{BASE}} resolves the ../ that journal pages need, and the
+// header keeps whatever class the page already carried (is-static / over-hero).
+function syncPartials() {
+  var names = ['header', 'mobile-nav', 'footer'];
+  var parts = {};
+  names.forEach(function (n) {
+    parts[n] = fs.readFileSync(path.join('partials', n + '.html'), 'utf8');
+  });
+
+  var files = fs.readdirSync('.')
+    .filter(function (f) { return f.endsWith('.html'); })
+    .concat(fs.readdirSync('journal').map(function (f) { return path.join('journal', f); }));
+
+  var touched = 0;
+  files.forEach(function (file) {
+    var html = fs.readFileSync(file, 'utf8');
+    if (html.indexOf('<!--#header-->') === -1) return;   // redirect stubs carry no chrome
+    var base = file.indexOf(path.sep) === -1 ? '' : '../';
+    var headerClass = (html.match(/<header class="site-header ([^"]+)"/) || [])[1] || 'is-static';
+    var before = html;
+
+    names.forEach(function (n) {
+      var body = parts[n]
+        .replace(/\{\{BASE\}\}/g, base)
+        .replace(/\{\{HEADER_CLASS\}\}/g, headerClass);
+      var re = new RegExp('<!--#' + n + '-->[\\s\\S]*?<!--/#' + n + '-->');
+      html = html.replace(re, '<!--#' + n + '-->\n' + body + '\n<!--/#' + n + '-->');
+    });
+
+    if (html !== before) { fs.writeFileSync(file, html); touched++; }
+  });
+  console.log('partials → synced into ' + files.length + ' pages (' + touched + ' rewritten)');
+}
+syncPartials();
+
+// ── Build dist/ (pages carry the synced partials; no further injection) ──
 var pages = [
   'index', 'about', 'catalog', 'calculator', 'contact', 'wholesale',
   'shop', 'journal', 'fibre', 'product-safa', 'product-noor', 'product-waqar', 'product-daim'
