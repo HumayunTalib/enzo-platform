@@ -25,6 +25,11 @@
   --charcoal:    #1A1D21;
   --slate:       #68727D;
   --copper:      #A66345;
+  /* Parent-company mark. Same hue on both grounds: brick on warm-white,
+     lifted terracotta on navy. --copper itself fails contrast on both
+     (4.29:1 light, 3.08:1 on navy), so it could not be reused here. */
+  --oxblood:      #9B3B2C;
+  --oxblood-soft: #D08E7C;
 
   /* Derived neutrals — biased warm so they sit with warm-white,
      never a pure inherited grey */

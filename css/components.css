@@ -393,3 +393,26 @@
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
+
+/* ============================================================
+   PARENT COMPANY — "Humayun Ibrahim Textile"
+   Set in the site's serif rather than the UI sans, and in a
+   restrained brick red. It is the house behind the cloth, so it
+   reads as a signature rather than another line of chrome.
+   Serif runs optically smaller at a shared px size, so it is
+   nudged up slightly to sit level with the text around it.
+   ============================================================ */
+.parent-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.09em;
+  letter-spacing: 0.005em;
+  color: var(--oxblood);
+}
+/* Lifted on every dark ground. Brick on --deep-navy measures 2.60:1, so this
+   is a contrast fix, not a preference: .hero and .on-deep must be listed too,
+   not just .on-navy. */
+.on-navy .parent-name,
+.on-deep .parent-name,
+.hero .parent-name,
+.site-footer .parent-name { color: var(--oxblood-soft); }
