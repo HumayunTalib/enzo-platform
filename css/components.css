@@ -416,3 +416,19 @@
 .on-deep .parent-name,
 .hero .parent-name,
 .site-footer .parent-name { color: var(--oxblood-soft); }
+
+/* ── Install affordance (calculator only). Sits in the flow, never over it. ── */
+.install-host {
+  display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap;
+  margin-top: var(--s4); padding-top: var(--s3);
+  border-top: 1px solid var(--line-dark);
+}
+.install-host[hidden] { display: none; }
+.install-note { font-size: var(--fs-sm); color: #C3CEDA; margin: 0; max-width: 46ch; }
+.install-note strong { color: var(--warm-white); font-weight: 600; }
+.install-dismiss {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: .1em;
+  text-transform: uppercase; color: #8FA3B5;
+}
+.install-dismiss:hover { color: var(--warm-white); }

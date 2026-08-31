@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; worker-src 'self'; manifest-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
 <title>Viscose Staple Fibre | ENZO — Imported, Held in Lahore</title>
 <meta name="description" content="Viscose staple fibre in 3D, 4D and 5D, cut 38mm, 44mm or 51mm. Imported from China, limited stock held in Lahore. One tonne minimum. ENZO Tower, Main Westwood Road, Thokar Niaz Baig.">
 <meta name="robots" content="index,follow">
@@ -23,10 +23,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/logo/favicon-180.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#142B44">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="output.css?v=7">
+<link rel="stylesheet" href="output.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -155,7 +157,7 @@
       </div>
       <div class="col-5" style="display:flex;flex-direction:column;gap:var(--s2);justify-content:center;">
         <a href="https://wa.me/923218230266?text=Hello%20ENZO%2C%20I%27d%20like%20to%20enquire%20about%20viscose%20staple%20fibre.%20Denier%3A%20%0ACut%20length%3A%20%0AQuantity%20%28tonnes%29%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-invert btn-block">Enquire on WhatsApp</a>
-        <a href="mailto:info@enzolhr.com?subject=Viscose%20staple%20fibre%20enquiry&body=Denier%3A%20%0ACut%20length%3A%20%0AQuantity%20(tonnes)%3A%20" class="btn btn-secondary btn-block" style="color:#fff;border-color:rgba(255,255,255,.55);">Email an enquiry</a>
+        <a href="mailto:info@enzolhr.com?subject=Viscose%20staple%20fibre%20enquiry&body=Denier%3A%20%0ACut%20length%3A%20%0AQuantity%20(tonnes)%3A%20" class="btn btn-secondary btn-block">Email an enquiry</a>
         <p class="xs" style="color:#8FA3B5;font-family:var(--mono);text-align:center;">info@enzolhr.com &nbsp;·&nbsp; +92&nbsp;321&nbsp;8230266</p>
       </div>
     </div>
@@ -211,5 +213,6 @@
 <!--/#footer-->
 <script src="js/motion.js"></script>
 <script src="js/media.js"></script>
+<script src="js/pwa.js"></script>
 </body>
 </html>

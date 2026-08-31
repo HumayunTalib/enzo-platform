@@ -127,7 +127,7 @@ copyDir('raqi-site', 'dist/raqi-site'); // old RAQI URLs — redirect stubs, not
 // css/components.css is appended onto output.css by `npm run build:css`
 // (one stylesheet request per page instead of two) — not copied standalone.
 
-['robots.txt', 'sitemap.xml'].forEach(function (f) {
+['robots.txt', 'sitemap.xml', 'manifest.json', 'sw.js'].forEach(function (f) {
   if (fs.existsSync(f)) fs.copyFileSync(f, 'dist/' + f);
 });
 console.log('copied → assets/ js/ data/ journal/ raqi-site/ + SEO files');

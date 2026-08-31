@@ -355,7 +355,11 @@ p { margin: 0; }
 .site-header.over-hero:not(.is-solid) .nav a:hover,
 .site-header.over-hero:not(.is-solid) .nav a[aria-current="page"] { color: var(--warm-white); }
 .site-header.over-hero:not(.is-solid) .nav a::after { background: var(--warm-white); }
+/* A secondary button on any dark section was navy-on-navy — invisible. The
+   header had this override; the dark page sections never did. */
+.on-navy .btn-secondary, .on-deep .btn-secondary,
 .site-header.over-hero:not(.is-solid) .btn-secondary { color: var(--warm-white); border-color: rgba(247,245,241,0.5); }
+.on-navy .btn-secondary:hover, .on-deep .btn-secondary:hover,
 .site-header.over-hero:not(.is-solid) .btn-secondary:hover { background: var(--warm-white); color: var(--navy); border-color: var(--warm-white); }
 .site-header.over-hero:not(.is-solid) .menu-toggle span { background: var(--warm-white); }
 

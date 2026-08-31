@@ -1,0 +1,26 @@
+{
+  "name": "ENZO Fabric Calculator",
+  "short_name": "ENZO Calc",
+  "description": "Work a woven fabric cost per metre from reed, pick, counts and yarn rates. Works offline.",
+  "start_url": "/calculator.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#142B44",
+  "background_color": "#142B44",
+  "lang": "en-PK",
+  "icons": [
+    {
+      "src": "/assets/logo/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
