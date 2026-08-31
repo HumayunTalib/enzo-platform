@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="output.css?v=5">
+<link rel="stylesheet" href="output.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -125,8 +125,10 @@
     <div class="card mt-6" style="max-width:480px;">
       <p class="label mb-1">Stay Informed</p>
       <p class="small mb-2">Get notified when a new shade lot opens.</p>
-      <form id="notify-form" class="row" aria-label="Shade-lot notification signup">
-        <input type="email" name="email" class="input" placeholder="you@email.com" required autocomplete="email" style="flex:1;min-width:180px;">
+      <form id="notify-form" class="row" action="https://formspree.io/f/xqpkpzre" method="POST" aria-label="Shade-lot notification signup">
+          <input type="hidden" name="_subject" value="ENZO — shade-lot notify signup">
+        <label for="notify-email" class="sr-only">Email address</label>
+          <input type="email" id="notify-email" name="email" class="input" placeholder="you@email.com" required autocomplete="email" aria-label="Email address" style="flex:1;min-width:180px;">
         <button type="submit" class="btn btn-primary">Notify Me</button>
       </form>
       <p id="notify-status" role="status" aria-live="polite" class="xs mt-1"></p>

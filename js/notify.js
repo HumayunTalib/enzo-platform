@@ -1,12 +1,12 @@
 /* ============================================================
    ENZO — shade-lot notify signup (shop.html only). Email capture,
-   Formspree, same account/ID as js/contact.js but a distinct form
-   so submissions land in a distinguishable subject. No-op if the
+   Formspree, same endpoint as js/contact.js; a hidden _subject marks it
+   apart in the inbox. No-op if the
    form isn't present on the current page.
    ============================================================ */
 (function () {
   'use strict';
-  var FORMSPREE_ID = (window.ENZO_CONFIG && window.ENZO_CONFIG.formspreeId) || 'xykardnj';
+  var FORMSPREE_ID = (window.ENZO_CONFIG && window.ENZO_CONFIG.formspreeId) || '';
   var form = document.getElementById('notify-form');
   if (!form) return;
   var status = document.getElementById('notify-status');
@@ -26,6 +26,11 @@
     var btn = form.querySelector('[type="submit"]');
     if (btn) btn.disabled = true;
     setStatus('Sending…', true);
+
+    if (!FORMSPREE_ID) {
+      setStatus('Signup is unavailable right now — email info@enzolhr.com.', false);
+      return;
+    }
 
     fetch('https://formspree.io/f/' + FORMSPREE_ID, {
       method: 'POST',
