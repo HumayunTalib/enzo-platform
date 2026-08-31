@@ -11,7 +11,10 @@
   if (!grid || typeof PRODUCTS === 'undefined') return;
 
   var countEl = document.getElementById('catalog-count');
-  var initialCat = new URLSearchParams(window.location.search).get('cat') || 'all';
+  // 'fibre' is a line, not a fabric category — it has its own block below,
+  // so treat it as no filter rather than emptying the fabric grid.
+  var requested = new URLSearchParams(window.location.search).get('cat');
+  var initialCat = (!requested || requested === 'fibre') ? 'all' : requested;
   var state = { category: initialCat };
 
   function cardHTML(p) {
@@ -54,17 +57,7 @@
     grid.innerHTML = list.map(cardHTML).join('');
     if (countEl) countEl.textContent = list.length + (list.length === 1 ? ' construction' : ' constructions');
     if (typeof applyImageFallback === 'function') applyImageFallback(grid);
-
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.1 });
-      grid.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-    } else {
-      grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-    }
+    applyReveal(grid);
   }
 
   // ── Fibre block — always shown, never filtered by the fabric categories ──
@@ -73,7 +66,7 @@
     var fibre = PRODUCTS.filter(function (p) { return p.line === 'fibre'; });
     fibreGrid.innerHTML = fibre.map(cardHTML).join('');
     if (typeof applyImageFallback === 'function') applyImageFallback(fibreGrid);
-    fibreGrid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    applyReveal(fibreGrid);
   }
 
   document.querySelectorAll('[data-filter]').forEach(function (btn) {

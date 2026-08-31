@@ -3,11 +3,14 @@
    The previous custom cursor and page loader were removed in the
    rebuild: both cost perceived speed and neither helped the user
    navigate, choose, or trust.
-   ============================================================ */
-(function () {
-  'use strict';
 
-  var els = document.querySelectorAll('.reveal');
+   Exposed as applyReveal() because the catalog and shop grids
+   re-render on filter and must reveal the new nodes; they used to
+   each carry their own copy of this observer.
+   ============================================================ */
+function applyReveal(root) {
+  'use strict';
+  var els = (root || document).querySelectorAll('.reveal:not(.in)');
   if (!els.length) return;
 
   if (!('IntersectionObserver' in window) ||
@@ -25,4 +28,5 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(function (el) { io.observe(el); });
-})();
+}
+applyReveal();

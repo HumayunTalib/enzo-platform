@@ -101,15 +101,7 @@
     if (countEl) countEl.textContent = filtered.length + (filtered.length === 1 ? ' fabric' : ' fabrics');
     if (typeof applyImageFallback === 'function') applyImageFallback(grid);
     if (window.EnzoCartUI) window.EnzoCartUI.refresh();
-
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.1 });
-      grid.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-    } else {
-      grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-    }
+    applyReveal(grid);
   }
 
   document.addEventListener('click', function (e) {
