@@ -6,13 +6,13 @@ module.exports = {
       colors: {
         // Navy is the identity; warm white is the ground; stone gives structure.
         // Copper is an accent only — never a second brand color.
-        'navy':       '#142B44',
-        'deep-navy':  '#0B1828',
-        'warm-white': '#F7F5F1',
-        'stone':      '#E7E3DC',
-        'charcoal':   '#1A1D21',
-        'slate':      '#68727D',
-        'copper':     '#A66345',
+        'navy':       '#1E3585',
+        'deep-navy':  '#0E1640',
+        'warm-white': '#FFFFFF',
+        'stone':      '#EEF1FB',
+        'charcoal':   '#0A0A0A',
+        'slate':      '#4A5578',
+        'copper':     '#4F6BD8',
       },
       fontFamily: {
         sans:  ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],

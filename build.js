@@ -98,10 +98,7 @@ function syncPartials() {
 syncPartials();
 
 // ── Build dist/ (pages carry the synced partials; no further injection) ──
-var pages = [
-  'index', 'about', 'catalog', 'calculator', 'contact', 'wholesale',
-  'shop', 'journal', 'fibre', 'product-safa', 'product-noor', 'product-waqar', 'product-daim'
-];
+var pages = ['index', 'about', 'journal'];
 
 // Clean dist so removed source files never linger in the artifact.
 // rmSync can hit EPERM on Windows if a file is briefly locked — retry, then
@@ -120,9 +117,7 @@ pages.forEach(function (page) {
 
 copyDir('assets',    'dist/assets');
 copyDir('js',        'dist/js');   // includes the generated config.js
-copyDir('data',      'dist/data');
 copyDir('journal',   'dist/journal');   // long-form article pages behind journal.html
-copyDir('raqi-site', 'dist/raqi-site'); // old RAQI URLs — redirect stubs, not a live app
 
 // css/components.css is appended onto output.css by `npm run build:css`
 // (one stylesheet request per page instead of two) — not copied standalone.

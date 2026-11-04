@@ -18,26 +18,30 @@
      Navy is the identity. Warm white is the ground. Stone gives
      structure. Copper is an accent, not a second brand color —
      keep it under ~2% of any page. */
-  --navy:        #142B44;
-  --deep-navy:   #0B1828;
-  --warm-white:  #F7F5F1;
-  --stone:       #E7E3DC;
-  --charcoal:    #1A1D21;
-  --slate:       #68727D;
-  --copper:      #A66345;
+  --navy:        #1E3585;
+  --deep-navy:   #0E1640;
+  --warm-white:  #FFFFFF;
+  --stone:       #EEF1FB;
+  --charcoal:    #0A0A0A;
+  --slate:       #4A5578;
+  --copper:      #4F6BD8;
+  --blue-500:    #4F6BD8;
+  --blue-300:    #9FB0EE;
+  --blue-100:    #E6EAF9;
+  --blue-50:     #EEF1FB;
   /* Parent-company mark. Same hue on both grounds: brick on warm-white,
      lifted terracotta on navy. --copper itself fails contrast on both
      (4.29:1 light, 3.08:1 on navy), so it could not be reused here. */
-  --oxblood:      #9B3B2C;
-  --oxblood-soft: #D08E7C;
+  --oxblood:      #1E3585;
+  --oxblood-soft: #9FB0EE;
 
   /* Derived neutrals — biased warm so they sit with warm-white,
      never a pure inherited grey */
-  --line:        #DCD6CC;                 /* hairline on warm surfaces */
-  --line-strong: #C9C1B4;
-  --line-dark:   rgba(247,245,241,0.14);  /* hairline on navy surfaces */
+  --line:        #D9DFF2;                 /* hairline on warm surfaces */
+  --line-strong: #B8C3E8;
+  --line-dark:   rgba(255,255,255,0.14);  /* hairline on navy surfaces */
   --surface:     #FFFFFF;
-  --slate-soft:  #8A939C;
+  --slate-soft:  #7C89B5;
 
   /* ── Spacing scale — the only permitted values ────────── */
   --s1: 8px;
@@ -204,7 +208,7 @@ p { margin: 0; }
 .xs    { font-size: var(--fs-xs);   line-height: 1.55; color: var(--slate); }
 
 .on-navy .lead, .on-navy .body, .on-navy .small, .on-navy .xs,
-.on-deep .lead, .on-deep .body, .on-deep .small, .on-deep .xs { color: #B8C4D0; }
+.on-deep .lead, .on-deep .body, .on-deep .small, .on-deep .xs { color: #B8C3E8; }
 
 .label {
   display: block;
@@ -215,7 +219,7 @@ p { margin: 0; }
   text-transform: uppercase;
   color: var(--slate);
 }
-.on-navy .label, .on-deep .label { color: #8C9BAB; }
+.on-navy .label, .on-deep .label { color: #8D9BD6; }
 .label-copper { color: var(--copper); }
 
 .num { font-variant-numeric: tabular-nums; font-family: var(--mono); }
@@ -252,8 +256,8 @@ p { margin: 0; }
 .btn-invert { background: var(--warm-white); color: var(--navy); border-color: var(--warm-white); }
 .btn-invert:hover { background: var(--stone); border-color: var(--stone); }
 
-.btn-ghost-light { background: transparent; color: var(--warm-white); border-color: rgba(247,245,241,0.38); }
-.btn-ghost-light:hover { border-color: var(--warm-white); background: rgba(247,245,241,0.08); }
+.btn-ghost-light { background: transparent; color: var(--warm-white); border-color: rgba(255,255,255,0.38); }
+.btn-ghost-light:hover { border-color: var(--warm-white); background: rgba(255,255,255,0.08); }
 
 .btn-sm    { padding: 10px 18px; font-size: var(--fs-label); }
 .btn-block { width: 100%; }
@@ -271,7 +275,7 @@ p { margin: 0; }
   transition: border-color .22s var(--ease), color .22s var(--ease);
 }
 .link:hover { border-bottom-color: var(--copper); }
-.on-navy .link, .on-deep .link { color: var(--warm-white); border-bottom-color: rgba(247,245,241,0.3); }
+.on-navy .link, .on-deep .link { color: var(--warm-white); border-bottom-color: rgba(255,255,255,0.3); }
 .on-navy .link:hover, .on-deep .link:hover { border-bottom-color: var(--copper); }
 
 /* ============================================================
@@ -351,14 +355,14 @@ p { margin: 0; }
 
 /* Over a dark hero, before scroll, the header inverts */
 .site-header.over-hero:not(.is-solid) .brand { color: var(--warm-white); }
-.site-header.over-hero:not(.is-solid) .nav a { color: rgba(247,245,241,0.86); }
+.site-header.over-hero:not(.is-solid) .nav a { color: rgba(255,255,255,0.86); }
 .site-header.over-hero:not(.is-solid) .nav a:hover,
 .site-header.over-hero:not(.is-solid) .nav a[aria-current="page"] { color: var(--warm-white); }
 .site-header.over-hero:not(.is-solid) .nav a::after { background: var(--warm-white); }
 /* A secondary button on any dark section was navy-on-navy — invisible. The
    header had this override; the dark page sections never did. */
 .on-navy .btn-secondary, .on-deep .btn-secondary,
-.site-header.over-hero:not(.is-solid) .btn-secondary { color: var(--warm-white); border-color: rgba(247,245,241,0.5); }
+.site-header.over-hero:not(.is-solid) .btn-secondary { color: var(--warm-white); border-color: rgba(255,255,255,0.5); }
 .on-navy .btn-secondary:hover, .on-deep .btn-secondary:hover,
 .site-header.over-hero:not(.is-solid) .btn-secondary:hover { background: var(--warm-white); color: var(--navy); border-color: var(--warm-white); }
 .site-header.over-hero:not(.is-solid) .menu-toggle span { background: var(--warm-white); }
@@ -430,7 +434,7 @@ p { margin: 0; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero-scrim {
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(11,24,40,0.93) 0%, rgba(11,24,40,0.72) 48%, rgba(11,24,40,0.34) 100%);
+  background: linear-gradient(90deg, rgba(14,22,64,0.93) 0%, rgba(14,22,64,0.72) 48%, rgba(14,22,64,0.34) 100%);
 }
 .hero-inner { position: relative; z-index: 1; width: 100%; padding-block: var(--s7) var(--s6); }
 
@@ -451,7 +455,7 @@ p { margin: 0; }
   gap: var(--s2);
 }
 .on-navy .card, .on-deep .card {
-  background: rgba(247,245,241,0.05);
+  background: rgba(255,255,255,0.05);
   border-color: var(--line-dark);
 }
 .on-stone .card { background: var(--warm-white); }
@@ -497,8 +501,8 @@ p { margin: 0; }
 .product-card:hover .product-cta { color: var(--copper); }
 
 .swatch-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: var(--s2); }
-.swatch { width: 13px; height: 13px; border-radius: 50%; border: 1px solid rgba(26,29,33,0.18); flex: none; }
-.swatch-lg { width: 34px; height: 34px; border-radius: var(--r1); border: 1px solid rgba(26,29,33,0.18); cursor: pointer; padding: 0; }
+.swatch { width: 13px; height: 13px; border-radius: 50%; border: 1px solid rgba(10,10,10,0.18); flex: none; }
+.swatch-lg { width: 34px; height: 34px; border-radius: var(--r1); border: 1px solid rgba(10,10,10,0.18); cursor: pointer; padding: 0; }
 .swatch-lg.active { outline: 2px solid var(--navy); outline-offset: 2px; }
 
 /* ============================================================
@@ -563,19 +567,19 @@ p { margin: 0; }
 
 .on-deep .input, .on-deep .select, .on-deep .textarea,
 .on-navy .input, .on-navy .select, .on-navy .textarea {
-  background: rgba(247,245,241,0.06);
-  border-color: rgba(247,245,241,0.22);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.22);
   color: var(--warm-white);
 }
 .on-deep .input:focus, .on-deep .select:focus, .on-deep .textarea:focus,
 .on-navy .input:focus, .on-navy .select:focus, .on-navy .textarea:focus { border-color: var(--warm-white); }
-.on-deep .input::placeholder, .on-navy .input::placeholder { color: rgba(247,245,241,0.4); }
+.on-deep .input::placeholder, .on-navy .input::placeholder { color: rgba(255,255,255,0.4); }
 .on-deep .select, .on-navy .select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8C4D0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .field-hint { font-size: var(--fs-label); color: var(--slate); }
-.on-deep .field-hint, .on-navy .field-hint { color: #8C9BAB; }
+.on-deep .field-hint, .on-navy .field-hint { color: #8D9BD6; }
 
 /* ============================================================
    FILTERS
@@ -615,17 +619,17 @@ p { margin: 0; }
 .footer-rule  { width: 32px; height: 2px; background: var(--copper); border: 0; margin: var(--s2) 0 var(--s3); }
 .footer-col h4 {
   font-family: var(--mono); font-size: var(--fs-label); font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase; color: #8C9BAB; margin-bottom: var(--s2);
+  letter-spacing: 0.12em; text-transform: uppercase; color: #8D9BD6; margin-bottom: var(--s2);
 }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.footer-col a { font-size: var(--fs-sm); color: #C3CEDA; transition: color .2s var(--ease); }
+.footer-col a { font-size: var(--fs-sm); color: #D5DCF7; transition: color .2s var(--ease); }
 .footer-col a:hover { color: var(--warm-white); }
 .footer-bottom {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2);
   padding-top: var(--s3);
-  font-size: var(--fs-xs); color: #7F8C99;
+  font-size: var(--fs-xs); color: #7C89B5;
 }
-.footer-bottom a { color: #7F8C99; }
+.footer-bottom a { color: #7C89B5; }
 .footer-bottom a:hover { color: var(--warm-white); }
 
 /* ============================================================

@@ -445,7 +445,7 @@ for (const page of pages) {
         <p style="font-family:'Inter',sans-serif;font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:#5C7386;" class="mb-4">Contact</p>
         <address class="not-italic flex flex-col gap-2" style="font-size:0.875rem;color:#D6DEE6;">
           <a href="mailto:info@enzolhr.com"          style="color:#D6DEE6;" class="nav-link">info@enzolhr.com</a>
-          <a href="https://wa.me/923218230266"       style="color:#D6DEE6;" class="nav-link" target="_blank" rel="noopener noreferrer">+92 321 8230266</a>
+          <a href="https://wa.me/923126418414"       style="color:#D6DEE6;" class="nav-link" target="_blank" rel="noopener noreferrer">+92 312 6418414</a>
           <span style="color:#5C7386;">ENZO Tower, Thokar Niaz Baig<br>Lahore, Pakistan</span>
         </address>
         <p style="font-size:0.75rem;color:#5C7386;margin-top:1.25rem;line-height:1.5;">Certifications (OEKO-TEX, BCI, Control Union) held at yarn-supplier level. Documentation available on request.</p>
@@ -853,7 +853,7 @@ bags              = ceil(0.11239*10000/45) = ceil(24.98) = 25
 - [ ] Create `js/calculator.js`:
 ```js
 (function () {
-  const PHONE = '923218230266';
+  const PHONE = '923126418414';
 
   const get = id => document.getElementById(id);
 
@@ -1012,7 +1012,7 @@ Sections (Navy → Light → Navy → Light per alternation rule):
   - Inquiry form fields: Name, Company, Email, Phone, Quantity (metres, min 10,000), Quality/Article (text), Delivery location, Message
   - All inputs have real `<label for>` elements
   - Form `action` attribute left as `#` (no backend — static site)
-  - WhatsApp channel: `<a href="https://wa.me/923218230266">` with display number +92 321 8230266
+  - WhatsApp channel: `<a href="https://wa.me/923126418414">` with display number +92 312 6418414
   - Email channel: `<a href="mailto:info@enzolhr.com">`
   - Address: ENZO Tower, Thokar Niaz Baig, Lahore, Pakistan
   - Quote turnaround promise: "1 business day" — use as trust signal

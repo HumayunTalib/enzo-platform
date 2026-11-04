@@ -74,7 +74,7 @@
 
 .cart-backdrop {
   position: fixed; inset: 0; z-index: 95;
-  background: rgba(11,24,40,0.5);
+  background: rgba(14,22,64,0.5);
   opacity: 0; pointer-events: none;
   transition: opacity .28s var(--ease);
 }
@@ -114,7 +114,7 @@
 .quickadd {
   position: absolute; top: 12px; right: 12px; z-index: 2;
   width: 32px; height: 32px; border-radius: var(--r1);
-  background: rgba(247,245,241,0.92);
+  background: rgba(255,255,255,0.92);
   border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center;
   color: var(--navy); cursor: pointer; padding: 0;
@@ -167,12 +167,12 @@
 .calc-fieldset legend {
   padding: 0;
   font-family: var(--mono); font-size: var(--fs-label); font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase; color: #8C9BAB;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #8D9BD6;
   margin-bottom: var(--s3);
 }
 
 .calc-output {
-  background: rgba(247,245,241,0.05);
+  background: rgba(255,255,255,0.05);
   border: 1px solid var(--line-dark);
   border-radius: var(--r3);
   padding: var(--s4);
@@ -188,7 +188,7 @@
   letter-spacing: -0.02em;
   margin-top: 6px;
 }
-.calc-value-sm { font-family: var(--mono); font-size: 1.125rem; color: #C3CEDA; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.calc-value-sm { font-family: var(--mono); font-size: 1.125rem; color: #D5DCF7; font-variant-numeric: tabular-nums; margin-top: 4px; }
 .calc-secondary { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
 
 /* ============================================================
@@ -200,8 +200,8 @@
 .article-body > * + * { margin-top: var(--s3); }
 .article-body h2 { font-size: 1.5rem; margin-top: var(--s6); }
 .article-body h3 { font-size: 1.1875rem; margin-top: var(--s5); }
-.article-body p { color: #3A4046; }
-.article-body ul, .article-body ol { padding-left: var(--s3); color: #3A4046; }
+.article-body p { color: #1B2250; }
+.article-body ul, .article-body ol { padding-left: var(--s3); color: #1B2250; }
 .article-body li + li { margin-top: var(--s1); }
 .article-body strong { color: var(--charcoal); font-weight: 600; }
 .article-body a { color: var(--navy); border-bottom: 1px solid var(--line-strong); }
@@ -219,7 +219,7 @@
 
 .article-formula {
   background: var(--deep-navy);
-  color: #DCE4EC;
+  color: #E6EAF9;
   border-radius: var(--r2);
   padding: var(--s3);
   font-family: var(--mono);
@@ -347,7 +347,7 @@
   min-width: 176px; padding: 6px 0;
   background: var(--warm-white);
   border: 1px solid var(--line); border-radius: var(--r2);
-  box-shadow: 0 6px 20px rgba(20, 43, 68, .08);
+  box-shadow: 0 6px 20px rgba(30, 53, 133, .08);
   display: flex; flex-direction: column;
   opacity: 0; pointer-events: none; transform: translateY(-4px);
   transition: opacity .18s var(--ease), transform .18s var(--ease);
@@ -424,11 +424,41 @@
   border-top: 1px solid var(--line-dark);
 }
 .install-host[hidden] { display: none; }
-.install-note { font-size: var(--fs-sm); color: #C3CEDA; margin: 0; max-width: 46ch; }
+.install-note { font-size: var(--fs-sm); color: #D5DCF7; margin: 0; max-width: 46ch; }
 .install-note strong { color: var(--warm-white); font-weight: 600; }
 .install-dismiss {
   background: none; border: 0; padding: 0; cursor: pointer;
   font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: .1em;
-  text-transform: uppercase; color: #8FA3B5;
+  text-transform: uppercase; color: #9FB0EE;
 }
 .install-dismiss:hover { color: var(--warm-white); }
+
+/* ── Logo (Nov 2026): image wordmark replaces the text brand ── */
+.brand { display: flex; align-items: center; line-height: 0; }
+.brand img { height: 40px; width: auto; }
+@media (min-width: 768px) { .brand img { height: 48px; } }
+.footer-logo { display: inline-block; line-height: 0; }
+.footer-logo img { height: 56px; width: auto; }
+@media (min-width: 720px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1.2fr; } }
+.site-footer .footer-rule { background: var(--blue-500); }
+.site-footer .parent-name { font-family: var(--sans); font-weight: 600; color: #fff; }
+.site-footer .small { color: #D5DCF7; }
+.hm-form label { align-content: start; }
+.mobile-nav a.btn-primary { color: #fff; }
+
+/* ── Journal article extras (Nov 2026) ── */
+.article-figure { margin: var(--s4) 0; }
+.article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: var(--r2); background: #fff; }
+.article-figure figcaption { font-size: var(--fs-sm); color: #4A5578; margin-top: var(--s1); line-height: 1.5; }
+.article-toc { border: 1px solid var(--line); border-radius: var(--r2); padding: var(--s3); background: var(--stone); }
+.article-toc ol { margin: var(--s1) 0 0; padding-left: 1.2em; }
+.article-toc li + li { margin-top: 4px; }
+.article-toc a, .article-related-list a, .article-sources a { border-bottom: 1px solid var(--line-strong); }
+.breadcrumb a { color: var(--navy); }
+.breadcrumb span { color: #4A5578; }
+.article-sources { font-size: var(--fs-sm); }
+.article-related { max-width: 68ch; margin-top: var(--s5); padding-top: var(--s3); border-top: 1px solid var(--line); }
+.article-related ul { padding-left: 1.2em; margin-top: var(--s1); }
+.article-body code { font-family: var(--mono); font-size: .9em; background: var(--stone); padding: 1px 5px; border-radius: 3px; }
+.article-formula { white-space: pre-wrap; }
+.article-body ol { list-style: decimal; } .article-body ul:not(.article-related-list) { list-style: disc; }
