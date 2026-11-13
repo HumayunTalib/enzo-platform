@@ -98,7 +98,7 @@ function syncPartials() {
 syncPartials();
 
 // ── Build dist/ (pages carry the synced partials; no further injection) ──
-var pages = ['index', 'about', 'journal'];
+var pages = ['index', 'about', 'journal', 'store'];
 
 // Clean dist so removed source files never linger in the artifact.
 // rmSync can hit EPERM on Windows if a file is briefly locked — retry, then

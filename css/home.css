@@ -149,3 +149,12 @@
 .hm-wa svg{width:22px;height:22px;fill:currentColor}
 @media(max-width:560px){.hm-wa span{display:none}.hm-wa{padding:15px}}
 @media(prefers-reduced-motion:reduce){.hm-live i{animation:none}.hm-card,.hm-chip,.hm-btn,.hm-post{transition:none}}
+
+/* ---- stock video ---- */
+.vid{position:relative;border-radius:14px;overflow:hidden;background:#0A0A0A;box-shadow:0 30px 60px -30px rgba(14,22,64,.55)}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:848/478;object-fit:cover}
+.vid-toggle{position:absolute;right:14px;bottom:14px;background:rgba(10,10,10,.78);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:8px 16px;font:600 .8rem var(--sans);cursor:pointer;backdrop-filter:blur(4px)}
+.vid-toggle:hover{background:#1E3585}
+.vid-cap{font-size:.875rem;color:#4A5578;margin-top:10px}
+.hm-video{display:grid;gap:var(--s5);align-items:center}
+@media(min-width:960px){.hm-video{grid-template-columns:1.1fr .9fr}}

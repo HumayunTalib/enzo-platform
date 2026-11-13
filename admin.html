@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>ENZO Shop Desk</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="assets/logo/favicon.ico" sizes="any">
+<meta name="theme-color" content="#1E3585">
+<style>
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#EEF1FB;color:#0A0A0A}
+header{background:#0A0A0A;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
+header b{font-size:1.05rem;letter-spacing:-.01em}header small{color:#9FB0EE;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+main{max-width:1000px;margin:0 auto;padding:18px}
+button,input,select{font:inherit}
+.btn{border:1.5px solid #1E3585;background:#1E3585;color:#fff;border-radius:6px;padding:10px 14px;cursor:pointer;font-weight:600}
+.btn:hover{background:#0A0A0A;border-color:#0A0A0A}.btn.ghost{background:#fff;color:#1E3585}.btn.ghost:hover{background:#0A0A0A;color:#fff}.btn.sm{padding:7px 10px;font-size:.85rem}.btn.danger{border-color:#B00020;background:#fff;color:#B00020}
+input,select{padding:10px 12px;border:1.5px solid #D9DFF2;border-radius:6px;background:#fff;min-width:0}
+.card{background:#fff;border:1px solid #E6EAF9;border-radius:12px;padding:16px;margin-bottom:14px}
+.login{max-width:360px;margin:12vh auto;text-align:center}.login input{width:100%;margin:12px 0;text-align:center;font-size:1.3rem;letter-spacing:.3em}
+.tabs{display:flex;gap:8px;margin-bottom:14px}.tabs button{flex:1}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.grow{flex:1 1 200px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}th{text-align:left;font:600 .7rem ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#4A5578;padding:8px 6px;border-bottom:2px solid #E6EAF9}td{padding:10px 6px;border-bottom:1px solid #E6EAF9;vertical-align:top}
+.tag{display:inline-block;font:600 .7rem ui-monospace,Menlo,monospace;letter-spacing:.06em;padding:3px 9px;border-radius:99px;background:#E6EAF9;color:#1E3585;text-transform:uppercase}
+.tag.available{background:#1E3585;color:#fff}.tag.sold{background:#0A0A0A;color:#fff}.tag.reserved{background:#9FB0EE;color:#0E1640}.tag.hidden{background:#D9DFF2;color:#4A5578}
+.acts{display:flex;flex-wrap:wrap;gap:6px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#0A0A0A;color:#fff;padding:12px 18px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90%;z-index:20}#toast.on{opacity:1}
+.hide{display:none!important}.small{font-size:.85rem;color:#4A5578}
+@media(max-width:700px){th:nth-child(n+4),td:nth-child(n+4){display:none}.hideM{display:none}}
+</style>
+</head>
+<body>
+<header><div><b>ENZO Shop Desk</b><br><small id="sync">not connected</small></div><div class="row"><button class="btn ghost sm" id="refresh" hidden>Refresh</button><button class="btn ghost sm" id="logout" hidden>Lock</button></div></header>
+<main>
+  <div id="login" class="card login">
+    <h2 style="margin:0 0 4px">Shop Desk</h2><p class="small" style="margin:0">Enter your PIN</p>
+    <input id="pin" type="password" inputmode="numeric" autocomplete="current-password" aria-label="PIN">
+    <button class="btn" id="go" style="width:100%">Unlock</button><p class="small" id="lerr" style="color:#B00020;min-height:1.4em"></p>
+  </div>
+
+  <div id="app" class="hide">
+    <div class="card"><b>Quick sale</b> <span class="small">— type or scan a piece code, then sell it at the counter</span>
+      <div class="row" style="margin-top:10px"><input id="qcode" class="grow" placeholder="Piece code" autocapitalize="characters"><input id="qprice" type="number" min="0" placeholder="Price (blank = list price)" style="width:200px"><input id="qbuyer" placeholder="Buyer (optional)" style="width:180px"><button class="btn" id="qsell">Sell</button></div>
+    </div>
+    <div class="tabs"><button class="btn" id="t-inv">Pieces</button><button class="btn ghost" id="t-ord">Online orders <span id="ncount"></span></button></div>
+
+    <section id="p-inv">
+      <div class="row" style="margin-bottom:10px"><input id="search" class="grow" placeholder="Search code, quality, colour"><select id="sf"><option value="">All</option><option>available</option><option>reserved</option><option>sold</option><option>hidden</option></select></div>
+      <div class="card" style="padding:6px 10px;overflow:auto"><table><thead><tr><th>Code</th><th>Piece</th><th>Price</th><th>Length</th><th>Status</th><th></th></tr></thead><tbody id="inv"></tbody></table></div>
+      <p class="small">Add or edit pieces directly in the Google Sheet (Inventory tab). This page is for selling and releasing them.</p>
+    </section>
+
+    <section id="p-ord" class="hide">
+      <div id="ords"></div>
+    </section>
+  </div>
+</main>
+<div id="toast" role="status"></div>
+<script src="js/store-config.js"></script>
+<script>
+(function () {
+  'use strict';
+  var API = (window.ENZO_STORE || {}).API || '';
+  var $ = function (i) { return document.getElementById(i); };
+  var pin = '', data = { items: [], orders: [] };
+  function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+  function money(n) { return 'Rs ' + Number(n).toLocaleString('en-PK'); }
+  function toast(m) { var t = $('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(function () { t.classList.remove('on'); }, 2800); }
+  function call(body) {
+    body.pin = pin;
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body), redirect: 'follow' }).then(function (r) { return r.json(); });
+  }
+  function load() {
+    return call({ action: 'admin_list' }).then(function (d) {
+      if (!d.ok) { throw new Error(d.error || 'fail'); }
+      data = d; draw(); $('sync').textContent = 'synced ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    });
+  }
+  function login() {
+    if (!API) { $('lerr').textContent = 'Set the Apps Script URL in js/store-config.js first.'; return; }
+    pin = $('pin').value.trim(); if (!pin) return;
+    $('go').disabled = true;
+    load().then(function () {
+      try { sessionStorage.setItem('enzo_pin', pin); } catch (e) {}
+      $('login').classList.add('hide'); $('app').classList.remove('hide'); $('refresh').hidden = false; $('logout').hidden = false;
+    }).catch(function (e) {
+      $('lerr').textContent = e.message === 'auth' ? 'Wrong PIN (5 wrong tries pauses access for 10 minutes).' : 'Could not connect.';
+    }).then(function () { $('go').disabled = false; });
+  }
+  function draw() {
+    var q = $('search').value.trim().toLowerCase(), sf = $('sf').value;
+    var rows = data.items.filter(function (i) { return (!sf || i.status === sf) && (!q || (i.code + ' ' + i.name + ' ' + i.colour).toLowerCase().indexOf(q) > -1); });
+    $('inv').innerHTML = rows.map(function (i) {
+      var a = '';
+      if (i.status === 'available') a += '<button class="btn sm" data-a="sell" data-c="' + esc(i.code) + '">Sell</button><button class="btn sm ghost" data-a="hide" data-c="' + esc(i.code) + '">Hide</button>';
+      if (i.status === 'reserved') a += '<button class="btn sm" data-a="sellforce" data-c="' + esc(i.code) + '">Sell</button><button class="btn sm ghost" data-a="release" data-c="' + esc(i.code) + '">Release</button>';
+      if (i.status === 'hidden') a += '<button class="btn sm ghost" data-a="release" data-c="' + esc(i.code) + '">Show</button>';
+      if (i.status === 'sold') a += '<button class="btn sm ghost" data-a="release" data-c="' + esc(i.code) + '">Undo sale</button>';
+      return '<tr><td><b>' + esc(i.code) + '</b></td><td>' + esc(i.name) + '<br><span class="small">' + esc(i.colour) + '</span></td><td>' + money(i.price_pkr) + '</td><td>' + esc(i.length_m) + ' m</td><td><span class="tag ' + esc(i.status) + '">' + esc(i.status) + '</span>' + (i.order_id ? '<br><span class="small">' + esc(i.order_id) + '</span>' : '') + '</td><td><div class="acts">' + a + '</div></td></tr>';
+    }).join('') || '<tr><td colspan="6" class="small">No pieces.</td></tr>';
+    var open = data.orders.filter(function (o) { return o.status === 'New' || o.status === 'Paid'; }).length;
+    $('ncount').textContent = open ? '(' + open + ')' : '';
+    $('ords').innerHTML = data.orders.map(function (o) {
+      var a = '';
+      if (o.status === 'New') a += '<button class="btn sm ghost" data-o="Paid" data-i="' + esc(o.order_id) + '">Mark paid</button>';
+      if (o.status === 'New' || o.status === 'Paid') a += '<button class="btn sm" data-o="Collected" data-i="' + esc(o.order_id) + '">Collected &amp; paid</button><button class="btn sm danger" data-o="Cancelled" data-i="' + esc(o.order_id) + '">Cancel</button>';
+      return '<div class="card"><div class="row" style="justify-content:space-between"><b>' + esc(o.order_id) + '</b><span class="tag ' + (o.status === 'Collected' ? 'sold' : o.status === 'New' ? 'reserved' : o.status === 'Paid' ? 'available' : 'hidden') + '">' + esc(o.status) + '</span></div>' +
+        '<p style="margin:6px 0">' + esc(o.name) + ' · <a href="https://wa.me/' + esc(String(o.phone).replace(/\D/g, '')) + '" target="_blank" rel="noopener noreferrer">' + esc(o.phone) + '</a></p>' +
+        '<p style="margin:6px 0"><b>' + money(o.total_pkr) + '</b> · ' + esc(o.payment) + ' · <span class="small">' + esc(o.items) + '</span></p>' +
+        (o.note ? '<p class="small" style="margin:6px 0">“' + esc(o.note) + '”</p>' : '') +
+        '<p class="small" style="margin:6px 0">' + new Date(o.created_at).toLocaleString() + '</p><div class="acts">' + a + '</div></div>';
+    }).join('') || '<p class="small">No online orders yet.</p>';
+  }
+  function act(body, okMsg) {
+    return call(body).then(function (d) {
+      if (!d.ok) { toast({ reserved: 'That piece is reserved by an online order — use the Sell button in the list to override.', already_sold: 'Already sold.', not_found: 'Code not found.', auth: 'PIN rejected.' }[d.error] || 'Failed: ' + d.error); return; }
+      toast(okMsg); return load();
+    }).catch(function () { toast('Connection problem — nothing was changed. Try again.'); });
+  }
+  $('go').addEventListener('click', login);
+  $('pin').addEventListener('keydown', function (e) { if (e.key === 'Enter') login(); });
+  $('refresh').addEventListener('click', function () { load().then(function () { toast('Updated'); }); });
+  $('logout').addEventListener('click', function () { try { sessionStorage.removeItem('enzo_pin'); } catch (e) {} location.reload(); });
+  $('search').addEventListener('input', draw); $('sf').addEventListener('change', draw);
+  $('t-inv').addEventListener('click', function () { $('p-inv').classList.remove('hide'); $('p-ord').classList.add('hide'); $('t-inv').classList.remove('ghost'); $('t-ord').classList.add('ghost'); });
+  $('t-ord').addEventListener('click', function () { $('p-ord').classList.remove('hide'); $('p-inv').classList.add('hide'); $('t-ord').classList.remove('ghost'); $('t-inv').classList.add('ghost'); });
+  $('qsell').addEventListener('click', function () {
+    var c = $('qcode').value.trim(); if (!c) return;
+    var p = $('qprice').value;
+    var it = data.items.filter(function (i) { return String(i.code).toLowerCase() === c.toLowerCase(); })[0];
+    if (it && !confirm('Sell ' + it.code + ' (' + it.name + ', ' + it.colour + ') for ' + money(p ? p : it.price_pkr) + '?')) return;
+    act({ action: 'admin_sell', code: it ? it.code : c, price: p, buyer: $('qbuyer').value }, 'Sold ' + c).then(function () { $('qcode').value = ''; $('qprice').value = ''; $('qbuyer').value = ''; });
+  });
+  $('inv').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-a]'); if (!b) return; var c = b.getAttribute('data-c'), a = b.getAttribute('data-a');
+    if (a === 'sell') { var it = data.items.filter(function (i) { return i.code === c; })[0]; if (confirm('Sell ' + c + ' for ' + money(it.price_pkr) + '?')) act({ action: 'admin_sell', code: c }, 'Sold ' + c); }
+    if (a === 'sellforce') { if (confirm('This piece is held for an online order. Sell it anyway?')) act({ action: 'admin_sell', code: c, force: true }, 'Sold ' + c); }
+    if (a === 'hide') act({ action: 'admin_status', code: c, status: 'hidden' }, c + ' hidden from the store');
+    if (a === 'release') act({ action: 'admin_status', code: c, status: 'available' }, c + ' is available again');
+  });
+  $('ords').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-o]'); if (!b) return; var s = b.getAttribute('data-o'), i = b.getAttribute('data-i');
+    if (s === 'Cancelled' && !confirm('Cancel ' + i + ' and release its pieces?')) return;
+    if (s === 'Collected' && !confirm('Mark ' + i + ' as collected and paid? Its pieces will be recorded as sold.')) return;
+    act({ action: 'admin_order', orderId: i, status: s }, i + ' → ' + s);
+  });
+  try { var sp = sessionStorage.getItem('enzo_pin'); if (sp && API) { $('pin').value = sp; login(); } } catch (e) {}
+})();
+</script>
+</body>
+</html>
