@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /queue/
 
 Sitemap: https://enzolhr.com/sitemap.xml

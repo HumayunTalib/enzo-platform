@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; worker-src 'self'; manifest-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; worker-src 'self'; manifest-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io https://formspree.io; frame-src 'none'; form-action 'self' https://formspree.io https://formspree.io; base-uri 'self'; object-src 'none'">
 <title>Moisture Regain of Fibres: Polyester, Cotton, Viscose | ENZO</title>
 <meta name="description" content="Moisture regain explained: values for polyester, cotton, linen and viscose, blend regain calculation, and an invoice weight worked example.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="../output.css?v=10">
+<link rel="stylesheet" href="../output.css?v=12">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -204,15 +204,11 @@ Invoice weight = 9,615.4 × 1.0202   ≈ 9,809.6 kg</div>
 
 <h2 id="sources">Sources</h2>
 <ol class="article-sources"><li><a href="https://store.astm.org/d1909-04r12.html" rel="noopener" target="_blank">ASTM D1909 — Standard Table of Commercial Moisture Regains for Textile Fibers</a></li><li><a href="https://archive.nptel.ac.in/content/storage2/courses/116102029/download/faq%20of%20module14.pdf" rel="noopener" target="_blank">NPTEL — Moisture textiles FAQ (blend regain worked examples)</a></li><li><a href="https://www.testextextile.com/?p=25694" rel="noopener" target="_blank">Testex — viscose fibre characteristics</a></li><li><a href="https://www.testextextile.com/?p=26368" rel="noopener" target="_blank">Testex — cotton vs viscose vs polyester moisture behaviour</a></li></ol>
-<p class="small">Figures marked as estimates are calculated from the cited fibre or construction values; they are not test results for any specific ENZO fabric. Source pages were reviewed on 4 November 2026.</p>
+<p class="small">Figures marked as estimates or illustrations are calculated or invented for explanation; they are not test results or specifications for any ENZO fabric. Source pages were reviewed in November 2026. This article is general information, not legal, customs or financial advice.</p>
         </div>
       </div>
     </div>
-    <div class="card mt-6" style="max-width:640px;background:var(--navy);border-color:var(--navy);">
-      <p class="label" style="color:#9FB0EE;">Specifying a blend for bulk production?</p>
-      <p class="body" style="color:#E6EAF9;">Share your target composition and end use. We will confirm what is practical to weave.</p>
-      <a href="../index.html#contact" class="btn btn-invert" style="align-self:flex-start;">Request a quotation</a>
-    </div>
+    <aside class="funnel" aria-labelledby="fn-h"><p class="label">Next step</p><h2 class="funnel-h" id="fn-h">See and feel the fabric</h2><p class="funnel-p">Tell us which quality you are considering and where you are based. We will reply with swatch and quotation options.</p><form class="funnel-form" data-funnel action="https://formspree.io/f/mljjawgw" method="POST" novalidate><input type="hidden" name="_subject" value="ENZO journal enquiry (swatch): fibre-moisture-regain-fabric-comfort"><input type="hidden" name="source_article" value="fibre-moisture-regain-fabric-comfort"><input type="hidden" name="funnel_stage" value="mofu"><input type="hidden" name="funnel_offer" value="swatch"><input type="hidden" name="page_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="referrer" value=""><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="fn-hp"><div class="fn-grid"><label>Name<input type="text" name="name" autocomplete="name" required></label><label>Email<input type="email" name="email" autocomplete="email" required></label><label>Country<input type="text" name="country" autocomplete="country-name" required></label><label>Quality<select name="quality"><option>Cotton 112×84</option><option>PV Blend 100×80</option><option>Poly Linen 80×72</option><option>Custom specification</option></select></label><label class="fn-wide">Details (optional)<textarea name="message" rows="3" placeholder="Composition, construction, intended use…"></textarea></label></div><p class="fn-status" role="status" aria-live="polite"></p><button type="submit" class="btn btn-invert">Request swatches and quote</button></form><p class="fn-note">We use your details only to reply to your request.</p></aside>
   </div>
 </article>
 
@@ -251,6 +247,7 @@ Invoice weight = 9,615.4 × 1.0202   ≈ 9,809.6 kg</div>
   </div>
 </footer>
 <!--/#footer-->
+<script src="../js/funnel.js"></script>
 <script src="../js/motion.js"></script>
 </body>
 </html>

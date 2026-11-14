@@ -462,3 +462,18 @@
 .article-body code { font-family: var(--mono); font-size: .9em; background: var(--stone); padding: 1px 5px; border-radius: 3px; }
 .article-formula { white-space: pre-wrap; }
 .article-body ol { list-style: decimal; } .article-body ul:not(.article-related-list) { list-style: disc; }
+
+/* ── Journal funnel block ── */
+.funnel { margin-top: var(--s6); max-width: 760px; background: var(--navy); color: #fff; border-radius: 14px; padding: clamp(22px, 4vw, 40px); }
+.funnel .label { color: #9FB0EE; }
+.funnel-h { font-family: var(--sans); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; letter-spacing: -.02em; margin: 6px 0 8px; color: #fff; }
+.funnel-p { color: #E6EAF9; max-width: 56ch; line-height: 1.6; margin: 0 0 18px; }
+.fn-grid { display: grid; gap: 14px; margin-bottom: 14px; }
+@media (min-width: 640px) { .fn-grid { grid-template-columns: 1fr 1fr; } .fn-wide { grid-column: 1 / -1; } }
+.funnel-form label { display: grid; gap: 6px; font-size: .8rem; font-weight: 600; color: #D5DCF7; }
+.funnel-form input, .funnel-form select, .funnel-form textarea { font: inherit; font-weight: 400; font-size: 1rem; padding: 12px 14px; border: 1.5px solid transparent; border-radius: 4px; background: #fff; color: #0A0A0A; width: 100%; }
+.funnel-form input:focus, .funnel-form select:focus, .funnel-form textarea:focus { outline: none; border-color: #9FB0EE; }
+.fn-hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+.fn-status { min-height: 1.4em; margin: 0 0 12px; font-size: .95rem; }
+.fn-status.ok { color: #E6EAF9; } .fn-status.err { color: #FFB4C0; }
+.fn-note { font-size: .8rem; color: #9FB0EE; margin: 12px 0 0; }
