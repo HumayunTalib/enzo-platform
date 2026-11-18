@@ -1,0 +1,71 @@
+<p class="lead">Yarn fineness is written in four common systems: Ne (English cotton count), Nm (metric count), tex and denier. A spinner may quote Ne, a polyester filament supplier denier, a European buyer tex or Nm, and all four can appear on the same specification. This reference gives the exact conversion formulas, a ready-made table for the counts most used in woven fabric, worked examples, and the mistakes that cause orders to go wrong.</p>
+<nav class="article-toc" aria-label="In this guide"><p class="label">In this guide</p><ol><li><a href="#systems">Direct and indirect systems</a></li><li><a href="#formulas">Conversion formulas</a></li><li><a href="#table">Conversion table</a></li><li><a href="#examples">Worked examples</a></li><li><a href="#ply">Plied yarns such as 2/40</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></nav>
+
+<h2 id="systems">Direct and indirect systems</h2>
+<p>All yarn count systems relate length to mass, but they do it in opposite ways.</p>
+<ul>
+<li><strong>Direct systems</strong> state the mass of a fixed length of yarn. A higher number means a <em>heavier, coarser</em> yarn. Tex is the mass in grams of 1,000 metres. Denier is the mass in grams of 9,000 metres.</li>
+<li><strong>Indirect systems</strong> state how much length you get from a fixed mass. A higher number means a <em>finer</em> yarn. Ne is the number of 840-yard hanks in one pound. Nm is the number of 1,000-metre hanks in one kilogram.</li>
+</ul>
+<p>This is why a 40s cotton yarn is finer than a 20s, while a 150-denier yarn is coarser than a 75-denier one. For the basic idea of count, see <a href="what-is-yarn-count.html">what is yarn count</a>; this page is only about moving between systems.</p>
+
+<h2 id="formulas">Conversion formulas</h2>
+<p>The constants below are the standard ones listed in textile reference material (<a href="https://www.textileschool.com/179/yarn-count-conversions/" rel="noopener" target="_blank">Textile School</a>).</p>
+<div class="article-formula">From tex:      denier = tex × 9        Ne = 590.5 ÷ tex        Nm = 1000 ÷ tex
+From denier:   tex = denier ÷ 9        Ne = 5315 ÷ denier      Nm = 9000 ÷ denier
+From Ne:       tex = 590.5 ÷ Ne        denier = 5315 ÷ Ne      Nm = Ne × 1.693
+From Nm:       tex = 1000 ÷ Nm         denier = 9000 ÷ Nm      Ne = Nm ÷ 1.693</div>
+<p>The constants are not arbitrary. One Ne hank is 840 yards (768.1 m) and one pound is 453.6 g, so 1 Ne equals about 590.5 tex; and one Nm hank is 1,000 m per kilogram, so 1 Ne equals about 1.693 Nm. Because 1.693 and 590.5 are rounded, conversions between systems are accurate to about three significant figures, which is enough for specification work but not for settling a dispute about a tolerance.</p>
+
+<h2 id="table">Conversion table for common woven-fabric counts</h2>
+<p>The table below was calculated by ENZO from the formulas above. Values are rounded; they are arithmetic conversions of nominal counts, not measurements of any yarn.</p>
+<div class="table-scroll"><table class="data-table">
+<thead><tr><th>Ne</th><th>Tex</th><th>Denier</th><th>Nm</th></tr></thead>
+<tbody>
+<tr><td>6</td><td>98.4</td><td>886</td><td>10.2</td></tr>
+<tr><td>10</td><td>59.1</td><td>532</td><td>16.9</td></tr>
+<tr><td>12</td><td>49.2</td><td>443</td><td>20.3</td></tr>
+<tr><td>16</td><td>36.9</td><td>332</td><td>27.1</td></tr>
+<tr><td>20</td><td>29.5</td><td>266</td><td>33.9</td></tr>
+<tr><td>24</td><td>24.6</td><td>221</td><td>40.6</td></tr>
+<tr><td>30</td><td>19.7</td><td>177</td><td>50.8</td></tr>
+<tr><td>36</td><td>16.4</td><td>148</td><td>60.9</td></tr>
+<tr><td>40</td><td>14.8</td><td>133</td><td>67.7</td></tr>
+<tr><td>45</td><td>13.1</td><td>118</td><td>76.2</td></tr>
+<tr><td>60</td><td>9.8</td><td>89</td><td>101.6</td></tr>
+<tr><td>80</td><td>7.4</td><td>66</td><td>135.4</td></tr>
+</tbody></table></div>
+
+<h2 id="examples">Worked examples</h2>
+<h3>Example 1: a spinner quotes Ne, a buyer asks for tex</h3>
+<p>A 30s (Ne 30) yarn: tex = 590.5 ÷ 30 = 19.7 tex. Denier = 5315 ÷ 30 = 177. Nm = 30 × 1.693 = 50.8.</p>
+<h3>Example 2: a filament yarn in denier, compared with a spun yarn</h3>
+<p>A 150-denier polyester filament yarn: tex = 150 ÷ 9 = 16.7 tex. Ne = 5315 ÷ 150 = 35.4. So it is roughly the same linear density as a 35s spun yarn. This comparison is only about weight per length; a filament yarn and a spun yarn of the same linear density behave very differently in fabric.</p>
+<h3>Example 3: a European specification in tex</h3>
+<p>A 20 tex yarn: Ne = 590.5 ÷ 20 = 29.5, Nm = 1000 ÷ 20 = 50, denier = 20 × 9 = 180. A Pakistani spinner would call this roughly a 30s yarn.</p>
+
+<h2 id="ply">Plied yarns such as 2/40</h2>
+<p>Plied yarns are written as <em>number of plies / count of each ply</em>. A 2/40 Ne yarn is two 40s yarns twisted together. Its effective count is 40 ÷ 2 = Ne 20, because two strands side by side are twice as heavy per length. Convert the <em>effective</em> count, not the printed ply count: Ne 20 is 29.5 tex, or about 266 denier. Writing 2/40 as if it were 40s is a common cause of fabric that comes out heavier than expected. For how count feeds fabric weight, see <a href="yarn-count-fabric-weight.html">yarn count and fabric weight</a> and the worked method in <a href="how-to-calculate-fabric-gsm-from-epi-ppi.html">how to calculate GSM from EPI, PPI and yarn count</a>.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Mixing direct and indirect logic.</strong> Moving from 20s to 40s makes yarn finer; moving from 20 tex to 40 tex makes it coarser.</li>
+<li><strong>Not stating the system.</strong> “30 count” with no unit is ambiguous. State Ne, Nm, tex or denier on every specification line (<a href="yarn-specs-before-bulk-order.html">yarn specifications before a bulk order</a>).</li>
+<li><strong>Using denier for spun yarn and Ne for filament without converting.</strong> Convert both to one system before comparing weight.</li>
+<li><strong>Treating nominal count as measured count.</strong> Real yarn varies along its length. Count is a nominal value with a tolerance; testing is done on lengths of actual yarn.</li>
+<li><strong>Blended yarn counts.</strong> The Ne system as defined above is the cotton system. Yarns of other fibres or blends are still commonly quoted in Ne by Pakistani spinners, but the basis should be confirmed in writing.</li>
+</ul>
+
+<h2 id="faq">Frequently asked questions</h2>
+<details class="faq-item"><summary>How do I convert Ne to tex?</summary><p>Divide 590.5 by the Ne count. For Ne 30 this gives 19.7 tex.</p></details>
+<details class="faq-item"><summary>How do I convert Ne to denier?</summary><p>Divide 5315 by the Ne count (or multiply tex by 9). Ne 30 is about 177 denier.</p></details>
+<details class="faq-item"><summary>What is the relationship between Nm and Ne?</summary><p>Nm = Ne × 1.693. A 30s Ne yarn is about Nm 50.8.</p></details>
+<details class="faq-item"><summary>Which is finer, 20s or 40s?</summary><p>40s. In indirect systems a higher number is a finer yarn. In tex and denier the opposite is true.</p></details>
+<details class="faq-item"><summary>What does tex mean?</summary><p>Tex is the mass in grams of 1,000 metres of yarn. A yarn of 20 tex weighs 20 g per kilometre.</p></details>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Yarn count conversion is simple arithmetic once the direction of each system is clear. Convert the effective count of the yarn actually in the fabric, state the system on every line, and treat the result as nominal. The same arithmetic underlies fabric weight, so a wrong conversion shows up directly in GSM and cost.</p>
+
+<h2 id="sources">Sources</h2>
+<ol class="article-sources"><li><a href="https://www.textileschool.com/179/yarn-count-conversions/" rel="noopener" target="_blank">Textile School — Yarn count conversions (constants and worked examples)</a></li></ol>
+<p class="small">The conversion table and the stated examples are calculated by ENZO from the formulas above; they are not test results or specifications for any ENZO fabric. Source page reviewed in November 2026.</p>

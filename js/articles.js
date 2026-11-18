@@ -13,6 +13,7 @@
  *                  hex    swatch colour (indicative only), e.g. '#1F2F63'
  *                  code   stock code — must match the "code" column in the Google Sheet inventory
  *                  image  optional fabric photo, e.g. 'assets/stock/MOSES-001.webp'
+ *   reading      optional [{title, href}] list of Journal articles shown as Related reading
  *   price_pkr    price used before the Google Sheet is connected (the Sheet price wins once connected)
  */
 window.ENZO_ARTICLES = [
@@ -32,6 +33,13 @@ window.ENZO_ARTICLES = [
       ['Delivery', 'Nationwide']
     ],
     price_pkr: 3969,
+    // Journal articles shown on the article page as "Related reading". Add or remove as needed.
+    reading: [
+      { title: 'Polyester-viscose (PV) fabric: a complete guide', href: 'journal/polyester-viscose-fabric-pv-blend-guide.html' },
+      { title: 'Dyeing polyester-viscose blends: disperse and reactive dyes', href: 'journal/dyeing-polyester-viscose-blends-disperse-reactive.html' },
+      { title: 'Pilling in fabric: causes and testing', href: 'journal/pilling-in-fabric-causes-testing-iso-12945-2.html' },
+      { title: 'Viscose vs modal vs lyocell', href: 'journal/viscose-vs-modal-vs-lyocell-differences.html' }
+    ],
     colours: [
       { name: 'Teal',         hex: '#1F5F6E', code: 'MOSES-001', image: 'assets/stock/MOSES-001.webp' },
       { name: 'Navy',         hex: '#1F2F63', code: 'MOSES-002', image: 'assets/stock/MOSES-002.webp' },

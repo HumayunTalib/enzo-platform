@@ -124,3 +124,9 @@
 .st-note{margin-top:10px;font-size:.8rem;color:#4A5578;line-height:1.5}
 .st-buy{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px;padding-top:20px;border-top:1.5px solid #0A0A0A;flex-wrap:wrap}
 .st-buy .st-price{margin:0}
+
+.st-read{margin-top:28px}
+.st-read ul{list-style:none;margin:10px 0 0;padding:0}
+.st-read li{border-bottom:1px solid #C9D2EE}
+.st-read a{display:block;padding:11px 0;color:#1E3585;text-decoration:none;font-size:.95rem}
+.st-read a:hover{text-decoration:underline}

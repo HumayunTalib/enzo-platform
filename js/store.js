@@ -92,7 +92,8 @@
       '<div class="st-dgrid"><div class="st-dleft">' +
       '<p class="st-lotid">' + esc(a.lot || '') + (a.demo ? ' <span class="st-tag">Sample listing</span>' : '') + '</p>' +
       '<h2 class="st-dname">' + esc(a.name) + '</h2>' + '<div class="st-desc">' + desc + '</div>' +
-      '<dl class="st-spec">' + specs + '</dl></div>' +
+      '<dl class="st-spec">' + specs + '</dl>' +
+      ((a.reading && a.reading.length) ? '<div class="st-read"><p class="st-lotid">Related reading</p><ul>' + a.reading.map(function (r) { return '<li><a href="' + esc(r.href) + '">' + esc(r.title) + '</a></li>'; }).join('') + '</ul></div>' : '') + '</div>' +
       '<div class="st-dright">' +
       (cols.length ? '<div class="st-panel"' + panelStyle + '>' + photo + '<span class="st-panel-n">' + esc(sel.name) + '</span></div>' +
         '<p class="st-sel"><span>Colour</span> <b>' + esc(sel.name) + '</b> <em>' + esc(info.label) + '</em></p>' +
