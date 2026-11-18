@@ -13,7 +13,7 @@ var CFG = {
 };
 var INV = 'Inventory', ORD = 'Orders', SALES = 'Sales';
 var INV_COLS = ['code', 'name', 'composition', 'colour', 'length_m', 'width_in', 'price_pkr', 'image', 'status', 'reserved_at', 'order_id', 'notes'];
-var ORD_COLS = ['order_id', 'created_at', 'name', 'phone', 'items', 'total_pkr', 'payment', 'status', 'note'];
+var ORD_COLS = ['order_id', 'created_at', 'name', 'phone', 'items', 'total_pkr', 'payment', 'status', 'note', 'delivery', 'address', 'city'];
 var SALES_COLS = ['sold_at', 'code', 'name', 'price_pkr', 'buyer', 'source'];
 
 /* ---------------- helpers ---------------- */
@@ -52,7 +52,7 @@ function bust_() { cache_().remove('inv'); }
 function pubItem_(o) {
   return {
     code: String(o.code), name: o.name, composition: o.composition, colour: o.colour,
-    length_m: Number(o.length_m), width_in: o.width_in === '' ? null : Number(o.width_in),
+    length_m: o.length_m === '' || o.length_m == null ? null : Number(o.length_m), width_in: o.width_in === '' ? null : Number(o.width_in),
     price_pkr: Number(o.price_pkr), image: o.image || '', status: o.status
   };
 }
@@ -111,11 +111,14 @@ function doPost(e) {
 function placeOrder_(d) {
   if (d.website) return { ok: false, error: 'rejected' };                       // honeypot
   var name = clean_(d.name, 80), phone = String(d.phone == null ? '' : d.phone).trim().slice(0, 20), note = clean_(d.note, 300);
-  var method = d.payment === 'raast' ? 'Raast transfer' : 'Pay at shop';
+  var delivery = d.delivery === 'pickup' ? 'Pickup' : 'Nationwide delivery';
+  var address = clean_(d.address, 200), city = clean_(d.city, 60);
+  var method = delivery === 'Pickup' && d.payment === 'pay_at_shop' ? 'Pay at shop' : 'Bank / Raast transfer';
   var codes = (d.codes || []).map(function (c) { return clean_(c, 40); }).filter(String);
   var uniq = {}; codes = codes.filter(function (c) { return uniq[c] ? false : (uniq[c] = true); });
   if (name.length < 2) return { ok: false, error: 'name_required' };
   if (!/^[+0-9][0-9\s\-]{8,18}$/.test(phone)) return { ok: false, error: 'phone_invalid' };
+  if (delivery !== 'Pickup' && (address.length < 5 || city.length < 2)) return { ok: false, error: 'address_required' };
   if (codes.length < 1 || codes.length > CFG.MAX_ITEMS) return { ok: false, error: 'items_invalid' };
   var digits = phone.replace(/\D/g, '');
 
@@ -146,17 +149,18 @@ function placeOrder_(d) {
     });
     setRow_(osh, osh.getLastRow() + 1, ORD_COLS, {
       order_id: orderId, created_at: now_(), name: name, phone: "'" + phone, items: codes.join(', '),
-      total_pkr: total, payment: method, status: 'New', note: note
+      total_pkr: total, payment: method, status: 'New', note: note,
+      delivery: delivery, address: address, city: city
     });
     bust_();
   } finally { lock.releaseLock(); }
 
   try {
     MailApp.sendEmail(ownerEmail_(), 'New ENZO order ' + orderId + ' — Rs ' + total,
-      'Order: ' + orderId + '\nName: ' + name + '\nPhone: ' + phone + '\nPayment: ' + method +
+      'Order: ' + orderId + '\nName: ' + name + '\nPhone: ' + phone + '\nPayment: ' + method + '\nDelivery: ' + delivery + '\nAddress: ' + address + ', ' + city +
       '\nPieces: ' + codes.join(', ') + '\nTotal: Rs ' + total + '\nNote: ' + note);
   } catch (err) { /* email quota or permission issue must never fail the order */ }
-  return { ok: true, orderId: orderId, total: total, holdHours: CFG.HOLD_HOURS, items: lines, payment: method };
+  return { ok: true, orderId: orderId, total: total, holdHours: CFG.HOLD_HOURS, items: lines, payment: method, delivery: delivery };
 }
 
 /* ---------------- admin (PIN) ---------------- */
@@ -177,7 +181,7 @@ function admin_(d) {
       var p = pubItem_(o); p.order_id = o.order_id; p.reserved_at = o.reserved_at ? new Date(o.reserved_at).toISOString() : ''; return p;
     });
     var ords = readAll_(sheet_(ORD, ORD_COLS), ORD_COLS).slice(-150).reverse().map(function (o) {
-      return { order_id: o.order_id, created_at: new Date(o.created_at).toISOString(), name: o.name, phone: String(o.phone).replace(/^'/, ''), items: o.items, total_pkr: o.total_pkr, payment: o.payment, status: o.status, note: o.note };
+      return { order_id: o.order_id, created_at: new Date(o.created_at).toISOString(), name: o.name, phone: String(o.phone).replace(/^'/, ''), items: o.items, total_pkr: o.total_pkr, payment: o.payment, status: o.status, note: o.note, delivery: o.delivery, address: o.address, city: o.city };
     });
     return { ok: true, items: items, orders: ords };
   }

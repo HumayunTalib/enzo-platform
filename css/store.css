@@ -65,3 +65,10 @@
 @media(prefers-reduced-motion:reduce){.st-card,.st-dr,.st-bar,.st-ov{transition:none}.st-skel{animation:none}}
 .st-vid{background:#EEF1FB;padding:clamp(28px,4vw,48px) 0 0}
 .st-vid .vid{max-width:720px}
+
+.st-step{display:flex;gap:12px;align-items:flex-start}
+.st-step>span{flex:none;width:28px;height:28px;border-radius:50%;background:#1E3585;color:#fff;font-weight:700;display:grid;place-items:center;font-size:.85rem}
+.st-step p{margin:4px 0 0}
+.st-step dl{margin-top:8px}
+.st-up{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center}
+#f-addr-wrap[hidden],#f-shoppay[hidden]{display:none}
