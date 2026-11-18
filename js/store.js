@@ -4,21 +4,20 @@
   var C = window.ENZO_STORE || {};
   var API = C.API || '';
   var $ = function (id) { return document.getElementById(id); };
-  var els = { grid: $('st-grid'), q: $('st-q'), ql: $('st-quality'), cl: $('st-colour'), count: $('st-count'),
+  var els = { lots: $('st-lots'), listv: $('st-list'), detail: $('st-detail'), count: $('st-count'),
     bar: $('st-bar'), barN: $('st-bar-n'), barT: $('st-bar-t'), open: $('st-open'), ov: $('st-ov'), dr: $('st-dr'),
     scroll: $('st-scroll'), close: $('st-close'), demo: $('st-demo') };
-  var state = { items: [], cart: [], loaded: false };
+  var ARTICLES = window.ENZO_ARTICLES || [];
+  var state = { items: [], cart: [], loaded: false, slug: '', sel: 0, photo: false };
   var raastOn = !!(C.RAAST && C.RAAST.IBAN && C.RAAST.TITLE && C.RAAST.ID);
 
-  var STOCK = [
-    { code: 'MOSES-001', name: 'MOSES', composition: 'PV Blend', colour: 'Teal', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' },
-    { code: 'MOSES-002', name: 'MOSES', composition: 'PV Blend', colour: 'Navy', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' },
-    { code: 'MOSES-003', name: 'MOSES', composition: 'PV Blend', colour: 'Black', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' },
-    { code: 'MOSES-004', name: 'MOSES', composition: 'PV Blend', colour: 'Plum', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' },
-    { code: 'MOSES-005', name: 'MOSES', composition: 'PV Blend', colour: 'Forest Green', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' },
-    { code: 'MOSES-006', name: 'MOSES', composition: 'PV Blend', colour: 'Brown', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' },
-    { code: 'MOSES-007', name: 'MOSES', composition: 'PV Blend', colour: 'Royal Blue', length_m: null, width_in: null, price_pkr: 3969, image: '', status: 'available' }
-  ];
+  var STOCK = [];
+  ARTICLES.forEach(function (a) {
+    (a.colours || []).forEach(function (c) {
+      var q = ''; (a.specs || []).forEach(function (x) { if (x[0] === 'Quality') q = x[1]; });
+      STOCK.push({ code: c.code, name: a.name, composition: q, colour: c.name, length_m: null, width_in: null, price_pkr: a.price_pkr, image: c.image || '', status: 'available' });
+    });
+  });
 
   /* ---------- utils ---------- */
   function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
@@ -48,10 +47,10 @@
     return fetchInventory().then(function (d) {
       if (!d || !d.ok) { throw new Error('bad'); }
       state.items = d.items; state.loaded = true; ls('enzo_inv', { items: d.items, t: Date.now() });
-      pruneCart(); fillFilters(); render(); updateBar();
+      pruneCart(); render(); updateBar();
     }).catch(function () {
       if (!state.items.length) {
-        els.grid.innerHTML = '<div class="st-msg" style="grid-column:1/-1">We could not load the stock list right now. Please try again, or <a href="https://wa.me/' + esc(C.WHATSAPP) + '" target="_blank" rel="noopener noreferrer" style="color:#1E3585;text-decoration:underline">message us on WhatsApp</a>.</div>';
+        els.lots.innerHTML = '<li class="st-msg">We could not load the stock list right now. Please try again, or <a href="https://wa.me/' + esc(C.WHATSAPP) + '" target="_blank" rel="noopener noreferrer" style="color:#1E3585;text-decoration:underline">message us on WhatsApp</a>.</li>';
       }
     });
   }
@@ -60,44 +59,75 @@
     ls('enzo_cart', state.cart);
   }
 
-  /* ---------- listing ---------- */
-  function fillFilters() {
-    function uniq(k) { var s = {}; state.items.forEach(function (i) { if (i[k]) s[i[k]] = 1; }); return Object.keys(s).sort(); }
-    function fill(sel, vals, keep) {
-      sel.innerHTML = sel.options[0].outerHTML + vals.map(function (v) { return '<option>' + esc(v) + '</option>'; }).join('');
-      sel.value = vals.indexOf(keep) > -1 ? keep : '';
-    }
-    fill(els.ql, uniq('name'), els.ql.value); fill(els.cl, uniq('colour'), els.cl.value);
+  /* ---------- articles ---------- */
+  function artBySlug(sl) { for (var i = 0; i < ARTICLES.length; i++) { if (ARTICLES[i].slug === sl) return ARTICLES[i]; } return null; }
+  function colourInfo(a, c) {
+    var it = byCode(c.code);
+    if (API && !state.loaded) return { ok: false, label: 'Checking stock…', price: a.price_pkr };
+    if (!it) return { ok: false, label: 'Not in stock', price: a.price_pkr };
+    return { ok: it.status === 'available', label: it.status === 'available' ? 'In stock' : (it.status === 'reserved' ? 'Reserved' : 'Not in stock'), price: it.price_pkr };
+  }
+  function renderList() {
+    els.count.textContent = ARTICLES.length + (ARTICLES.length === 1 ? ' article' : ' articles');
+    els.lots.innerHTML = ARTICLES.map(function (a, n) {
+      var n2 = ('0' + (n + 1)).slice(-2);
+      var meta = a.demo ? '<span class="st-tag">Sample listing</span>' : '<span>' + esc(a.summary || '') + '</span>' + (a.colours.length ? '<span>' + a.colours.length + ' colours</span>' : '');
+      return '<li><a class="st-lot' + (a.demo ? ' demo' : '') + '" href="#' + esc(a.slug) + '"><span class="st-n">' + n2 + '</span>' +
+        '<span class="st-main-t"><span class="st-lotid">' + esc(a.lot || '') + '</span><span class="st-name">' + esc(a.name) + '</span></span>' +
+        '<span class="st-lmeta">' + meta + '</span><span class="st-arr" aria-hidden="true">→</span></a></li>';
+    }).join('');
+  }
+  function renderDetail(a) {
+    var cols = a.colours || [], sel = cols[state.sel] || null, info = sel ? colourInfo(a, sel) : null;
+    var inCart = sel && state.cart.indexOf(sel.code) > -1;
+    var specs = (a.specs || []).map(function (x) { return '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('');
+    var desc = (a.description || []).map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('');
+    var swatches = cols.map(function (c, i) {
+      var ci = colourInfo(a, c);
+      return '<button type="button" class="st-sw' + (i === state.sel ? ' on' : '') + (ci.ok ? '' : ' off') + '" data-sw="' + i + '" role="radio" aria-checked="' + (i === state.sel) + '" aria-label="' + esc(c.name) + (ci.ok ? '' : ', ' + ci.label) + '" title="' + esc(c.name) + '"><i style="background:' + esc(c.hex || '#999') + '"></i><span>' + esc(c.name) + '</span></button>';
+    }).join('');
+    var panelStyle = sel ? ' style="background:' + esc(sel.hex || '#999') + '"' : '';
+    var photo = sel && sel.image && state.photo ? '<img src="' + esc(sel.image) + '" alt="' + esc(a.name + ' ' + sel.name + ' fabric') + '" width="800" height="600">' : '';
+    var h = '<a class="st-back" href="#">← All articles</a>' +
+      '<div class="st-dgrid"><div class="st-dleft">' +
+      '<p class="st-lotid">' + esc(a.lot || '') + (a.demo ? ' <span class="st-tag">Sample listing</span>' : '') + '</p>' +
+      '<h2 class="st-dname">' + esc(a.name) + '</h2>' + '<div class="st-desc">' + desc + '</div>' +
+      '<dl class="st-spec">' + specs + '</dl></div>' +
+      '<div class="st-dright">' +
+      (cols.length ? '<div class="st-panel"' + panelStyle + '>' + photo + '<span class="st-panel-n">' + esc(sel.name) + '</span></div>' +
+        '<p class="st-sel"><span>Colour</span> <b>' + esc(sel.name) + '</b> <em>' + esc(info.label) + '</em></p>' +
+        '<div class="st-sws" role="radiogroup" aria-label="Colour">' + swatches + '</div>' +
+        (sel.image ? '<button type="button" class="st-link" data-photo="1">' + (state.photo ? 'Hide fabric photo' : 'View fabric photo') + '</button>' : '') +
+        '<p class="st-note">Swatch colour is indicative. Please view the fabric photo, or ask us on WhatsApp, to confirm the shade.</p>' +
+        '<div class="st-buy"><div class="st-price">' + money(info.price) + '</div>' +
+        '<button type="button" class="st-btn' + (inCart ? ' ghost' : '') + '" data-add="' + esc(sel.code) + '"' + (info.ok ? '' : ' disabled') + '>' + (inCart ? 'Remove from order' : (info.ok ? 'Add ' + esc(sel.name) + ' to order' : esc(info.label))) + '</button></div>'
+        : '<div class="st-panel empty"><span class="st-panel-n">Colours to be announced</span></div>' +
+        '<p class="st-note">Colours and availability for this article will be added soon.</p>' +
+        '<a class="st-btn ghost" href="https://wa.me/' + esc(C.WHATSAPP) + '?text=' + encodeURIComponent('Hi ENZO, I would like details about ' + a.name + '.') + '" target="_blank" rel="noopener noreferrer">Ask about this article</a>') +
+      '</div></div>';
+    els.detail.innerHTML = h;
   }
   function render() {
-    var q = els.q.value.trim().toLowerCase(), ql = els.ql.value, cl = els.cl.value;
-    var list = state.items.filter(function (i) {
-      if (ql && i.name !== ql) return false; if (cl && i.colour !== cl) return false;
-      if (q && (i.code + ' ' + i.name + ' ' + i.colour + ' ' + i.composition).toLowerCase().indexOf(q) < 0) return false;
-      return true;
-    });
-    els.count.textContent = list.length + (list.length === 1 ? ' piece' : ' pieces');
-    if (!list.length) {
-      els.grid.innerHTML = '<div class="st-empty" style="grid-column:1/-1">' + (state.items.length ? 'No pieces match your search.' : 'No finished pieces are listed right now. Please check back soon or <a href="index.html#contact" style="color:#1E3585;text-decoration:underline">request a quote</a>.') + '</div>';
-      return;
-    }
-    els.grid.innerHTML = list.map(function (i) {
-      var src = imgSrc(i), inCart = state.cart.indexOf(i.code) > -1, res = i.status !== 'available';
-      var btn = res ? '<button class="st-btn" disabled>Reserved</button>' :
-        '<button class="st-btn' + (inCart ? ' ghost' : '') + '" data-code="' + esc(i.code) + '">' + (inCart ? 'Remove from order' : 'Add to order') + '</button>';
-      return '<article class="st-card"><div class="st-img' + (src ? '' : ' noimg') + '">' +
-        (src ? '<img src="' + esc(src) + '" alt="' + esc(i.name + ', ' + i.colour + ' ' + i.composition + ' fabric') + '" width="400" height="300" loading="lazy" decoding="async">' : '') +
-        '<span class="st-code">' + esc(i.code) + '</span></div>' +
-        '<div class="st-body"><h3>' + esc(i.name) + ' — ' + esc(i.colour) + '</h3>' +
-        '<p class="st-meta">' + esc(i.composition) + '</p>' +
-        '<div class="st-specs">' + (i.length_m ? '<span>' + esc(i.length_m) + ' m</span>' : '') + (i.width_in ? '<span>' + esc(i.width_in) + ' in wide</span>' : '') + '<span>Delivery nationwide</span></div>' +
-        '<div class="st-price">' + money(i.price_pkr) + '</div>' + btn + '</div></article>';
-    }).join('');
-    // broken images -> pattern placeholder
-    Array.prototype.forEach.call(els.grid.querySelectorAll('.st-img img'), function (im) {
-      im.addEventListener('error', function () { im.parentNode.classList.add('noimg'); im.remove(); });
-    });
+    var a = artBySlug(state.slug);
+    els.listv.hidden = !!a; els.detail.hidden = !a;
+    if (a) renderDetail(a); else renderList();
   }
+  function route() {
+    var sl = decodeURIComponent((location.hash || '').replace(/^#\/?/, ''));
+    var a = artBySlug(sl);
+    state.slug = a ? sl : ''; state.sel = 0; state.photo = false;
+    render();
+    if (a) document.title = a.name + ' — Ready Stock | ENZO Textiles';
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  els.detail.addEventListener('click', function (e) {
+    var a = artBySlug(state.slug); if (!a) return;
+    var sw = e.target.closest('button[data-sw]'), ad = e.target.closest('button[data-add]'), ph = e.target.closest('button[data-photo]');
+    if (sw) { state.sel = Number(sw.getAttribute('data-sw')); state.photo = false; render(); var n = els.detail.querySelector('.st-sw.on'); if (n) n.focus(); }
+    else if (ad) { toggle(ad.getAttribute('data-add')); }
+    else if (ph) { state.photo = !state.photo; render(); }
+  });
 
   /* ---------- cart ---------- */
   function total() { return state.cart.reduce(function (s, c) { var it = byCode(c); return s + (it ? Number(it.price_pkr) : 0); }, 0); }
@@ -111,10 +141,6 @@
     if (i > -1) state.cart.splice(i, 1); else if (state.cart.length < 10) state.cart.push(code);
     ls('enzo_cart', state.cart); render(); updateBar();
   }
-  els.grid.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-code]'); if (b) toggle(b.getAttribute('data-code'));
-  });
-  [els.q, els.ql, els.cl].forEach(function (x) { x.addEventListener('input', render); });
 
   /* ---------- drawer ---------- */
   function openDr() { drawCheckout(); els.dr.classList.add('on'); els.ov.classList.add('on'); els.dr.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; els.close.focus(); }
@@ -229,6 +255,7 @@
   }
 
   state.cart = ls('enzo_cart') || [];
+  route();
   load(true);
   setInterval(function () { if (!document.hidden && API) load(); }, 60000);
 })();

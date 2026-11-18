@@ -67,9 +67,9 @@
 <section class="st-hero">
   <div class="container">
     <p class="hm-eyebrow" style="color:#9FB0EE">Ready stock</p>
-    <h1>Finished fabric pieces.<br>Reserve in seconds.</h1>
-    <p>Every piece below is in our Lahore stock right now. Add it to your order, send it, and we hold it for you. Pay and collect at the shop, or transfer by Raast.</p>
-    <div class="st-steps"><span>1 · Choose pieces</span><span>2 · Send your order</span><span>3 · Pay &amp; collect</span></div>
+    <h1>Ready-stock fabric.<br>Reserve in seconds.</h1>
+    <p>Open an article to see its colours, choose a piece and add it to your order. We reserve it for you. Delivery nationwide, or collect from our Lahore shop.</p>
+    <div class="st-steps"><span>1 · Open an article</span><span>2 · Choose a colour</span><span>3 · Order &amp; pay</span></div>
   </div>
 </section>
 <section class="st-vid" aria-label="Stock room walk-through">
@@ -80,19 +80,17 @@
           </video>
           <button type="button" class="vid-toggle">Play</button>
         </div>
-    <p class="vid-cap">A walk through our stock room. Live availability is listed below.</p>
+    <p class="vid-cap">A walk through our stock room.</p>
   </div>
 </section>
 <section class="st-main" aria-live="polite">
   <div class="container">
-    <div class="st-tools">
-      <input type="search" id="st-q" placeholder="Search by code, quality or colour" aria-label="Search pieces">
-      <select id="st-quality" aria-label="Filter by quality"><option value="">All qualities</option></select>
-      <select id="st-colour" aria-label="Filter by colour"><option value="">All colours</option></select>
-      <span class="st-count" id="st-count"></span>
+    <div id="st-list" class="st-view">
+      <div class="st-listhead"><h2>Articles</h2><span class="st-count" id="st-count"></span></div>
+      <ol class="st-lots" id="st-lots"></ol>
     </div>
-    <div class="st-grid" id="st-grid"><div class="st-skel"></div><div class="st-skel"></div><div class="st-skel"></div></div>
-    <p class="small" style="margin-top:28px;color:#4A5578">Looking for large quantities or a custom construction? <a href="index.html#orders" style="color:#1E3585;text-decoration:underline">See bulk and custom orders</a>. Questions about a piece? <a href="https://wa.me/923126418414" target="_blank" rel="noopener noreferrer" style="color:#1E3585;text-decoration:underline">Message us on WhatsApp</a>.</p>
+    <div id="st-detail" class="st-view" hidden></div>
+    <p class="small" style="margin-top:28px;color:#4A5578">Looking for large quantities or a custom construction? <a href="index.html#orders" style="color:#1E3585;text-decoration:underline">See bulk and custom orders</a>. Questions about an article? <a href="https://wa.me/923126418414" target="_blank" rel="noopener noreferrer" style="color:#1E3585;text-decoration:underline">Message us on WhatsApp</a>.</p>
   </div>
 </section>
 </main>
@@ -142,6 +140,7 @@
 <script src="js/nav.js"></script>
 <script src="js/motion.js"></script>
 <script src="js/store-config.js"></script>
+<script src="js/articles.js"></script>
 <script src="js/store.js"></script>
 <script src="js/video.js"></script>
 </body>
