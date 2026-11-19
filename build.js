@@ -64,6 +64,7 @@ console.log('generated → js/config.js');
 // <!--/#name--> markers on each page. The markup emitted is byte-for-byte what
 // was there before; {{BASE}} resolves the ../ that journal pages need, and the
 // header keeps whatever class the page already carried (is-static / over-hero).
+var CSS_V = 14;   // bump when output.css changes shape; also set CSS_V in tools/b2b/layout.js
 function syncPartials() {
   var names = ['header', 'mobile-nav', 'footer'];
   var parts = {};
@@ -71,17 +72,25 @@ function syncPartials() {
     parts[n] = fs.readFileSync(path.join('partials', n + '.html'), 'utf8');
   });
 
-  var files = fs.readdirSync('.')
-    .filter(function (f) { return f.endsWith('.html'); })
-    .concat(fs.readdirSync('journal').map(function (f) { return path.join('journal', f); }));
+  // every page with chrome markers, at any depth (root, journal/, products/…, knowledge-centre/<slug>/ …)
+  var SKIP = ['node_modules', 'dist', 'queue', 'assets', 'content', 'docs', 'data', '.git', 'css', 'js'];
+  var files = [];
+  (function walk(dir) {
+    fs.readdirSync(dir).forEach(function (f) {
+      var p = dir === '.' ? f : path.join(dir, f), st = fs.statSync(p);
+      if (st.isDirectory()) { if (SKIP.indexOf(f) === -1 && f[0] !== '.') walk(p); }
+      else if (f.endsWith('.html') && ['article-template.html'].indexOf(f) === -1) files.push(p);
+    });
+  })('.');
 
   var touched = 0;
   files.forEach(function (file) {
     var html = fs.readFileSync(file, 'utf8');
     if (html.indexOf('<!--#header-->') === -1) return;   // redirect stubs carry no chrome
-    var base = file.indexOf(path.sep) === -1 ? '' : '../';
+    var base = '../'.repeat(file.split(path.sep).length - 1);
     var headerClass = (html.match(/<header class="site-header ([^"]+)"/) || [])[1] || 'is-static';
     var before = html;
+    html = html.replace(/output\.css\?v=\d+/g, 'output.css?v=' + CSS_V);   // one cache-bust value for every page
 
     names.forEach(function (n) {
       var body = parts[n]
@@ -95,6 +104,8 @@ function syncPartials() {
   });
   console.log('partials → synced into ' + files.length + ' pages (' + touched + ' rewritten)');
 }
+// B2B pages are generated first so their chrome is synced in the same run.
+try { require('./tools/build-b2b.js'); } catch (e) { console.error('build-b2b failed:', e.message); process.exitCode = 1; }
 syncPartials();
 
 // ── Build dist/ (pages carry the synced partials; no further injection) ──
@@ -117,7 +128,17 @@ pages.forEach(function (page) {
 
 copyDir('assets',    'dist/assets');
 copyDir('js',        'dist/js');   // includes the generated config.js
-copyDir('journal',   'dist/journal');   // long-form article pages behind journal.html
+copyDir('journal',   'dist/journal');
+['products', 'manufacturing', 'international-buyers', 'tools', 'knowledge-centre', 'quote', 'resources'].forEach(function (d) {
+  (function walk(src) {   // copy only generated pages (tools/ also holds dev scripts that must not ship)
+    if (!fs.existsSync(src)) return;
+    fs.readdirSync(src).forEach(function (f) {
+      var p = path.join(src, f);
+      if (fs.statSync(p).isDirectory()) { if (d !== 'tools' || src !== 'tools' || ['b2b', 'store-backend'].indexOf(f) === -1) walk(p); }
+      else if (f === 'index.html') { fs.mkdirSync(path.join('dist', src), { recursive: true }); fs.copyFileSync(p, path.join('dist', src, f)); }
+    });
+  })(d);
+});   // long-form article pages behind journal.html
 
 // css/components.css is appended onto output.css by `npm run build:css`
 // (one stylesheet request per page instead of two) — not copied standalone.

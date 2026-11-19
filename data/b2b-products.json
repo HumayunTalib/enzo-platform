@@ -1,0 +1,61 @@
+{
+  "_note": "Single source for category spec blocks. Anything not confirmed by ENZO is the literal string VERIFY and renders as a [VERIFY SPEC] marker. Do not replace with guesses.",
+  "categories": [
+    {
+      "slug": "pv-suiting-fabrics",
+      "name": "PV Suiting Fabrics",
+      "short": "Polyester-viscose woven fabric for men's unstitched suiting.",
+      "h1": "PV Suiting Fabrics: Polyester-Viscose Woven Fabric, Wholesale from Lahore",
+      "title": "PV Suiting Fabrics — Wholesale Polyester-Viscose | ENZO",
+      "desc": "Wholesale polyester-viscose (PV) woven suiting fabric from ENZO Textiles, Lahore. Spec block, custom constructions (36/1, 37/1, 26/1 PV) and RFQ for B2B buyers.",
+      "intro": "Polyester-viscose (PV) is the working blend for men's unstitched suiting. ENZO weaves PV constructions to order and holds a limited ready-stock PV lot. Every quality is quoted from a written specification so that both sides agree what is being bought.",
+      "composition": "Polyester / viscose (PV) blend, woven. Blend ratio per quality:",
+      "yarnCount": "Counts ENZO weaves include 36/1, 37/1 and 26/1 PV, plus custom counts. Count per quality:",
+      "weave": "EPI × PPI and weave per quality (a PV Blend running quality is listed at 100 × 80 ends × picks per inch; weave and counts to be confirmed):",
+      "width": "VERIFY", "gsm": "VERIFY", "finish": "VERIFY",
+      "applications": "Men's unstitched suiting; uniform and formal-wear programmes.",
+      "moq": "VERIFY",
+      "custom": "Construction (EPI × PPI), yarn count, width, shade (dyed through external dyeing partners) and finish can be specified per order.",
+      "formCategory": "PV Suiting Fabrics", "formComposition": "Polyester/Viscose (PV)",
+      "photos": ["assets/stock/MOSES-001.webp", "assets/stock/MOSES-002.webp", "assets/stock/MOSES-007.webp"],
+      "photoAlt": ["MOSES PV blend fabric in teal", "MOSES PV blend fabric in navy", "MOSES PV blend fabric in royal blue"],
+      "photoNote": "MOSES: PV blend, ready-stock lot (seven colours)."
+    },
+    {
+      "slug": "mens-woven-suiting",
+      "name": "Men's Woven Suiting",
+      "short": "Unstitched men's suiting in woven PV and cotton-blend constructions.",
+      "h1": "Men's Woven Suiting Fabric: Unstitched Suiting for Wholesalers and Garment Makers",
+      "title": "Men's Woven Suiting Fabric — Wholesale | ENZO Textiles",
+      "desc": "Men's unstitched woven suiting fabric in PV and cotton-blend constructions, supplied wholesale by ENZO Textiles, Lahore. Spec block and RFQ for B2B buyers.",
+      "intro": "Men's unstitched suiting is ENZO's core category: woven PV and cotton-blend cloth sold by the roll or bulk lot to wholesalers, garment manufacturers, brands and sourcing agents. ENZO does not sell to retail consumers.",
+      "composition": "PV and cotton-blend woven suiting. Composition and ratio per quality:",
+      "yarnCount": "Counts ENZO weaves include 36/1, 37/1 and 26/1 PV, plus custom counts. Count per quality:",
+      "weave": "EPI × PPI and weave per quality (a Cotton running quality is listed at 112 × 84 and a Poly Linen at 80 × 72 ends × picks per inch; confirm before quoting):",
+      "width": "VERIFY", "gsm": "VERIFY", "finish": "VERIFY",
+      "applications": "Men's unstitched suiting (shalwar kameez and similar); uniform and formal-wear programmes.",
+      "moq": "VERIFY",
+      "custom": "Composition, construction, width, shade (external dyeing partners) and finish can be specified per order.",
+      "formCategory": "Men's Woven Suiting", "formComposition": "",
+      "photos": [], "photoAlt": [], "photoNote": ""
+    },
+    {
+      "slug": "custom-greige-dyed-woven",
+      "name": "Custom Greige & Dyed Woven Constructions",
+      "short": "Woven to your construction: greige for your own dyeing, or dyed to shade.",
+      "h1": "Custom Greige and Dyed Woven Fabric: Woven to Your Construction",
+      "title": "Custom Greige & Dyed Woven Fabric — To Your Spec | ENZO",
+      "desc": "Custom woven fabric made to your construction: greige for your own processing, or dyed to shade through ENZO's external dyeing partners. Spec block and RFQ.",
+      "intro": "If the construction you need is not on a list, specify it. ENZO procures the yarn, weaves on its own shuttleless looms and arranges dyeing through external partners, with an independent final inspection before dispatch. The specification you send drives the quote.",
+      "composition": "As specified by the buyer (PV and cotton-blend woven constructions are ENZO's core). Composition:",
+      "yarnCount": "Buyer-specified warp and weft counts (examples ENZO weaves: 36/1, 37/1, 26/1 PV). Confirmed per order:",
+      "weave": "Buyer-specified EPI × PPI and weave, checked with the GSM calculator and the fabric construction calculator before sampling:",
+      "width": "VERIFY", "gsm": "Calculated from your construction (see the GSM calculator), then confirmed on a sample.", "finish": "VERIFY",
+      "applications": "Suiting and other woven end uses, as specified by the buyer.",
+      "moq": "VERIFY",
+      "custom": "Everything: composition, counts, EPI × PPI, weave, width, greige or dyed, shade and finish. Capacity above ENZO's own 23 looms can be added through vetted external units.",
+      "formCategory": "Custom Greige & Dyed Woven Constructions", "formComposition": "",
+      "photos": [], "photoAlt": [], "photoNote": ""
+    }
+  ]
+}

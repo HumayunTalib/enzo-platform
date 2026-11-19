@@ -69,11 +69,18 @@
   document.addEventListener('click', function (e) { if (!e.target.closest('.nav-item')) closeSubs(false); });
 
   /* ── Current page ──
-     Matched on filename so it works identically on the live domain,
-     the project-path staging URL, and file:// previews. */
-  var here = window.location.pathname.split('/').pop() || 'index.html';
+     Resolved against the page URL, so it works on the live domain, a
+     project-path URL and file:// previews. Directory links (products/,
+     tools/ ...) stay highlighted on every page inside that section;
+     file links (store.html) match on the exact file. */
+  var norm = function (p) { return p.replace(/index\.html$/, ''); };
+  var here = norm(window.location.pathname);
   document.querySelectorAll('.nav a, .mobile-nav a').forEach(function (link) {
-    var href = (link.getAttribute('href') || '').split('/').pop();
-    if (href && href === here) link.setAttribute('aria-current', 'page');
+    var raw = link.getAttribute('href') || '';
+    if (!raw || raw.charAt(0) === '#') return;
+    var p;
+    try { p = norm(new URL(link.href, window.location.href).pathname); } catch (e) { return; }
+    var section = /\/$/.test(raw) && p.length > 1;
+    if (p === here || (section && here.indexOf(p) === 0)) link.setAttribute('aria-current', 'page');
   });
 })();
