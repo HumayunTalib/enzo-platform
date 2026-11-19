@@ -13,12 +13,11 @@ For each of PV Suiting Fabrics, Men's Woven Suiting and Custom Greige & Dyed Wov
 - [ ] Minimum order quantity (greige / dyed / ready stock). The old site said 10,000 m: restore only if still true.
 - [ ] Lead times by order type (manufacturing, international and RFQ pages say "stated in the quotation")
 - [ ] Which finishing steps are done by whom (manufacturing page)
-- [ ] Loom type of the 23 shuttleless looms (air-jet, rapier, projectile or water-jet)
 - [ ] Blend ratio, widths, GSM and MOQ in the PV buyer's reference guide
 
 ## 2. Photography
 - [ ] Men's Woven Suiting and Custom Greige/Dyed categories show a "to be supplied" slot
-- [ ] Real photos for the manufacturing page (loom shed, inspection) if available
+- [ ] Real photos for the manufacturing page (production, inspection) if available
 - [ ] PV category uses the real MOSES photos; confirm composition and GSM before claiming specs for MOSES
 
 ## 3. Contact and identity

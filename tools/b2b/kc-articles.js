@@ -147,7 +147,7 @@ ${def('Definition', 'Ready stock is finished fabric already held, in the constru
 ${h2('compare', 'The two options compared')}
 ${tbl(['', 'Ready stock', 'Custom weave'], [['Construction', 'Fixed: what has been woven', 'Yours to specify'], ['Colour', 'The colours held', 'Greige, or dyed to your shade'], ['Quantity', 'What is held', 'Set by the order'], ['Time', 'Shorter: no production run', 'Includes yarn, weaving, dyeing, inspection'], ['Sampling', 'You can see the finished cloth', 'Approval of a sample or reference before the run'], ['Flexibility', 'Low', 'High']])}
 ${h2('timeline', 'What sets the timeline for custom orders')}
-<p>For a custom order the timeline is the sum of its stages, and each can be the slowest. At ENZO those stages are yarn procurement, weaving in the owned unit (23 shuttleless looms, with vetted external units added when volume needs it), dyeing through external partners if the order is dyed, and an independent final inspection before dispatch. ENZO states the timeline in the quotation for your specification, not as a general figure.</p>
+<p>For a custom order the timeline is the sum of its stages, and each can be the slowest. At ENZO those stages are yarn procurement, weaving, dyeing through external partners if the order is dyed, and an independent final inspection before dispatch. ENZO states the timeline in the quotation for your specification, not as a general figure.</p>
 ${h2('greige', 'Greige or dyed')}
 <p>Greige fabric is woven but not yet dyed or finished. A buyer with their own dyeing arrangement may want greige; a buyer who wants fabric ready to cut will want it dyed. If you order dyed fabric, state the shade reference and how it will be approved, because colour is the commonest source of rejection.</p>
 ${h2('choose', 'A simple way to choose')}
@@ -159,7 +159,7 @@ ${h2('choose', 'A simple way to choose')}
 A['shuttleless-looms-for-suiting-fabric'] = {
   updated: '2026-11-19', sources: [['e-PG Pathshala (INFLIBNET) — Shuttleless looms', 'https://ebooks.inflibnet.ac.in/hsp08/?p=126']],
   related: ['bulk-fabric-pre-shipment-inspection', 'cover-factor-and-fabric-balance'], tools: ['warp-consumption', 'weft-consumption'], journal: [['plain-twill-satin-weave-differences', 'Plain, twill and satin weave differences']],
-  faq: [['What is a shuttleless loom?', 'A loom that inserts the weft without a conventional shuttle: projectile, rapier, air-jet and water-jet systems are the main types.'], ['Which shuttleless loom is used for cotton?', 'Water-jet looms are limited to hydrophobic yarns, so they are not used for cotton or viscose weft. The other three types can handle a wider range.'], ['How many looms does ENZO run?', 'ENZO\'s owned weaving unit has 23 shuttleless looms.']],
+  faq: [['What is a shuttleless loom?', 'A loom that inserts the weft without a conventional shuttle: projectile, rapier, air-jet and water-jet systems are the main types.'], ['Which shuttleless loom is used for cotton?', 'Water-jet looms are limited to hydrophobic yarns, so they are not used for cotton or viscose weft. The other three types can handle a wider range.']],
   body: `<p>"Shuttleless" describes how the weft yarn crosses the warp, not a single machine. The four main systems differ in how they carry the weft, what yarns they suit and where their limits lie. Knowing the difference helps you ask a mill the right question.</p>
 ${def('Definition', 'A shuttleless loom inserts the weft pick across the warp shed by a carrier other than a conventional shuttle: a projectile, a rapier, a jet of air or a jet of water.')}
 ${h2('types', 'The four types')}
@@ -172,7 +172,7 @@ ${tbl(['Type', 'How the weft crosses', 'Notes from the source'], [
 ${h2('buyers', 'What it means for a buyer')}
 <ul><li><strong>Fibre.</strong> A water-jet loom needs a hydrophobic weft, so it is not an option for cotton or viscose in the weft. The other types are not restricted in the same way.</li><li><strong>Width.</strong> Loom type and reed width limit the widths that can be woven. If your spec needs an unusual width, say so early.</li><li><strong>Not the whole story.</strong> Loom type is one input. Yarn quality, preparation, settings and inspection decide what arrives.</li></ul>
 ${h2('enzo', 'ENZO\'s loom shed')}
-<p>ENZO\'s owned weaving unit runs <strong>23 shuttleless looms</strong>. Ask for the loom type if it matters to your specification. When an order needs more capacity than the owned looms can deliver in time, ENZO can add vetted external units or rent machinery; the same specification and independent final inspection apply. More on the <a href="${B}manufacturing/">manufacturing page</a>.</p>
+<p>Any woven fabric can be easily produced. Ask for the loom type if it matters to your specification. More on the <a href="${B}manufacturing/">manufacturing page</a>.</p>
 <p>Yarn used per metre depends on the construction, not the loom type: see the ${tool('warp-consumption', 'warp')} and ${tool('weft-consumption', 'weft')} calculators.</p>`
 };
 
