@@ -12,13 +12,24 @@
       "composition": "Polyester / viscose (PV) blend, woven. Blend ratio per quality:",
       "yarnCount": "Counts ENZO weaves include 36/1, 37/1 and 26/1 PV, plus custom counts. Count per quality:",
       "weave": "EPI × PPI and weave per quality (a PV Blend running quality is listed at 100 × 80 ends × picks per inch; weave and counts to be confirmed):",
-      "width": "VERIFY", "gsm": "VERIFY", "finish": "VERIFY",
+      "width": "Usually 64 inches; other widths on request.",
+      "gsm": "Varies by quality; confirmed on a weighed sample.",
+      "finish": "VERIFY",
       "applications": "Men's unstitched suiting; uniform and formal-wear programmes.",
-      "moq": "VERIFY",
+      "moq": "Greige: 12,000 m, depending on the specification. Finished: confirmed in the quotation.",
       "custom": "Construction (EPI × PPI), yarn count, width, shade (dyed through external dyeing partners) and finish can be specified per order.",
-      "formCategory": "PV Suiting Fabrics", "formComposition": "Polyester/Viscose (PV)",
-      "photos": ["assets/stock/MOSES-001.webp", "assets/stock/MOSES-002.webp", "assets/stock/MOSES-007.webp"],
-      "photoAlt": ["MOSES PV blend fabric in teal", "MOSES PV blend fabric in navy", "MOSES PV blend fabric in royal blue"],
+      "formCategory": "PV Suiting Fabrics",
+      "formComposition": "Polyester/Viscose (PV)",
+      "photos": [
+        "assets/stock/MOSES-001.webp",
+        "assets/stock/MOSES-002.webp",
+        "assets/stock/MOSES-007.webp"
+      ],
+      "photoAlt": [
+        "MOSES PV blend fabric in teal",
+        "MOSES PV blend fabric in navy",
+        "MOSES PV blend fabric in royal blue"
+      ],
       "photoNote": "MOSES: PV blend, ready-stock lot (seven colours)."
     },
     {
@@ -32,12 +43,17 @@
       "composition": "PV and cotton-blend woven suiting. Composition and ratio per quality:",
       "yarnCount": "Counts ENZO weaves include 36/1, 37/1 and 26/1 PV, plus custom counts. Count per quality:",
       "weave": "EPI × PPI and weave per quality (a Cotton running quality is listed at 112 × 84 and a Poly Linen at 80 × 72 ends × picks per inch; confirm before quoting):",
-      "width": "VERIFY", "gsm": "VERIFY", "finish": "VERIFY",
+      "width": "Usually 64 inches; other widths on request.",
+      "gsm": "Varies by quality; confirmed on a weighed sample.",
+      "finish": "VERIFY",
       "applications": "Men's unstitched suiting (shalwar kameez and similar); uniform and formal-wear programmes.",
-      "moq": "VERIFY",
+      "moq": "Greige: 12,000 m, depending on the specification. Finished: confirmed in the quotation.",
       "custom": "Composition, construction, width, shade (external dyeing partners) and finish can be specified per order.",
-      "formCategory": "Men's Woven Suiting", "formComposition": "",
-      "photos": [], "photoAlt": [], "photoNote": ""
+      "formCategory": "Men's Woven Suiting",
+      "formComposition": "",
+      "photos": [],
+      "photoAlt": [],
+      "photoNote": ""
     },
     {
       "slug": "custom-greige-dyed-woven",
@@ -50,12 +66,17 @@
       "composition": "As specified by the buyer (PV and cotton-blend woven constructions are ENZO's core). Composition:",
       "yarnCount": "Buyer-specified warp and weft counts (examples ENZO weaves: 36/1, 37/1, 26/1 PV). Confirmed per order:",
       "weave": "Buyer-specified EPI × PPI and weave, checked with the GSM calculator and the fabric construction calculator before sampling:",
-      "width": "VERIFY", "gsm": "Calculated from your construction (see the GSM calculator), then confirmed on a sample.", "finish": "VERIFY",
+      "width": "Usually 64 inches; other widths on request.",
+      "gsm": "Calculated from your construction (see the GSM calculator), then confirmed on a sample.",
+      "finish": "VERIFY",
       "applications": "Suiting and other woven end uses, as specified by the buyer.",
-      "moq": "VERIFY",
+      "moq": "Greige: 12,000 m, depending on the specification. Finished: confirmed in the quotation.",
       "custom": "Everything: composition, counts, EPI × PPI, weave, width, greige or dyed, shade and finish.",
-      "formCategory": "Custom Greige & Dyed Woven Constructions", "formComposition": "",
-      "photos": [], "photoAlt": [], "photoNote": ""
+      "formCategory": "Custom Greige & Dyed Woven Constructions",
+      "formComposition": "",
+      "photos": [],
+      "photoAlt": [],
+      "photoNote": ""
     }
   ]
 }

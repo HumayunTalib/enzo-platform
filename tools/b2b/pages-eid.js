@@ -28,10 +28,13 @@ const slugOf = n => n.toLowerCase().replace(/ /g, '-');
     ['Fabric type', 'Wash &amp; wear, woven'],
     ['Fabric weight', weight],
     ['Shades', '11 (see the shade card below)'],
+    ['Width', '64 inches'],
     ['Season', 'All season'],
-    ['Bulk supply', 'Greige, by the lot'],
+    ['Bulk supply', 'Greige, by the lot. MOQ 12,000 m (depends on the specification)'],
     ['Small batches', 'Finished fabric, for buyers who cannot take a full lot'],
-    ['MOQ and lead time', 'Confirmed in the quotation'],
+    ['Quotation', 'Within 1 day of receiving your specification'],
+    ['Production time', 'Greige: about 20 days. Finished: about 1 month'],
+    ['Export payment', '70:30 against LC'],
     ['Price', 'Quote on request']
   ];
 
@@ -42,19 +45,21 @@ const slugOf = n => n.toLowerCase().replace(/ /g, '-');
 
   const usp = '<div class="b2-grid c3">' +
     '<div class="b2-card flat"><h3>The spec is written down</h3><p>Construction, shade and quantity go on a written quotation, so both sides agree what is being bought.</p></div>' +
-    '<div class="b2-card flat"><h3>Inspected before dispatch</h3><p>An independent final inspection is done before the fabric leaves.</p></div>' +
+    '<div class="b2-card flat"><h3>Sample matches bulk</h3><p>The bulk cloth matches the approved sample. Final finishing can differ slightly from lab dips, never the quality. An independent final inspection is done before dispatch.</p></div>' +
     '<div class="b2-card flat"><h3>Greige or finished</h3><p>Take bulk greige for your own processing, or finished fabric in a small batch that fits your shop or stitching unit.</p></div></div>';
 
   const faq = [
     ['What does 112 × 84 mean?', '112 is the reed (ends per inch in the warp) and 84 is the pick (picks per inch in the weft). Together they describe how closely the cloth is woven.'],
     ['Can I buy greige and finish it myself?', 'Yes. Bulk greige is sold by the lot to processors, converters, wholesalers and exporters.'],
     ['I only need a small quantity. Can I still buy?', 'Yes. Finished fabric is available in small batches for stitching units, shops and smaller brands. The batch size is confirmed in the quotation.'],
-    ['When should I book for Eid?', 'Wholesalers stock before Ramadan, so book early. Send your quantity and shades on WhatsApp and ENZO replies with the timeline for your order.'],
-    ['What is the GSM?', 'The fabric sits in the medium weight range. The exact GSM is confirmed on a weighed sample before you book bulk.']
+    ['When should I book for Eid?', 'Wholesalers stock before Ramadan, so book early. Greige takes about 20 days and finished fabric about 1 month from booking. Send your quantity and shades on WhatsApp for a quote within a day.'],
+    ['What is the GSM?', 'The fabric sits in the medium weight range. GSM varies by quality and is confirmed on a weighed sample before you book bulk.'],
+    ['What is the minimum order?', 'For bulk greige the minimum is 12,000 metres, depending on the specification. Finished fabric is sold in smaller batches.'],
+    ['Will bulk match my sample?', 'Yes. Bulk matches the approved sample. Lab dips can differ slightly from the final finish, but quality is not compromised.']
   ];
 
   const body = head(base, crumbs, 'Eid Wash &amp; Wear 112 × 84: Bulk Greige and Small-Batch Finished',
-      'A medium-weight wash &amp; wear woven at 112 × 84, in 11 shades for the Eid season. Buy it as bulk greige by the lot, or as finished fabric in small batches. Every order is quoted from a written spec.',
+      'A medium-weight wash &amp; wear woven at 112 × 84, 64 inches wide, in 11 shades for the Eid season. Buy it as bulk greige by the lot, or as finished fabric in small batches. Every order is quoted from a written spec.',
       rfqBtn(base, 'Request a quote', qs) + waBtn(base, 'Book on WhatsApp', 'Eid Wash & Wear 112x84', spec), 'wide') +
     sec('<div class="b2-split"><div><h2>Specification</h2>' + table(null, rows) + '<div class="b2-actions">' + rfqBtn(base, 'Request a quote', qs) + waBtn(base, 'Ask about samples', 'Eid 112x84 sample request', spec, 'btn-secondary') + '</div></div>' +
       '<div><h2>The fabric</h2><img src="' + base + IMG + 'eid-112x84-photo.webp" alt="Eleven rolls of ENZO Eid wash and wear 112 x 84 fabric in navy, steel blue, teal, sky blue, cream, off white, ice blue, olive, sand beige, taupe and khaki brown" width="1280" height="963" style="width:100%;height:auto;border-radius:var(--r2)"><p class="small" style="margin-top:8px">Mill photo of the 11 shades.</p></div></div>') +
