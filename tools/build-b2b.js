@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const SITE = 'https://enzolhr.com';
-const modules = ['pages-commercial', 'pages-tools', 'pages-kc', 'pages-quote'];
+const modules = ['pages-eid', 'pages-commercial', 'pages-tools', 'pages-kc', 'pages-quote'];
 const pages = [].concat.apply([], modules.map(m => require('./b2b/' + m + '.js')));
 const seenT = {}, seenD = {}; let problems = 0;
 pages.forEach(pg => {
